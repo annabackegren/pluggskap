@@ -2,4 +2,7 @@ node_modules
 .DS_Store
 connectionMongodb.ts
 connectionMySQL.ts
-
+connectionMongodb.js
+connectionMySQL.js
+connectionMySQL.js.map
+connectionMongodb.js.map

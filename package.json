@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000p\u0000l\u0000u\u0000g\u0000g\u0000s\u0000k\u0000a\u0000p\u0000\r\u0000 \u0000#\u0000 \u0000p\u0000l\u0000u\u0000g\u0000g\u0000s\u0000k\u0000a\u0000p\u0000\r\u0000 \u0000# pluggskap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annabackegren/pluggskap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/annabackegren/pluggskap/issues"
+  },
+  "homepage": "https://github.com/annabackegren/pluggskap#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "mysql2": "^3.17.2",
+    "node.js": "^0.0.1-security"
+  }
+}

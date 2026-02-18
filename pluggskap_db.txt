@@ -1,0 +1,20 @@
+CREATE DATABASE pluggskap_db;
+
+USE pluggskap_db;
+
+CREATE TABLE user(
+    userId INT AUTO_INCREMENT NOT NULL,
+    userType VARCHAR(20) NOT NULL,
+    userFirstName VARCHAR(20) NOT NULL,
+    userLastName VARCHAR(30) NOT NULL ,
+    PRIMARY KEY (userId)
+);
+
+INSERT INTO user(userType, userFirstName, userLastName)
+VALUES ('elev', 'Gunde', 'Svan');
+
+SELECT * FROM user;
+
+
+
+DROP DATABASE pluggskap_db;

@@ -1,0 +1,41 @@
+use pluggskap_province_db
+
+db.pluggskap_province_db.createIndex({ name: 1}, {unique: true})
+
+db.pluggskap_province_db.insertOne(
+        {
+        name: "Lappland",
+        animal: {
+            name: "Fjällräv",
+            weight: "3-8 kg",
+            height: "28 cm",
+            food: "Smågnangare",
+            sound: "ljudfil",
+            image: "bild"
+        },
+        bird: {
+            name: "Blåhake",
+            weight: "12-25 g",
+            wingspan: "13-15 cm",
+            stay: false,
+            food: "Insekter",
+            sound: "ljudfil",
+            image: "bild"
+        },
+        food: {
+            name: "Souvas Pirko",
+            description: "Souvas pirko består av lättrökt och saltat renkött, gärna av stek eller bog, potatis, helst mandelpotatis.",
+            recipeLink: "receptlänk",
+            image: "bild"
+        },
+        plant: {
+            name: "Fjällsippa",
+            type: "Blomma",
+            season: "Vår",
+            protected: false,
+            image: "bild"
+        },
+    }
+)
+
+db.pluggskap_province_db.find()

@@ -26,9 +26,10 @@
   "homepage": "https://github.com/annabackegren/pluggskap#readme",
   "dependencies": {
     "express": "^5.2.1",
+    "mongodb": "^7.1.0",
     "mongoose": "^9.2.1",
     "mysql2": "^3.17.2",
     "node.js": "^0.0.1-security"
   },
-    "type": "module"
+  "type": "module"
 }

@@ -1,7 +1,10 @@
-import { database } from './connectionMongoDB.ts'
+import { database } from './connectionMongodb.ts'
 import { ObjectId, type OptionalId } from 'mongodb'
 import type { Request } from 'express'
 import express, {request} from 'express'
+import { databaseSQL } from './connectionMySQL.ts'
+import type { RowDataPacket } from 'mysql2'
+
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -40,10 +43,80 @@ interface Province {
     }
 }
 
+interface User extends RowDataPacket {
+  userId: number,
+  userType: string,
+  userFirstName: string,
+  userLastName: string
+}
+
 app.get("/province", async (_request, response) => {
-    const results = await database.collection<Province>('province').find().toArray()
+    const results = await database.collection<Province>('provinces').find().toArray()
     response.json(results);
 })
+
+
+app.get('/user', async (_request, response) => {
+  const [results] = await databaseSQL.query<User[]>(
+    'SELECT * FROM user',
+  )
+
+  response.send(results)
+})
+
+app.post('/user', async (
+   request: Request<
+      void, // request.params
+      void, // response.send
+      { userType: string; userFirstName: string; userLastName: string }, // request.body
+      void // request.query
+    >,
+    response
+  ) => {
+    await databaseSQL.execute(
+      'INSERT INTO user (userType, userFirstName, userLastName) VALUES (?, ?, ?)',
+      [request.body.userType, request.body.userFirstName, request.body.userLastName]
+    )
+
+    response.status(201).send()
+  }
+)
+
+app.put('/user', async (
+   request: Request<
+      void, // request.params
+      void, // response.send
+      { userId: number; userType: string; userFirstName: string; userLastName: string }, // request.body
+      void // request.query
+    >,
+    response
+  ) => {
+    await databaseSQL.execute(
+      'UPDATE user SET userType = ?, userFirstName= ?, userLastName=? WHERE userId=? ',
+      [request.body.userType, request.body.userFirstName, request.body.userLastName, request.body.userId]
+    )
+
+    response.status(200).send()
+  }
+)
+
+app.delete('/user/:userId', async (
+   request: Request<
+      {userId: number}, // request.params
+      void, // response.send
+      void, // request.body
+      void // request.query
+    >,
+    response
+  ) => {
+    await databaseSQL.execute(
+      'DELETE FROM user WHERE userId=?',
+      [request.params.userId]
+    )
+
+    response.status(201).send()
+  }
+)
 
 app.get('/', (_request, response) => {
   response.send('Hello World!')

@@ -1,8 +1,8 @@
 use pluggskap_province_db
 
-db.pluggskap_province_db.createIndex({ name: 1}, {unique: true})
+db.provinces.createIndex({ name: 1}, {unique: true})
 
-db.pluggskap_province_db.insertOne(
+db.provinces.insertOne(
         {
         name: "Lappland",
         animal: {
@@ -38,4 +38,6 @@ db.pluggskap_province_db.insertOne(
     }
 )
 
-db.pluggskap_province_db.find()
+db.provinces.find()
+
+db.dropDatabase()

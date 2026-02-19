@@ -6,15 +6,13 @@ CREATE TABLE user(
     userId INT AUTO_INCREMENT NOT NULL,
     userType VARCHAR(20) NOT NULL,
     userFirstName VARCHAR(20) NOT NULL,
-    userLastName VARCHAR(30) NOT NULL ,
+    userLastName VARCHAR(30) NOT NULL,
+    userName VARCHAR(20) NOT NULL,
+    userPassword VARCHAR(20) NOT NULL,
     PRIMARY KEY (userId)
 );
 
-INSERT INTO user(userType, userFirstName, userLastName)
-VALUES ('elev', 'Gunde', 'Svan');
+INSERT INTO user(userType, userFirstName, userLastName, userName, userPassword)
+VALUES ('elev', 'Gunde', 'Svan', 'svagun', 'hejhopp123');
 
 SELECT * FROM user;
-
-
-
-DROP DATABASE pluggskap_db;

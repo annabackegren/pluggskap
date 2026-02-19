@@ -50,6 +50,10 @@ interface User extends RowDataPacket {
   userLastName: string
 }
 
+interface ResponseMessage {
+  message: string
+}
+
 app.get("/province", async (_request, response) => {
     const results = await database.collection<Province>('provinces').find().toArray()
     response.json(results);
@@ -61,13 +65,13 @@ app.get('/user', async (_request, response) => {
     'SELECT * FROM user',
   )
 
-  response.send(results)
+  response.status(200).send(results)
 })
 
 app.post('/user', async (
    request: Request<
       void, // request.params
-      void, // response.send
+      ResponseMessage, // response.send
       { userType: string; userFirstName: string; userLastName: string }, // request.body
       void // request.query
     >,
@@ -78,14 +82,14 @@ app.post('/user', async (
       [request.body.userType, request.body.userFirstName, request.body.userLastName]
     )
 
-    response.status(201).send()
+    response.status(201).send({message:"User successfully posted."})
   }
 )
 
 app.put('/user', async (
    request: Request<
       void, // request.params
-      void, // response.send
+      ResponseMessage, // response.send
       { userId: number; userType: string; userFirstName: string; userLastName: string }, // request.body
       void // request.query
     >,
@@ -96,14 +100,14 @@ app.put('/user', async (
       [request.body.userType, request.body.userFirstName, request.body.userLastName, request.body.userId]
     )
 
-    response.status(200).send()
+    response.status(200).send({message:"User successfully added"})
   }
 )
 
 app.delete('/user/:userId', async (
    request: Request<
       {userId: number}, // request.params
-      void, // response.send
+      ResponseMessage, // response.send
       void, // request.body
       void // request.query
     >,
@@ -114,7 +118,7 @@ app.delete('/user/:userId', async (
       [request.params.userId]
     )
 
-    response.status(201).send()
+    response.status(201).send({message:"User successfully deleted."})
   }
 )
 

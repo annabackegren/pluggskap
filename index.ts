@@ -1,4 +1,4 @@
-import { database } from './connectionMongodb.ts'
+import { database } from './connectionMongoDB.ts'
 import { ObjectId, type OptionalId } from 'mongodb'
 import type { Request } from 'express'
 import express, {request} from 'express'
@@ -47,8 +47,26 @@ interface User extends RowDataPacket {
   userId: number,
   userType: string,
   userFirstName: string,
-  userLastName: string
+  userLastName: string,
+  userName: string,
+  userPassword: string
 }
+
+interface UpdateUser {
+  userId: number,
+  userType: string,
+  userFirstName: string,
+  userLastName: string,
+  userName: string,
+  userPassword: string
+}
+
+type PostUser = Omit<UpdateUser, 'userId'>
+
+interface DeleteUser{
+  userId: number
+}
+
 
 interface ResponseMessage {
   message: string
@@ -72,7 +90,7 @@ app.post('/user', async (
    request: Request<
       void, // request.params
       ResponseMessage, // response.send
-      { userType: string; userFirstName: string; userLastName: string }, // request.body
+      PostUser, // request.body
       void // request.query
     >,
     response
@@ -90,7 +108,7 @@ app.put('/user', async (
    request: Request<
       void, // request.params
       ResponseMessage, // response.send
-      { userId: number; userType: string; userFirstName: string; userLastName: string }, // request.body
+      UpdateUser, // request.body
       void // request.query
     >,
     response
@@ -106,7 +124,7 @@ app.put('/user', async (
 
 app.delete('/user/:userId', async (
    request: Request<
-      {userId: number}, // request.params
+      DeleteUser, // request.params
       ResponseMessage, // response.send
       void, // request.body
       void // request.query

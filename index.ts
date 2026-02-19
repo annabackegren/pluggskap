@@ -9,6 +9,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
+
+
 interface Province {
     name: string,
     animal: {
@@ -71,12 +73,6 @@ interface DeleteUser{
 interface ResponseMessage {
   message: string
 }
-
-app.get("/province", async (_request, response) => {
-    const results = await database.collection<Province>('provinces').find().toArray()
-    response.json(results);
-})
-
 
 app.get('/user', async (_request, response) => {
   const [results] = await databaseSQL.query<User[]>(

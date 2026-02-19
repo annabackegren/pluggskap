@@ -4,12 +4,13 @@ import type { Request } from 'express'
 import express, {request} from 'express'
 import { databaseSQL } from './connectionMySQL.ts'
 import type { RowDataPacket } from 'mysql2'
+import provinceRoutes from './routes/provinceRoutes.ts'
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-
+app.use('/province', provinceRoutes)
 
 interface Province {
     name: string,
@@ -69,10 +70,11 @@ interface DeleteUser{
   userId: number
 }
 
-
 interface ResponseMessage {
   message: string
 }
+
+
 
 app.get('/user', async (_request, response) => {
   const [results] = await databaseSQL.query<User[]>(

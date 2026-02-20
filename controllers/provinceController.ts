@@ -45,8 +45,3 @@ export const getProvinces = async (_req: Request, res: Response) => {
     res.status(500).send
   }
 }
-
-// app.get("/province", async (_request, response) => {
-//     const results = await database.collection<Province>('provinces').find().toArray()
-//     response.json(results);
-// })

@@ -20,6 +20,8 @@ export interface UpdateUserDTO {
 
 export type PostUserDTO = Omit<UpdateUserDTO, 'userId'>
 
+export type LoginUserDTO = Omit<User, 'userId, userType, userFirstName, userLastName'>
+
 export interface DeleteUserDTO{
   userId: number
 }

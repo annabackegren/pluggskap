@@ -1,7 +1,9 @@
 import type { Request, Response } from 'express';
-import { getAllUsers, updateUser as updateUserService, addUser as addUserService, deleteUser as deleteUserService } from "../services/userService.js"
+import { getAllUsers, updateUser as updateUserService, addUser as addUserService, deleteUser as deleteUserService, getOneUser } from "../services/userService.js"
 import type {ResponseMessage} from '../interfaces/responseInterface.ts'
-import type { PostUserDTO, UpdateUserDTO } from '../interfaces/userInterface.ts';
+import type { PostUserDTO, LoginUserDTO, UpdateUserDTO } from '../interfaces/userInterface.ts';
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 // ------------- GET -------------
 export const getUsers = async (_req: Request, res: Response) => {
@@ -18,9 +20,8 @@ export const getUsers = async (_req: Request, res: Response) => {
 // ------------- PUT -------------
 export const updateUser = async (_req: Request<{}, ResponseMessage, UpdateUserDTO>, res: Response<ResponseMessage>) => {
   try {
-    const data: UpdateUserDTO = _req.body
-    
-    await updateUserService(data)
+   
+    await updateUserService(_req.body)
 
     res.status(200).json({message: 'User successfully updated.'})
   } catch (error: any) {
@@ -29,19 +30,49 @@ export const updateUser = async (_req: Request<{}, ResponseMessage, UpdateUserDT
   }
 }
 
-// ------------- POST -------------
+// ------------- POST ADD -------------
 export const addUser = async (_req: Request<{}, ResponseMessage, PostUserDTO>, res: Response<ResponseMessage>) => {
   try {
-    const data: PostUserDTO = _req.body
-    
-    await addUserService(data)
+    const user: PostUserDTO = _req.body
+    const hashedPassword = await bcrypt.hash(user.userPassword, 10)
+    const newUser: PostUserDTO =  {...user, userPassword: hashedPassword}
 
+    await addUserService(newUser)
     res.status(200).json({message: 'User successfully posted.'})
   } catch (error: any) {
     console.error(error);
     res.status(500).json({message: error.message})
   }
 }
+
+// ------------- POST LOGIN-------------
+export const loginUser = async (_req: Request<{}, ResponseMessage, LoginUserDTO>, res: Response<ResponseMessage>) => {
+  try {
+    const user: LoginUserDTO = _req.body
+    const findUser = await getOneUser(user.userName)
+
+        if (!findUser) {
+            return res.status(401).json({ message: 'Det gick inte att logga in med din användare!' });
+        }
+        const passwordMatch = await bcrypt.compare(user.userPassword, findUser.userPassword);
+        if (!passwordMatch) {
+            return res.status(401).json({ message: 'Ditt lösenord är inte korrekt!' });
+        }
+
+            const token = jwt.sign({ userId: user._id }, 'your-secret-key', {
+                expiresIn: '1h',
+            });
+            res.status(200).json(
+                {
+                    token,
+                    message: 'Du är inloggad!'
+                });
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({message: error.message})
+  }
+}
+
 
 // ------------- DELETE -------------
 export const deleteUser = async (_req: Request<{userId: string}, ResponseMessage>, res: Response<ResponseMessage>) => {

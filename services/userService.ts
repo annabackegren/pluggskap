@@ -1,5 +1,4 @@
-
-import { request } from 'node:http';
+// import { request } from 'node:http';
 import { databaseSQL } from '../connectionMySQL.ts'
 import type {User, UpdateUserDTO, PostUserDTO, DeleteUserDTO} from '../interfaces/userInterface.ts'
 
@@ -24,16 +23,16 @@ export const getOneUser = async (userName: string): Promise<User | null> => {
 // ------------- PUT -------------
 export const updateUser = async (request: UpdateUserDTO): Promise<void> => {
     await databaseSQL.execute(
-    'UPDATE user SET userType = ?, userFirstName= ?, userLastName=?, userName=?, userPassword=? WHERE userId=? ',
-    [request.userType, request.userFirstName, request.userLastName, request.userName, request.userPassword, request.userId]
+    'UPDATE user SET userType = ?, userName=?, userPassword=? WHERE userId=? ',
+    [request.userType,request.userName, request.userPassword, request.userId]
     );
 }
 
 // ------------- POST -------------
 export const addUser = async (request: PostUserDTO): Promise<void> => {
     await databaseSQL.execute(
-      'INSERT INTO user (userType, userFirstName, userLastName, userName, userPassword) VALUES (?, ?, ?, ?, ?)',
-      [request.userType, request.userFirstName, request.userLastName, request.userName, request.userPassword]
+      'INSERT INTO user (userType, userName, userPassword) VALUES (?, ?, ?)',
+      [request.userType, request.userName, request.userPassword]
     )
 }
 

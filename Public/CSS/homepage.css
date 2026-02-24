@@ -1,0 +1,35 @@
+body {
+  background-color: #446036;
+}
+
+nav {
+  background-color: #446036;
+  display: flex;
+  justify-content: space-between;
+}
+h1 {
+  color: #ffffff;
+}
+
+#profil {
+  display: flex;
+  width: 317px;
+  height: 120px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+#profil img {
+  background-color: #ffffff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.kort {
+  background-color: #a68ec1;
+  width: 317px;
+  height: 120px;
+  border-radius: 10px;
+  margin: 80px auto;
+}

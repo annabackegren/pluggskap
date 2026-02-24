@@ -4,6 +4,9 @@ import type {ResponseMessage} from '../interfaces/responseInterface.ts'
 import type { PostUserDTO, LoginUserDTO, UpdateUserDTO } from '../interfaces/userInterface.ts';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 // ------------- GET -------------
 export const getUsers = async (_req: Request, res: Response) => {
@@ -20,8 +23,11 @@ export const getUsers = async (_req: Request, res: Response) => {
 // ------------- PUT -------------
 export const updateUser = async (_req: Request<{}, ResponseMessage, UpdateUserDTO>, res: Response<ResponseMessage>) => {
   try {
-   
-    await updateUserService(_req.body)
+    const user: UpdateUserDTO = _req.body
+    const hashedPassword = await bcrypt.hash(user.userPassword, 10)
+    const updatedUser: UpdateUserDTO =  {...user, userPassword: hashedPassword}
+
+    await updateUserService(updatedUser)
 
     res.status(200).json({message: 'User successfully updated.'})
   } catch (error: any) {
@@ -59,7 +65,7 @@ export const loginUser = async (_req: Request<{}, ResponseMessage, LoginUserDTO>
             return res.status(401).json({ message: 'Ditt lösenord är inte korrekt!' });
         }
 
-            const token = jwt.sign({ userId: user._id }, 'your-secret-key', {
+            const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET as string, {
                 expiresIn: '1h',
             });
             res.status(200).json(
@@ -81,7 +87,7 @@ export const deleteUser = async (_req: Request<{userId: string}, ResponseMessage
 
     if(isNaN(userId)) throw new Error('Invalid userId')
 
-    await deleteUserService({userId})   
+    await deleteUserService({userId})
 
     res.status(200).json({message: 'User successfully deleted.'})
   } catch (error: any) {

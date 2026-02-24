@@ -4,9 +4,7 @@ import {getUsers, updateUser, addUser, deleteUser, loginUser} from '../controlle
 const router = express.Router()
 
 router.get('/', getUsers)
-router.put('/', updateUser)
 router.post('/', addUser)
-router.delete('/:userId', deleteUser)
 
 router.post('/login', loginUser);
 

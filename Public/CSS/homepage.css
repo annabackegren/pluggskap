@@ -8,7 +8,8 @@ nav {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
+  border-radius: 25px;
+  position: relative;
 }
 h1 {
   color: #ffffff;
@@ -20,24 +21,30 @@ h1 {
   display: flex;
   width: 317px;
   height: 120px;
-  border-radius: 10px;
-  margin: 20px auto;
+  border-radius: 60px 10px 10px 10px;
+  margin: 35px auto;
+  position: relative;
+  color: #ffffff;
 }
 
 #profil img {
   background-color: #ffffff;
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -13px;
 }
 #profil div {
-  border: 2px solid #ffffff;
+  border: 4px solid #ffffff;
   border-radius: 10px;
   width: 307px;
   height: 86px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 60px;
 }
 
 .kort {
@@ -66,4 +73,33 @@ h2 {
   color: #ffffff;
   font-size: 22px;
   font-weight: lighter;
+}
+
+#menulist {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  list-style: none;
+  background-color: #446036;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 20px 20px;
+  padding: 10px 20px;
+  margin-top: 0px;
+  border-top: 2px solid #446036;
+}
+
+#menulist a {
+  color: #ffffff;
+  text-decoration: none;
+}
+#menulist li {
+  padding: 8px 0;
+}
+#hamburger {
+  background-color: #446036;
+  border: none;
+  color: #ffffff;
+  font-size: xx-large;
+  padding: 30px;
 }

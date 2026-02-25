@@ -1,14 +1,19 @@
 body {
   background-color: #446036;
+  font-family: "Baloo 2", sans-serif;
 }
 
 nav {
   background-color: #446036;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
 }
 h1 {
   color: #ffffff;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: lighter;
 }
 
 #profil {
@@ -16,7 +21,7 @@ h1 {
   width: 317px;
   height: 120px;
   border-radius: 10px;
-  margin: auto;
+  margin: 20px auto;
 }
 
 #profil img {
@@ -25,11 +30,40 @@ h1 {
   height: 60px;
   border-radius: 50%;
 }
+#profil div {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  width: 307px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .kort {
   background-color: #a68ec1;
   width: 317px;
   height: 120px;
   border-radius: 10px;
-  margin: 80px auto;
+  margin: 50px auto;
+  border: 2px solid #b6da7e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kort div {
+  background-color: #446036;
+  border-radius: 10px;
+  height: 60px;
+  width: 158px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: lighter;
 }

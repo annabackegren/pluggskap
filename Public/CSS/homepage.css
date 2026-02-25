@@ -96,6 +96,10 @@ h2 {
 #menulist li {
   padding: 8px 0;
 }
+#menulist a:hover {
+  text-decoration: underline;
+}
+
 #hamburger {
   background-color: #446036;
   border: none;

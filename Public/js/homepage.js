@@ -11,3 +11,5 @@ const button = document.getElementById("hamburger");
 button.addEventListener("click", () => {
   toggleMenu("menulist");
 });
+
+let showUsername = localStorage.getItem("usernameIndex");

@@ -27,10 +27,14 @@ async function loginReq() {
         userPassword: password.value,
       }),
     });
-    console.log(await response.json());
+    const loginMsg = await response.json();
     if ((await response.status) === 200) {
-      username.value = "";
-      password.value = "";
+      localStorage.setItem("usernameIndex", JSON.stringify(username.value));
+      let showUsername = localStorage.getItem("usernameIndex");
+      localStorage.setItem("token", JSON.stringify(loginMsg.token));
+      let showToken = localStorage.getItem("token");
+      console.log(showToken);
+      console.log(showUsername);
       window.location.href = "http://localhost:3000/html/homepage.html";
     } else {
       console.log("fel");
@@ -41,18 +45,7 @@ async function loginReq() {
   }
 }
 
-async function getUserId() {
-  try {
-    const response = await fetch("http://localhost:3000/user");
-    const result = response.json();
-    console.log(result);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   loginReq();
-  getUserId();
 });

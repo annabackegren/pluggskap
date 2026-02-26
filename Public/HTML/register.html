@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pluggskap</title>
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/pluggskap/public/css/images/globe_no_arms.png"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <main>
+      <form id="userinfo" action="">
+        <input
+          id="elevbtn"
+          class="usertype"
+          name="usertype"
+          type="radio"
+          value="elev"
+        />Elev
+        <input
+          id="lararebtn"
+          class="usertype"
+          name="usertype"
+          type="radio"
+          value="larare"
+        />Lärare
+        <input
+          id="username"
+          name="username"
+          placeholder="Användarnamn"
+          type="text"
+          required
+        />
+        <input
+          id="password"
+          name="password"
+          placeholder="Lösenord"
+          type="password"
+          required
+        />
+        <span id="passworderror"
+          >Lösenordet måste innehålla mer än 3 tecken</span
+        >
+        <input
+          id="confirmpassword"
+          name="confirmpassword"
+          placeholder="Bekräfta lösenord"
+          type="password"
+          required
+        />
+        <span id="cfpassworderror">Lösenordet matchar inte</span>
+        <input id="gdprcheck" name="gdprcheck" type="checkbox" />Jag godkänner
+        GDPR-avtalet
+        <input id="submitbtn" type="submit" value="Skapa användare" />
+      </form>
+      <div>
+        <p id="usercreated">Användare skapad!</p>
+      </div>
+      <a href="login.html"><button id="loginbtn">Logga in</button></a>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="../js/index.js"></script>
+  <script src="../js/register.js"></script>
+</html>

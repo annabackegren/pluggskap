@@ -1,3 +1,31 @@
+@font-face {
+  font-family: Baloo2;
+  src: url("../style/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../style/fonts/Montserrat.ttf") format("truetype");
+}
+
+:root {
+  /* COLORS */
+  --dark-green: #446036;
+  --light-green: #b6da7e;
+  --purple: #a68ec1;
+
+  --text-light: #ffffff;
+  --text-dark: #000000;
+
+  /* FONTS */
+  --header-font: ;
+  --body-font: ;
+}
+
+body {
+  font-family: var(--body-font), Arial, sans-serif;
+}
+
 /* HEADER */
 header {
   display: flex;

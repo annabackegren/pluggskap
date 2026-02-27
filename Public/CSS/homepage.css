@@ -10,6 +10,7 @@ nav {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   position: relative;
+  align-items: center;
 }
 h1 {
   color: #ffffff;
@@ -94,7 +95,7 @@ h2 {
   text-decoration: none;
 }
 #menulist li {
-  padding: 8px 0;
+  padding: 0 15px;
 }
 #menulist a:hover {
   text-decoration: underline;
@@ -106,4 +107,30 @@ h2 {
   color: #ffffff;
   font-size: xx-large;
   padding: 30px;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    align-items: flex-start;
+  }
+  .kort {
+    height: 774px;
+    width: 310px;
+  }
+  #hamburger {
+    display: none;
+  }
+  #menulist {
+    display: flex;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    font-size: x-large;
+    padding: 0;
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+  }
 }

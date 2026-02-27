@@ -12,4 +12,7 @@ button.addEventListener("click", () => {
   toggleMenu("menulist");
 });
 
-let showUsername = localStorage.getItem("usernameIndex");
+let showUsername = JSON.parse(localStorage.getItem("usernameIndex"));
+const user = document.getElementById("username");
+
+user.textContent = showUsername || "Förnamn Efternamn";

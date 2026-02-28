@@ -5,25 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../CSS/images/favicon.png" />
     <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/province.css" />
 
     <title>Landskapsnamn - Pluggskap</title>
   </head>
 
   <body>
+    <div id="header"></div>
     <main>
       <div id="user-wrapper">User-Wrapper</div>
+
+      <div class="landscape-wrapper">
         <div class="landscape-header">
-        <img src="" alt="Vapensköld" />
-        <h1>Landskapsnamn</h1>
+          <img src="" alt="Vapensköld" />
+          <h1>Landskapsnamn</h1>
         </div>
+
         <section class="landscape-grid">
-          <article>Landskapsdjur</article>
-          <article>Landskapsväxt</article>
-          <article>Landskapsfågel</article>
-          <article>Landskapsmat</article>
+          <button class="card-button" data-type="djur">
+            <article class="card">
+              <figure><img src="" alt="Landskapsdjur" /></figure>
+              <div class="card-content">
+                <h2>Djur:</h2>
+                <p>Djurets namn</p>
+              </div>
+            </article>
+          </button>
+          <button class="card-button" data-type="växt">
+            <article class="card">
+              <figure><img src="" alt="Landskapsväxt" /></figure>
+              <div class="card-content">
+                <h2>Växt:</h2>
+                <p>Växtens namn</p>
+              </div>
+            </article>
+          </button>
+          <button class="card-button" data-type="fågel">
+            <article class="card">
+              <figure><img src="" alt="Landskapsfågel" /></figure>
+              <div class="card-content">
+                <h2>Fågel:</h2>
+                <p>Fågelns namn</p>
+              </div>
+            </article>
+          </button>
+          <button class="card-button" data-type="mat">
+            <article class="card">
+              <figure><img src="" alt="Landskapsmat" /></figure>
+              <div class="card-content">
+                <h2>Maträtt:</h2>
+                <p>Matens namn</p>
+              </div>
+            </article>
+          </button>
         </section>
       </div>
+
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close">X</span>
+          <p>Mer info kommer här</p>
+        </div>
+      </div>
     </main>
-    
   </body>
+  <script src="../js/index.js"></script>
+  <script src="../js/province.js"></script>
 </html>

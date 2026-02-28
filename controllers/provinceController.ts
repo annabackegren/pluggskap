@@ -1,9 +1,13 @@
 import express from 'express';
 import type { Request, Response } from 'express';
 import { database } from '../connectionMongoDB.ts'
+import type {ResponseMessage} from '../interfaces/responseInterface.ts'
+import { error } from 'node:console';
 
 interface Province {
+    id: string,
     name: string,
+    coatOfArms: string,
     animal: {
       name: string,
       weight: string,
@@ -43,5 +47,25 @@ export const getProvinces = async (_req: Request, res: Response) => {
   } catch (error: any) {
     console.error(error);
     res.status(500).send
+  }
+}
+
+export const getProvince = async (_req: Request, res: Response<Province | ResponseMessage>) => {
+  try {
+    const provinceId = _req.params.id
+    if(!provinceId){
+      return res.status(400).json({error: 'Could not find any province id'})
+    }
+
+    const province = await database.collection<Province>('provinces').findOne({id: provinceId});
+
+    if(!province){
+      return res.status(404).json({error: 'Province not found'})
+    }
+
+    res.json(province)
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({error: 'Server error'})
   }
 }

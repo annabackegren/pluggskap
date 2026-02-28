@@ -1,10 +1,13 @@
 use pluggskap_province_db
 
 db.provinces.createIndex({ name: 1}, {unique: true})
+db.provinces.createIndex({ id: 1}, {unique: true})
 
-db.provinces.insertOne(
+db.provinces.insertMany([
         {
+        id: "lpl",
         name: "Lappland",
+        coatOfArms: "bild",
         animal: {
             name: "Fjällräv",
             weight: "3-8 kg",
@@ -25,7 +28,7 @@ db.provinces.insertOne(
         food: {
             name: "Souvas Pirko",
             description: "Souvas pirko består av lättrökt och saltat renkött, gärna av stek eller bog, potatis, helst mandelpotatis.",
-            recipeLink: "receptlänk",
+            recipeLink: "https://www.ica.se/recept/suovas-pirko-702258/",
             image: "bild"
         },
         plant: {
@@ -35,9 +38,46 @@ db.provinces.insertOne(
             protected: false,
             image: "bild"
         },
+    },
+            {
+        id: "nbt",
+        name: "Norrbotten",
+        coatOfArms: "bild",
+        animal: {
+            name: "Lavskrika",
+            weight: "80-95 g",
+            height: "26-29 cm",
+            food: "Allätare",
+            sound: "ljudfil",
+            image: "bild"
+        },
+        bird: {
+            name: "Lavskrika",
+            weight: "80-95 g",
+            wingspan: "40-46 cm",
+            stay: true,
+            food: "Allätare",
+            sound: "ljudfil",
+            image: "bild"
+        },
+        food: {
+            name: "Pitepalt",
+            description: "Pitepalt tillagas av rå, malen potatis som blandas med kornmjöl och salt. Av detta görs runda bollar som oftast fylls med rimmat fläsk och sedan kokas i rikligt saltat vatten.",
+            recipeLink: "https://www.ica.se/recept/pitepalt-702154/",
+            image: "bild"
+        },
+        plant: {
+            name: "Åkerbär",
+            type: "Bärväxt",
+            season: "Sommar",
+            protected: false,
+            image: "bild"
+        },
     }
-)
+])
 
 db.provinces.find()
+
+db.provinces.findOne({id: "lpl"})
 
 db.dropDatabase()

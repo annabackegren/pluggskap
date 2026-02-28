@@ -7,14 +7,14 @@ db.provinces.insertMany([
         {
         id: "lpl",
         name: "Lappland",
-        coatOfArms: "bild",
+        coatOfArms: "../assets/img/coatOfArms/Lappland_landskapsvapen.png",
         animal: {
             name: "Fjällräv",
             weight: "3-8 kg",
             height: "28 cm",
             food: "Smågnangare",
             sound: "ljudfil",
-            image: "bild"
+            image: "../assets/img/animal/arctic-fox.jpg"
         },
         bird: {
             name: "Blåhake",
@@ -23,33 +23,33 @@ db.provinces.insertMany([
             stay: false,
             food: "Insekter",
             sound: "ljudfil",
-            image: "bild"
+            image: "../assets/img/bird/bluethroat.jpg"
         },
         food: {
             name: "Souvas Pirko",
             description: "Souvas pirko består av lättrökt och saltat renkött, gärna av stek eller bog, potatis, helst mandelpotatis.",
             recipeLink: "https://www.ica.se/recept/suovas-pirko-702258/",
-            image: "bild"
+            image: "../assets/img/food/suovas_pirko.jpg"
         },
         plant: {
             name: "Fjällsippa",
             type: "Blomma",
             season: "Vår",
             protected: false,
-            image: "bild"
+            image: "../assets/img/plant/dryas-octopetala.jpg"
         },
     },
             {
         id: "nbt",
         name: "Norrbotten",
-        coatOfArms: "bild",
+        coatOfArms: "../assets/img/coatOfArms/Norrbotten_landskapsvapen.png",
         animal: {
             name: "Lavskrika",
             weight: "80-95 g",
             height: "26-29 cm",
             food: "Allätare",
             sound: "ljudfil",
-            image: "bild"
+            image: "../assets/img/animal/siberian-jay.jpg"
         },
         bird: {
             name: "Lavskrika",
@@ -58,20 +58,20 @@ db.provinces.insertMany([
             stay: true,
             food: "Allätare",
             sound: "ljudfil",
-            image: "bild"
+            image: "../assets/img/bird/siberian-jay.jpg"
         },
         food: {
             name: "Pitepalt",
             description: "Pitepalt tillagas av rå, malen potatis som blandas med kornmjöl och salt. Av detta görs runda bollar som oftast fylls med rimmat fläsk och sedan kokas i rikligt saltat vatten.",
             recipeLink: "https://www.ica.se/recept/pitepalt-702154/",
-            image: "bild"
+            image: "../assets/img/food/pitepalt.jpg"
         },
         plant: {
             name: "Åkerbär",
             type: "Bärväxt",
             season: "Sommar",
             protected: false,
-            image: "bild"
+            image: "../assets/img/plant/rubus_arcticus.jpg"
         },
     }
 ])

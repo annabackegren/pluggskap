@@ -13,6 +13,7 @@
   --dark-green: #446036;
   --light-green: #b6da7e;
   --purple: #a68ec1;
+  --white: #ffffff;
 
   --text-light: #ffffff;
   --text-dark: #000000;
@@ -24,6 +25,7 @@
 
 body {
   font-family: var(--body-font), Arial, sans-serif;
+  background: var(--dark-green);
 }
 
 /* HEADER */

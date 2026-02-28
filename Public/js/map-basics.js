@@ -28,13 +28,13 @@ function initSvgClick() {
     resetPaths();
     // targetPath.classList.add("active");
 
-    const provinceName = targetPath.getAttribute("name");
+    // const provinceName = targetPath.getAttribute("name");
     const provinceId = targetPath.id;
 
-    const encodedName = encodeURIComponent(provinceName);
+    // const encodedName = encodeURIComponent(provinceName);
     const encodedId = encodeURIComponent(provinceId);
 
-    window.location.href = `/html/province/${encodedName}?id=${encodedId}`;
+    window.location.href = `/html/province.html?id=${encodedId}`;
   });
 }
 

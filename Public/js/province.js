@@ -1,8 +1,8 @@
 const urlParamsId = new URLSearchParams(window.location.search);
 const provinceId = urlParamsId.get("id");
 
-const provinceHeaderName = document.querySelector(".landscape-header h1"),
-  provinceHeaderCoatOfArms = document.querySelector(".landscape-header img"),
+const provinceHeaderName = document.querySelector(".province-header h1"),
+  provinceHeaderCoatOfArms = document.querySelector(".province-header img"),
   animalCard = document.querySelector('[data-type="animal"]'),
   animalImg = animalCard.querySelector("img"),
   animalName = animalCard.querySelector("p"),

@@ -1,23 +1,3 @@
-body {
-  background-color: #446036;
-  font-family: "Baloo 2", sans-serif;
-}
-
-nav {
-  background-color: #446036;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-  position: relative;
-  align-items: center;
-}
-h1 {
-  color: #ffffff;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: lighter;
-}
-
 #profil {
   display: flex;
   width: 317px;
@@ -48,6 +28,10 @@ h1 {
   margin-left: 60px;
 }
 
+#profil p {
+  padding-left: 1.8rem;
+}
+
 .kort {
   background-color: #a68ec1;
   width: 317px;
@@ -76,39 +60,6 @@ h2 {
   font-weight: lighter;
 }
 
-#menulist {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  list-style: none;
-  background-color: #446036;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 20px 20px;
-  padding: 10px 20px;
-  margin-top: 0px;
-  border-top: 2px solid #446036;
-}
-
-#menulist a {
-  color: #ffffff;
-  text-decoration: none;
-}
-#menulist li {
-  padding: 0 15px;
-}
-#menulist a:hover {
-  text-decoration: underline;
-}
-
-#hamburger {
-  background-color: #446036;
-  border: none;
-  color: #ffffff;
-  font-size: xx-large;
-  padding: 30px;
-}
-
 @media (min-width: 768px) {
   main {
     display: flex;
@@ -117,20 +68,5 @@ h2 {
   .kort {
     height: 774px;
     width: 310px;
-  }
-  #hamburger {
-    display: none;
-  }
-  #menulist {
-    display: flex;
-    position: static;
-    background-color: transparent;
-    box-shadow: none;
-    font-size: x-large;
-    padding: 0;
-    margin: 0;
-  }
-  h1 {
-    margin: 0;
   }
 }

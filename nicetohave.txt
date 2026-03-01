@@ -9,3 +9,17 @@ export const database = async (): Promise<void> => {
         process.exit(1);
     }
 };
+
+Från header. Kod som krockade med inline i css. Resultat: Meny visades inte på stor skärm.
+    // function toggleMenu(menuId) {
+    //   const meny = document.getElementById(menuId);
+    //   if (meny.style.display === "none") {
+    //     meny.style.display = "block";
+    //   } else {
+    //     meny.style.display = "none";
+    //   }
+    // }
+
+    // button.addEventListener("click", () => {
+    //   toggleMenu("menu");
+    // });

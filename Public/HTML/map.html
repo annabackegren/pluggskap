@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
     <link rel="stylesheet" href="../CSS/index.css" />
     <link rel="stylesheet" href="../CSS/map.css" />
+    <link rel="stylesheet" href="../CSS/userCard.css" />
 
     <title>Karta - Pluggskap</title>
   </head>
@@ -13,9 +14,9 @@
     <header id="header"></header>
 
     <main>
-      <div id="user-wrapper" class="user-wrapper-desktop">User-Wrapper</div>
+      <section class="user-card user-wrapper-desktop"></section>
       <section id="map-wrapper">
-        <div id="user-wrapper" class="user-wrapper-mobile">User-Wrapper</div>
+        <section class="user-card user-wrapper-mobile"></section>
         <!-- <div class="page-header">
           <h1>Sveriges landskap</h1>
           <p>Klicka på ett landskap för att gå vidare.</p>
@@ -30,7 +31,8 @@
         <ul id="feedback-message"></ul>
       </section>
     </main>
-    <script src="../js/index.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/userCard.js"></script>
     <script type="module" src="../js/map-basics.js"></script>
     <script type="module" src="../js/map.js"></script>
   </body>

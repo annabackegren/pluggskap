@@ -1,0 +1,40 @@
+.user-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 317px;
+  height: 120px;
+  min-width: 317px;
+  border-radius: 60px 10px 10px 10px;
+  margin: 2rem auto;
+  position: relative;
+  color: var(--text-light);
+}
+
+.user-card img {
+  background-color: var(--white);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--white);
+  object-fit: contain;
+  margin-right: -70px;
+  position: relative;
+  z-index: 10;
+}
+.user-card div {
+  border: 4px solid var(--white);
+  border-radius: 10px;
+  height: 86px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.user-card p {
+  padding-left: 1.8rem;
+}

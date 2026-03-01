@@ -133,14 +133,6 @@ nav a {
 }
 
 @media (min-width: 768px) {
-  main {
-    display: flex;
-    align-items: flex-start;
-  }
-  .kort {
-    height: 774px;
-    width: 310px;
-  }
   #hamburger {
     display: none;
   }

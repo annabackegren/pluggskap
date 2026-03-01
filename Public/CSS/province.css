@@ -180,18 +180,7 @@ main {
   font-size: 1.5rem;
 }
 
-@media screen and (min-width: 768px) {
-  .province-wrapper {
-    max-height: calc(100vh - 125px - 3rem);
-  }
-}
-
 @media screen and (min-width: 668px) {
-  main {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
   .province-grid article {
     aspect-ratio: auto;
     min-height: 12rem;
@@ -219,5 +208,19 @@ main {
     align-items: flex-start;
     border-radius: 0 15px 15px 0;
     padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .province-wrapper {
+    max-height: calc(100vh - 125px - 3rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.5rem;
   }
 }

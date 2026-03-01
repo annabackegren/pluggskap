@@ -1,29 +1,43 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pluggskap</title>
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/pluggskap/public/css/images/globe_no_arms.png"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pluggskap</title>
-  <link rel="stylesheet" href="../CSS/index.css" />
-  <link rel="icon" type="image/x-icon" href="/pluggskap/public/css/images/globe_no_arms.png" />
-</head>
-
-<body>
-  <div id="header"></div>
-  <main>
-    <form id="loginform">
-      <input id="username" name="username" placeholder="Användarnamn" type="text" required />
-      <input id="password" name="password" placeholder="Lösenord" type="password" required />
-      <input id="loginbtn" type="submit" value="Logga in" />
-    </form>
-    <div>
-      <p id="loginerror">Användarnamn eller lösenord är fel</p>
-    </div>
-  </main>
-  <footer></footer>
-</body>
-<script src="../js/index.js"></script>
-<script src="../js/login.js"></script>
-
+  <body>
+    <div id="header"></div>
+    <main>
+      <form id="loginform">
+        <input
+          id="username"
+          name="username"
+          placeholder="Användarnamn"
+          type="text"
+          required
+        />
+        <input
+          id="password"
+          name="password"
+          placeholder="Lösenord"
+          type="password"
+          required
+        />
+        <input id="loginbtn" type="submit" value="Logga in" />
+      </form>
+      <div>
+        <p id="loginerror">Användarnamn eller lösenord är fel</p>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="../js/header.js"></script>
+  <script src="../js/login.js"></script>
 </html>

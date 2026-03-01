@@ -23,3 +23,38 @@ Från header. Kod som krockade med inline i css. Resultat: Meny visades inte på
     // button.addEventListener("click", () => {
     //   toggleMenu("menu");
     // });
+
+
+    #user-card {
+  display: flex;
+  width: 317px;
+  height: 120px;
+  border-radius: 60px 10px 10px 10px;
+  margin: 35px auto;
+  position: relative;
+  color: #ffffff;
+}
+
+#user-card img {
+  background-color: #ffffff;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -13px;
+}
+#user-card div {
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+  width: 307px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
+}
+
+#user-card p {
+  padding-left: 1.8rem;
+}

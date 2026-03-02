@@ -5,11 +5,12 @@ async function user() {
     const result = await fetch("../HTML/userCard.html"),
       user = await result.text();
     userEl.innerHTML = user;
+
+    let showUsername = JSON.parse(localStorage.getItem("usernameIndex"));
+    const usernameEl = document.getElementById("user-name");
+
+    if (usernameEl)
+      usernameEl.textContent = showUsername || "Förnamn Efternamn";
   }
-
-  let showUsername = JSON.parse(localStorage.getItem("usernameIndex"));
-  const user = document.getElementById("username");
-
-  user.textContent = showUsername || "Förnamn Efternamn";
 }
 user();

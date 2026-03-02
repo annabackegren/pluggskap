@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pluggskap</title>
     <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/register.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -16,20 +17,28 @@
     <div id="header"></div>
     <main>
       <form id="userinfo" action="">
-        <input
-          id="elevbtn"
-          class="usertype"
-          name="usertype"
-          type="radio"
-          value="elev"
-        />Elev
-        <input
-          id="lararebtn"
-          class="usertype"
-          name="usertype"
-          type="radio"
-          value="larare"
-        />Lärare
+        <div class="radiobtns">
+          <div>
+            <input
+              id="elevbtn"
+              class="usertype"
+              name="usertype"
+              type="radio"
+              value="elev"
+            />
+            <label for="elevbtn">Elev</label>
+          </div>
+          <div>
+            <input
+              id="lararebtn"
+              class="usertype"
+              name="usertype"
+              type="radio"
+              value="larare"
+            />
+            <label for="lararebtn">Lärare</label>
+          </div>
+        </div>
         <input
           id="username"
           name="username"
@@ -37,32 +46,38 @@
           type="text"
           required
         />
-        <input
-          id="password"
-          name="password"
-          placeholder="Lösenord"
-          type="password"
-          required
-        />
-        <span id="passworderror"
-          >Lösenordet måste innehålla mer än 3 tecken</span
-        >
-        <input
-          id="confirmpassword"
-          name="confirmpassword"
-          placeholder="Bekräfta lösenord"
-          type="password"
-          required
-        />
-        <span id="cfpassworderror">Lösenordet matchar inte</span>
-        <input id="gdprcheck" name="gdprcheck" type="checkbox" />Jag godkänner
-        GDPR-avtalet
+        <div class="passwordgroup">
+          <span id="passworderror"
+            >Lösenordet måste innehålla mer än 3 tecken</span
+          >
+          <input
+            id="password"
+            name="password"
+            placeholder="Lösenord"
+            type="password"
+            required
+          />
+        </div>
+        <div class="passwordgroup">
+          <span id="cfpassworderror">Lösenordet matchar inte</span>
+          <input
+            id="confirmpassword"
+            name="confirmpassword"
+            placeholder="Bekräfta lösenord"
+            type="password"
+            required
+          />
+        </div>
+        <div id="gdpr">
+          <input id="gdprcheck" name="gdprcheck" type="checkbox" />
+          <label for="gdprcheck">Jag godkänner GDPR-avtalet</label>
+        </div>
         <input id="submitbtn" type="submit" value="Skapa användare" />
       </form>
       <div>
         <p id="usercreated">Användare skapad!</p>
       </div>
-      <a href="login.html"><button id="loginbtn">Logga in</button></a>
+      <a href="login.html"><button id="loginbtn">LOGGA IN</button></a>
     </main>
     <footer></footer>
   </body>

@@ -9,6 +9,8 @@ const passwordError = document.querySelector("#passworderror");
 const cfpasswordError = document.querySelector("#cfpassworderror");
 const userCreated = document.querySelector("#usercreated");
 const loginBtn = document.querySelector("#loginbtn");
+const larareBtn = document.querySelector("#lararebtn");
+const elevBtn = document.querySelector("#elevbtn");
 
 loginBtn.style.display = "none";
 userCreated.style.display = "none";
@@ -35,7 +37,8 @@ function checkForm() {
     password.value.length > 3 &&
     confirmPassword.value.length > 3 &&
     password.value === confirmPassword.value &&
-    gdprcheck.checked === true
+    gdprcheck.checked === true &&
+    (larareBtn.checked === true || elevBtn.checked === true)
   ) {
     submitbtn.disabled = false;
   } else {
@@ -55,6 +58,9 @@ function errorForm() {
     cfpasswordError.style.display = "block";
   }
 }
+
+larareBtn.addEventListener("change", checkForm);
+elevBtn.addEventListener("change", checkForm);
 
 gdprcheck.addEventListener("change", checkForm);
 

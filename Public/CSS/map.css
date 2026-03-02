@@ -1,3 +1,4 @@
+/* *********** FIX FIX  */
 body {
   background: var(--purple);
   display: flex;
@@ -17,7 +18,7 @@ h3 {
   display: none;
 }
 
-.user-wrapper-mobile {
+/* .user-wrapper-mobile {
   display: block;
   text-align: center;
 }
@@ -25,7 +26,7 @@ h3 {
 .user-wrapper-desktop {
   display: none;
   text-align: center;
-}
+} */
 
 #map-wrapper {
   position: relative;
@@ -33,7 +34,17 @@ h3 {
   max-width: 1930px;
 }
 
-.page-header {
+.user-card-map {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* .page-header {
   position: absolute;
   top: 1rem;
   left: 7rem;
@@ -46,7 +57,7 @@ h3 {
 
 .page-header p {
   width: 10rem;
-}
+} */
 
 #svg-container {
   display: flex;
@@ -93,20 +104,34 @@ h3 {
 @media screen and (min-width: 780px) {
   main {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: center;
-    gap: 5%;
+    align-items: flex-start;
+    gap: 3rem;
   }
 
-  .user-wrapper-mobile {
+  .user-card-map {
+    position: static;
+    transform: none;
+    width: 300px;
+  }
+
+  #map-wrapper {
+    position: static;
+    flex: 1;
+  }
+
+  /* .user-wrapper-mobile {
     display: none;
   }
 
   .user-wrapper-desktop {
     display: block;
-  }
+  } */
 
   #feedback-wrapper {
     display: block;
+    width: 300px;
+    margin-top: 0;
   }
 }

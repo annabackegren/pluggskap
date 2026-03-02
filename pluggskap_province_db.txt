@@ -12,7 +12,7 @@ db.provinces.insertMany([
             name: "Fjällräv",
             weight: "3-8 kg",
             height: "28 cm",
-            food: "Smågnangare",
+            food: "Smågnagare",
             sound: "ljudfil",
             image: "../assets/img/animal/arctic-fox.jpg"
         },
@@ -75,6 +75,114 @@ db.provinces.insertMany([
         },
     }
 ])
+
+      db.provinces.insertOne({
+        id: "vbt",
+        name: "Västerbotten",
+        coatOfArms: "../assets/img/coatOfArms/Vasterbotten_landskapsvapen.png",
+        animal: {
+            name: "Storspov",
+            weight: "700-1000 g",
+            height: "50-60 cm",
+            food: "Insekter, maskar och smådjur",
+            sound: "ljudfil",
+            image: "../assets/img/animal/curlew.jpg"
+        },
+        bird: {
+            name: "Storspov",
+            weight: "700-1000 g",
+            wingspan: "80-100 cm",
+            stay: false,
+            food: "Insekter, maskar och smådjur",
+            sound: "ljudfil",
+            image: "../assets/img/bird/curlew.jpg"
+        },
+        food: {
+            name: "Västerbottenpaj",
+            description: "Västerbottenpaj är en klassisk paj gjord på den smakrika osten Västerbottensost. Pajen serveras ofta vid högtider och traditionella firanden.",
+            recipeLink: "https://www.ica.se/recept/klassisk-vasterbottenpaj-725368/",
+            image: "../assets/img/food/klassisk_vasterbottenpaj.jpg"
+        },
+        plant: {
+            name: "Kung Karls spira",
+            type: "Blomma",
+            season: "Sommar",
+            protected: false,
+            image: "../assets/img/plant/pedicularis.jpg"
+        },
+    })
+
+          db.provinces.insertOne({
+        id: "aml",
+        name: "Ångermanland",
+        coatOfArms: "../assets/img/coatOfArms/Angermanland_landskapsvapen.png",
+        animal: {
+            name: "Bäver",
+            weight: "18-30 kg",
+            height: "30-35 cm",
+            food: "Bark, kvistar, löv och vattenväxter",
+            sound: "ljudfil",
+            image: "../assets/img/animal/beaver.jpg"
+        },
+        bird: {
+            name: "Gråspettt",
+            weight: "120-250 g",
+            wingspan: "38-40 cm",
+            stay: true,
+            food: "Insekter",
+            sound: "ljudfil",
+            image: "../assets/img/bird/green-woodpecker.jpg"
+        },
+        food: {
+            name: "Surströmmingsklämma",
+            description: "Surströmmingsklämma är en traditionell norrländsk rätt med jäst strömming som serveras på tunnbröd tillsammans med potatis, lök och ofta gräddfil.",
+            recipeLink: "https://www.ica.se/recept/surstrommingsklamma-701865/",
+            image: "../assets/img/food/surstrommingsklamma.jpg"
+        },
+        plant: {
+            name: "Styvmorsviol",
+            type: "Blomma",
+            season: "Vår-sommar",
+            protected: false,
+            image: "../assets/img/plant/wild_pansies.jpg"
+        },
+    })
+
+              db.provinces.insertOne({
+        id: "jml",
+        name: "Jämtland",
+        coatOfArms: "../assets/img/coatOfArms/Jamtland_landskapsvapen.png",
+        animal: {
+            name: "Älg",
+            weight: "200-600 kg",
+            height: "140-210 cm",
+            food: "Gräs, örter och träd",
+            sound: "ljudfil",
+            image: "../assets/img/animal/moose.jpg"
+        },
+        bird: {
+            name: "Hökuggla",
+            weight: "200-400 g",
+            wingspan: "45-62 cm",
+            stay: true,
+            food: "Smågnagare och mindre fåglar",
+            sound: "ljudfil",
+            image: "../assets/img/bird/northern-hawk-owl.jpg"
+        },
+        food: {
+            name: "Älgstek med murklor",
+            description: "Älgstek med murklor är en klassisk jämtländsk rätt där saftig älgstek serveras med en krämig sås på murklor, ofta tillsammans med potatis och gelé.",
+            recipeLink: "https://www.koket.se/torbjorn___arvika/varmratter/vilt/algfile_med_murkelsas",
+            image: "../assets/img/food/algfile-med-murkelsas.jpg"
+        },
+        plant: {
+            name: "Brunkulla",
+            type: "Blomma",
+            season: "Sommar",
+            protected: true,
+            image: "../assets/img/plant/brunkulla.jpg"
+        },
+    })
 
 db.provinces.find()
 

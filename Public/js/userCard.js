@@ -7,9 +7,9 @@ async function user() {
     userEl.innerHTML = user;
   }
 
-  //   let showUsername = JSON.parse(localStorage.getItem("usernameIndex"));
-  //   const user = document.getElementById("username");
+  let showUsername = JSON.parse(localStorage.getItem("usernameIndex"));
+  const user = document.getElementById("username");
 
-  //   user.textContent = showUsername || "Förnamn Efternamn";
+  user.textContent = showUsername || "Förnamn Efternamn";
 }
 user();

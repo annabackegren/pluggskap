@@ -100,12 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <dd>${data.height}</dd>
             <dt>Äter:</dt>
             <dd>${data.food}</dd>
-            <dt>Låter:</dt>
-            <dd>
-              <a href="${data.sound}" target="_blank" rel="noopener noreferrer">
-              Lyssna
-              </a>
-            </dd>
+
             `
                 : ""
             } ${

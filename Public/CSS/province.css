@@ -234,7 +234,7 @@ main {
 
   .province-grid article {
     aspect-ratio: auto;
-    min-height: 15rem;
+    min-height: 12rem;
     max-height: 16rem;
   }
 

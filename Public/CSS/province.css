@@ -1,6 +1,11 @@
 main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.user-card img {
+  z-index: 0;
 }
 
 .province-wrapper {
@@ -8,7 +13,6 @@ main {
   border-radius: 15px;
   border: solid 3px var(--light-green);
   max-width: 63rem;
-  margin-top: 3rem;
   max-height: calc(100vh - 125px - 3rem);
   overflow: auto;
 }
@@ -19,8 +23,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .province-header img {
@@ -36,28 +40,28 @@ main {
   grid-gap: 1rem;
   justify-content: center;
   margin: 1rem;
-  /* grid-auto-rows: 1fr; */
+  grid-auto-rows: 1fr;
 }
 
 .province-grid article {
-  aspect-ratio: 1 /1;
   border-radius: 15px;
-  border: solid 3px var(--white);
-  min-height: 5rem;
-  max-height: 20rem;
+  border: solid 3px var(--light-green);
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  max-height: 15rem;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
   color: var(--text-light);
 }
 
 .card figure {
-  flex: 7;
+  flex: 2;
   margin: 0;
   overflow: hidden;
   min-height: 0;
@@ -67,26 +71,23 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* border-radius: 12px 12px 0 0; */
+  display: block;
 }
 
 .card-content {
-  flex: 3;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /* text-align: center; */
   padding: 0.2rem;
   background: var(--dark-green);
-  /* border-radius: 0 0 15px 15px; */
-  /* height: 30%; */
-  /* min-height: 32px; */
 }
 
 .card-content h2 {
   font-size: clamp(16px, 3vw, 25px);
   margin: 0;
+  text-decoration: underline;
 }
 
 .card-content p {
@@ -100,7 +101,6 @@ main {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  /* padding-right: 3%; */
 }
 
 .popup {
@@ -121,7 +121,8 @@ main {
   background: var(--light-green);
   padding: 2rem;
   width: 50%;
-  max-width: 50rem;
+  max-width: 30rem;
+  min-width: 22rem;
   height: auto;
   border-radius: 15px;
   border: solid 3px var(--dark-green);
@@ -131,6 +132,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .popup-header figure {
@@ -142,7 +144,7 @@ main {
   max-width: 15rem;
   border-radius: 15px;
   border: solid 3px var(--white);
-  margin: 0 0 0 10%;
+  margin: 0;
   overflow: hidden;
 }
 
@@ -151,10 +153,6 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.popup-header h3 {
-  padding-right: 20%;
 }
 
 .popup-content dl {
@@ -184,36 +182,43 @@ main {
   .province-grid article {
     aspect-ratio: auto;
     min-height: 12rem;
-    max-height: 20rem;
+    max-height: 12rem;
   }
 
   .card {
     flex-direction: row;
-    height: 100%;
   }
 
   .card figure {
-    flex: 7;
+    flex: 3;
   }
 
-  .card figure img {
+  /* .card figure img {
     border-radius: 15px 0 0 15px;
-  }
+  } */
 
   .card-content {
-    flex: 3;
-    /* height: 100%; */
+    flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: 0 15px 15px 0;
     padding: 1rem;
+    word-break: break-word;
+  }
+
+  .card-content p {
+    font-size: clamp(12px, 1.6vw, 20px);
+  }
+
+  .popup-header figure {
+    min-width: 13rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .province-wrapper {
-    max-height: calc(100vh - 125px - 3rem);
+    max-height: calc(100vh - 81px - 3rem);
   }
 }
 
@@ -222,5 +227,19 @@ main {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 0.5rem;
+  }
+
+  .province-wrapper {
+    margin-top: 3rem;
+  }
+
+  .province-grid article {
+    aspect-ratio: auto;
+    min-height: 15rem;
+    max-height: 16rem;
+  }
+
+  .card-content {
+    flex: 2;
   }
 }

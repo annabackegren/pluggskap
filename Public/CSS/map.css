@@ -109,7 +109,7 @@ h3 {
   }
 
   #svg-container {
-    flex: 1 1 600px;
+    /* flex: 1 1 600px; */
     min-width: 300px;
     max-width: 100%;
     margin-top: 0;

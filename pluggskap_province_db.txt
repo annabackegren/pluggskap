@@ -73,10 +73,8 @@ db.provinces.insertMany([
             protected: false,
             image: "../assets/img/plant/rubus_arcticus.jpg"
         },
-    }
-])
-
-      db.provinces.insertOne({
+    },
+    {
         id: "vbt",
         name: "Västerbotten",
         coatOfArms: "../assets/img/coatOfArms/Vasterbotten_landskapsvapen.png",
@@ -110,9 +108,8 @@ db.provinces.insertMany([
             protected: false,
             image: "../assets/img/plant/pedicularis.jpg"
         },
-    })
-
-          db.provinces.insertOne({
+    },
+          {
         id: "aml",
         name: "Ångermanland",
         coatOfArms: "../assets/img/coatOfArms/Angermanland_landskapsvapen.png",
@@ -146,9 +143,7 @@ db.provinces.insertMany([
             protected: false,
             image: "../assets/img/plant/wild_pansies.jpg"
         },
-    })
-
-              db.provinces.insertOne({
+    },{
         id: "jml",
         name: "Jämtland",
         coatOfArms: "../assets/img/coatOfArms/Jamtland_landskapsvapen.png",
@@ -182,7 +177,386 @@ db.provinces.insertMany([
             protected: true,
             image: "../assets/img/plant/brunkulla.jpg"
         },
-    })
+    },
+    {
+        id: "hrj",
+        name: "Härjedalen",
+        coatOfArms: "../assets/img/coatOfArms/Harjedalen_landskapsvapen.png",
+        animal: {
+            name: "Björn",
+            weight: "100-300 kg",
+            height: "70-150 cm",
+            food: "Bär, växter, insekter, fisk och mindre däggdjur",
+            sound: "ljudfil",
+            image: "../assets/img/animal/bear.jpg"
+        },
+        bird: {
+            name: "Kungsörn",
+            weight: "3-6 kg",
+            wingspan: "190-225 cm",
+            stay: true,
+            food: "Harar, ripor och andra mindre djur",
+            sound: "ljudfil",
+            image: "../assets/img/bird/golden_eagle.jpg"
+        },
+        food: {
+            name: "Röding med fjötgröt",
+            description: "Röding med flötgröt är en traditionell rätt från Härjedalen där stekt eller kokt röding serveras med flötgröt, en gräddbaserad gröt som speglar områdets fäbodtraditioner.",
+            recipeLink: "https://www.ica.se/recept/roding-med-flotgrot-701928/",
+            image: "../assets/img/food/roding_med_flotgrot.jpg"
+        },
+        plant: {
+            name: "Mosippa",
+            type: "Blomma",
+            season: "Vår",
+            protected: true,
+            image: "../assets/img/plant/mosippa.jpg"
+        },
+    },
+    {
+        id: "mpd",
+        name: "Medelpad",
+        coatOfArms: "../assets/img/coatOfArms/Medelpad_landskapsvapen.png",
+        animal: {
+            name: "Skogshare",
+            weight: "2-5 kg",
+            height: "45-65 cm",
+            food: "Gräs, örter, kvistar och bark",
+            sound: "ljudfil",
+            image: "../assets/img/animal/rabbit.jpg"
+        },
+        bird: {
+            name: "Mindre korsnäbb",
+            weight: "35-50 g",
+            wingspan: "27-30 cm",
+            stay: true,
+            food: "Frön från gran och tall",
+            sound: "ljudfil",
+            image: "../assets/img/bird/loxia.jpg"
+        },
+        food: {
+            name: "Tjälknöl",
+            description: "Tjälknöl är en klassisk norrländsk rätt där fryst kött, ofta älg eller nöt, långsamt tillagas i låg temperatur och sedan läggs i saltlag för att bli extra saftigt.",
+            recipeLink: "https://www.ica.se/recept/tjalknol-med-rotfruktsgratang-714148/",
+            image: "../assets/img/food/tjalknol_med_rotfruktsgratang.jpg"
+        },
+        plant: {
+            name: "Gran",
+            type: "Träd",
+            season: "Hela året",
+            protected: false,
+            image: "../assets/img/plant/picea_abies.jpg"
+        },
+    },
+    {
+        id: "hsl",
+        name: "Hälsingland",
+        coatOfArms: "../assets/img/coatOfArms/Halsingland_landskapsvapen.png",
+        animal: {
+            name: "Lodjur",
+            weight: "18-30 kg",
+            height: "55-75 cm",
+            food: "Rådjur, hare och fågel",
+            sound: "ljudfil",
+            image: "../assets/img/animal/lynx.jpg"
+        },
+        bird: {
+            name: "Slaguggla",
+            weight: "500-900 g",
+            wingspan: "90-110 cm",
+            stay: true,
+            food: "Smågnagare och mindre fåglar",
+            sound: "ljudfil",
+            image: "../assets/img/bird/ural-owl.jpg"
+        },
+        food: {
+            name: "Hälsingeostkaka",
+            description: "Hälsingeostkaka är en traditionell dessert gjord på mjölk, ostmassa, ägg, socker och mandel. Den serveras ofta ljummen med sylt och grädde.",
+            recipeLink: "https://www.ica.se/recept/halsingeostkaka-701686/",
+            image: "../assets/img/food/halsingeostkaka.jpg"
+        },
+        plant: {
+            name: "Lin",
+            type: "Ört",
+            season: "Sommar",
+            protected: false,
+            image: "../assets/img/plant/linum.jpg"
+        },
+    },
+    {
+        id: "grl",
+        name: "Gästrikland",
+       coatOfArms: "../assets/img/coatOfArms/Gastrikland_landskapsvapen.png",
+
+animal: {
+    name: "Tjäder",
+    weight: "3–6 kg",
+    height: "60–87 cm",
+    food: "Barr, knoppar, bär och insekter",
+    sound: "ljudfil",
+    image: "../assets/img/animal/tjader.jpg"
+},
+
+bird: {
+    name: "Storlom",
+    weight: "3–6 kg",
+    wingspan: "122–148 cm",
+    stay: false,
+    food: "Fisk",
+    sound: "ljudfil",
+    image: "../assets/img/bird/big_loon.jpg"
+},
+
+food: {
+    name: "Sotare med färskpotatis",
+    description: "Sotare är en traditionell rätt från Gästrikland där rökt eller sotad fisk serveras med färskpotatis och ofta dill eller smör.",
+    recipeLink: "https://www.ica.se/recept/sotare-med-farskpotatis-701614/",
+    image: "../assets/img/food/sotare_med_farskpotatis.jpg"
+},
+
+plant: {
+    name: "Liljekonvalj",
+    type: "Blomma",
+    season: "Vår",
+    protected: false,
+    image: "../assets/img/plant/lily-of-the-valley.jpg"
+},
+    },
+    {
+        id: "dal",
+        name: "Dalarna",
+coatOfArms: "../assets/img/coatOfArms/Dalarna_landskapsvapen.png",
+
+animal: {
+    name: "Berguv",
+    weight: "1,5–4 kg",
+    height: "60–75 cm",
+    food: "Harar, gnagare och fåglar",
+    sound: "ljudfil",
+    image: "../assets/img/animal/bubo.jpg"
+},
+
+bird: {
+    name: "Berguv",
+    weight: "1,5–4 kg",
+    wingspan: "138–170 cm",
+    stay: true,
+    food: "Harar, gnagare och fåglar",
+    sound: "ljudfil",
+    image: "../assets/img/bird/bubo.jpg"
+},
+
+food: {
+    name: "Rårakor med fläsk",
+    description: "Rårakor med fläsk är en klassisk rätt där riven potatis steks krispig och serveras med stekt fläsk och ofta lingonsylt.",
+    recipeLink: "https://alltommat.expressen.se/recept/rarakor-med-honung-och-sojastekt-flask/",
+    image: "../assets/img/food/raraka.jpg"
+},
+
+plant: {
+    name: "Ängsklocka",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/bellflower.jpg"
+},
+    },
+    {
+        id: "upl",
+        name: "Uppland",
+coatOfArms: "../assets/img/coatOfArms/Uppland_landskapsvapen.png",
+
+animal: {
+    name: "Havsörn",
+    weight: "3–6,5 kg",
+    height: "70–90 cm",
+    food: "Fisk och sjöfågel",
+    sound: "ljudfil",
+    image: "../assets/img/animal/eagle.jpg"
+},
+
+bird: {
+    name: "Havsörn",
+    weight: "3–6,5 kg",
+    wingspan: "200–245 cm",
+    stay: true,
+    food: "Fisk och sjöfågel",
+    sound: "ljudfil",
+    image: "../assets/img/bird/eagle.jpg"
+},
+
+food: {
+    name: "Ångbåtsbiff",
+    description: "Ångbåtsbiff är en traditionell rätt från Uppland där köttbiffar tillagas och ofta serveras med potatis, sås och lingonsylt.",
+    recipeLink: "https://www.ica.se/recept/angbatsbiff-701470/",
+    image: "../assets/img/food/angbatsbiff.jpg"
+},
+
+plant: {
+    name: "Kungsängslilja",
+    type: "Blomma",
+    season: "Sommar",
+    protected: true,
+    image: "../assets/img/plant/fritillaria.jpg"
+},
+    },
+    {
+        id: "sdm",
+        name: "Södermanland",
+coatOfArms: "../assets/img/coatOfArms/Sodermanland_landskapsvapen.png",
+
+animal: {
+    name: "Fiskgjuse",
+    weight: "1,2–2,5 kg",
+    height: "55–70 cm",
+    food: "Fisk",
+    sound: "ljudfil",
+    image: "../assets/img/animal/osprey.jpg"
+},
+
+bird: {
+    name: "Fiskgjuse",
+    weight: "1,2–2,5 kg",
+    wingspan: "150–180 cm",
+    stay: false,
+    food: "Fisk",
+    sound: "ljudfil",
+    image: "../assets/img/bird/osprey.jpg"
+},
+
+food: {
+    name: "Sorundatårta",
+    description: "Sorundatårta är en traditionell söt bakelse från Södermanland, ofta gjord med mandelmassa, ägg och socker, och serveras vid festliga tillfällen. Kakan är skyddad vid namn och något offentligt recept finns inte.",
+    recipeLink: "https://smakasverige.se/mat/brod-och-bakverk/sorundatarta",
+    image: "../assets/img/food/sorunda.jpg"
+},
+
+plant: {
+    name: "Vit näckros",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/water-lily.jpg"
+},
+    },
+    {
+        id: "nrk",
+        name: "Närke",
+coatOfArms: "../assets/img/coatOfArms/Narke_landskapsvapen.png",
+
+animal: {
+    name: "Hasselmus",
+    weight: "10–15 g",
+    height: "6–9 cm (kroppslängd)",
+    food: "Frön, nötter och insekter",
+    sound: "ljudfil",
+    image: "../assets/img/animal/mouse.jpg"
+},
+
+bird: {
+    name: "Gulsparv",
+    weight: "20–30 g",
+    wingspan: "25–28 cm",
+    stay: true,
+    food: "Frön och små insekter",
+    sound: "ljudfil",
+    image: "../assets/img/bird/gulsparv.jpg"
+},
+
+food: {
+    name: "Skomakarlåda",
+    description: "Skomakarlåda är en klassisk rätt med stekt kött, ofta nötkött, serverad med potatismos och stekt lök.",
+    recipeLink: "https://www.ica.se/recept/skomakarlada-701234/",
+    image: "../assets/img/food/skomakarlada.jpg"
+},
+
+plant: {
+    name: "Gullviva",
+    type: "Blomma",
+    season: "Vår",
+    protected: false,
+    image: "../assets/img/plant/primula.jpg"
+},
+    },
+    {
+        id: "vml",
+        name: "Västmanland",
+coatOfArms: "../assets/img/coatOfArms/Vastmanland_landskapsvapen.png",
+
+animal: {
+    name: "Rådjur",
+    weight: "20–30 kg",
+    height: "65–75 cm (mankhöjd)",
+    food: "Gräs, blad, frukt och kvistar",
+    sound: "ljudfil",
+    image: "../assets/img/animal/deer.jpg"
+},
+
+bird: {
+    name: "Tofsmes",
+    weight: "8–12 g",
+    wingspan: "17–20 cm",
+    stay: true,
+    food: "Frön, små insekter",
+    sound: "ljudfil",
+    image: "../assets/img/bird/crested-tit.jpg"
+},
+
+food: {
+    name: "Mälargös med pepparrot",
+    description: "Mälargös med pepparrot är en traditionell rätt från Västmanland med färsk gös från Mälaren, ofta serverad med en pepparrotsås och potatis.",
+    recipeLink: "https://www.ica.se/recept/malargos-med-pepparrot-701304/",
+    image: "../assets/img/food/malargos_med_pepparrot.jpg"
+},
+
+plant: {
+    name: "Mistel",
+    type: "Buske",
+    season: "Vinter",
+    protected: false,
+    image: "../assets/img/plant/mistletoe.jpg"
+},
+    },
+    {
+        id: "vrm",
+        name: "Värmland",
+coatOfArms: "../assets/img/coatOfArms/Varmland_landskapsvapen.png",
+
+animal: {
+    name: "Varg",
+    weight: "25–45 kg",
+    height: "60–90 cm (mankhöjd)",
+    food: "Hjortdjur, smådjur och kadaver",
+    sound: "ljudfil",
+    image: "../assets/img/animal/wolf.jpg"
+},
+
+bird: {
+    name: "Smålom",
+    weight: "1,5–2,5 kg",
+    wingspan: "105–130 cm",
+    stay: false,
+    food: "Fisk",
+    sound: "ljudfil",
+    image: "../assets/img/bird/red-loon.jpg"
+},
+
+food: {
+    name: "Nävgröt med fläsk och lingon",
+    description: "Nävgröt är en traditionell värmländsk rätt gjord på kornmjöl, serverad med stekt fläsk och lingonsylt.",
+    recipeLink: "https://www.ica.se/recept/navgrot-701181/",
+    image: "../assets/img/food/navgrot.jpg"
+},
+
+plant: {
+    name: "Skogsstjärna",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/chickweed.jpg"
+},
+    }
+    ])
 
 db.provinces.find()
 

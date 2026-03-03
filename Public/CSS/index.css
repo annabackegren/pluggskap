@@ -149,3 +149,18 @@ nav a {
     margin: 0;
   }
 }
+
+#card-index img {
+  background-color: var(--purple);
+}
+#card-index {
+  margin: 1.5rem auto;
+}
+#globe-text {
+  max-width: 21rem;
+  margin: auto;
+}
+#index-wrap {
+  display: flex;
+  flex-direction: column;
+}

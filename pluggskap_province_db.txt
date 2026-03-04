@@ -350,7 +350,7 @@ food: {
     name: "Rårakor med fläsk",
     description: "Rårakor med fläsk är en klassisk rätt där riven potatis steks krispig och serveras med stekt fläsk och ofta lingonsylt.",
     recipeLink: "https://alltommat.expressen.se/recept/rarakor-med-honung-och-sojastekt-flask/",
-    image: "../assets/img/food/raraka.jpg"
+    image: "../assets/img/food/raraka.webp"
 },
 
 plant: {

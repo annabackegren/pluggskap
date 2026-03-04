@@ -112,12 +112,11 @@ main {
   width: 100%;
   min-width: 130px;
   max-width: 160px;
-  font-size: 16px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   background-color: var(--dark-green);
-  color: var(--white);
-  text-align: center;
   height: 50px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
   border: solid 2px var(--light-green);
@@ -130,8 +129,10 @@ main {
   border: solid 2px white;
 }
 
-a {
-  text-decoration: none;
+.quiz-button-text {
+  font-size: 16px;
+  color: var(--white);
+  text-align: center;
 }
 
 .popup {

@@ -1,5 +1,5 @@
 body {
-  background: var(--purple);
+  /* background: var(--purple); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,9 +13,9 @@ h3 {
   display: none;
 }
 
-.user-card div {
+/* .user-card div {
   background-color: var(--purple);
-}
+} */
 
 #map-wrapper {
   position: relative;
@@ -61,7 +61,7 @@ h3 {
 }
 
 #svg-container path:hover {
-  fill: var(--dark-green);
+  fill: var(--purple);
 }
 
 #svg-container path {

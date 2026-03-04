@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
     <link rel="stylesheet" href="../CSS/index.css" />
-    <link rel="stylesheet" href="../CSS/homepage.css" />
     <link rel="stylesheet" href="../CSS/userCard.css" />
+    <link rel="stylesheet" href="../CSS/homepage.css" />
 
     <title>Hem - Pluggskap</title>
   </head>
 
   <body>
     <header id="header"></header>
+
     <main>
       <section class="user-card"></section>
 
-      <section class="kort landskap">
-        <div>
-          <a href="map.html" style="text-decoration: none">
-            <h2>Karta</h2>
-          </a>
-        </div>
-      </section>
+      <div id="menu">
+        <section class="kort">
+          <div>
+            <img src="../assets/img/misc/sweden.png" alt="Sveriges karta" />
+          </div>
+          <div>
+            <button id="mapbtn" class="homepagebtn">Karta</button>
+          </div>
+        </section>
 
-      <section class="kort mina-sidor">
-        <div>
-          <h2>Mina sidor</h2>
-        </div>
-      </section>
+        <section class="kort">
+          <div>
+            <img
+              src="../assets/img/misc/pencil-ruler.png"
+              alt="En linjal som håller en penna"
+            />
+          </div>
+          <div>
+            <button id="mypagebtn" class="homepagebtn">Mina sidor</button>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="../js/header.js"></script>
     <script src="../js/userCard.js"></script>

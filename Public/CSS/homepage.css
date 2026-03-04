@@ -34,69 +34,53 @@
 
 .kort {
   background-color: #a68ec1;
-  width: 90%;
-  max-width: 500px;
   height: 120px;
+  width: 100%;
   border-radius: 10px;
-  margin: 50px auto;
   border: 2px solid #b6da7e;
   display: flex;
+  flex-direction: wrap;
   align-items: center;
   justify-content: center;
-  position: relative;
-}
-.kort.landskap {
-  background-image: url("../assets/svg/map1.svg");
-  background-size: 50%;
-  background-position: center 15px;
-  background-repeat: no-repeat;
+  gap: 20px;
+  max-width: 390px;
 }
 
-.kort.mina-sidor {
-  background-image: url("../assets/img/misc/pencil-ruler.png");
-  background-size: 70px;
-  background-position: center 10px;
-  background-repeat: no-repeat;
-}
-
-.kort div {
-  background-color: #446036;
-  border-radius: 10px;
-  height: 60px;
-  width: 158px;
-  align-items: center;
-  justify-content: center;
+#menu {
+  padding-top: 100px;
   display: flex;
-  position: absolute;
-  bottom: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
 
-h2 {
-  color: #ffffff;
+.kort img {
+  width: 50%;
+  max-width: 100px;
+  height: auto;
+}
+
+.homepagebtn {
+  background-color: #446036;
+  color: white;
+  border-radius: 10px;
   font-size: 22px;
-  font-weight: lighter;
+  height: 50px;
+  width: 150px;
+  border: none;
+  transition: transform 0.2s ease;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 1024px) {
-  main {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .kort {
-    height: 774px;
-    width: 310px;
-  }
-  .kort.landskap {
-    height: 580px;
-    width: 350px;
-    background-size: 125%;
-    background-position: center 40px;
-  }
-  .kort.mina-sidor {
-    height: 580px;
-    width: 350;
-    background-size: 220px;
-    background-position: center 40px;
+.homepagebtn:hover {
+  transform: scale(1.05);
+  border: solid 2px white;
+}
+
+@media (min-width: 768px) {
+  #menu {
+    flex-direction: row;
   }
 }

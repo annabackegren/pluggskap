@@ -30,6 +30,14 @@ async function header() {
         menu.classList.toggle("open");
       }
     });
+
+    const logoutBtn = document.querySelector("#logoutbtn");
+
+    logoutBtn.addEventListener("click", (e) => {
+      localStorage.removeItem("usernameIndex");
+      localStorage.removeItem("token");
+      window.location.href = "http://localhost:3000/html/index.html";
+    });
   }
 }
 

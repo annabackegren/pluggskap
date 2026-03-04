@@ -11,8 +11,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  padding: 32px 24px;
+  gap: 0px;
+  padding: 0px 24px 64px 24px;
 }
 
 label {

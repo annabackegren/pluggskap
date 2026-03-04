@@ -13,8 +13,13 @@ main {
   border-radius: 15px;
   border: solid 3px var(--light-green);
   max-width: 63rem;
-  max-height: calc(100vh - 125px - 3rem);
+  /* max-height: calc(100vh - 125px - 3rem); */
   overflow: auto;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  padding-bottom: 1rem;
+  margin: 0 auto;
 }
 
 .province-header {
@@ -24,7 +29,7 @@ main {
   justify-content: center;
   gap: 2rem;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 1rem; */
 }
 
 .province-header img {
@@ -39,7 +44,7 @@ main {
   grid-template-columns: repeat(2, minmax(8rem, 1fr));
   grid-gap: 1rem;
   justify-content: center;
-  margin: 1rem;
+  margin: 2rem 1rem 1rem 1rem;
   grid-auto-rows: 1fr;
 }
 
@@ -75,7 +80,7 @@ main {
 }
 
 .card-content {
-  flex: 1;
+  flex: 0.5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,6 +106,32 @@ main {
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+
+.quiz-button {
+  width: 100%;
+  min-width: 130px;
+  max-width: 160px;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  height: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border: solid 2px var(--light-green);
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.quiz-button:hover {
+  transform: scale(1.05);
+  border: solid 2px white;
+}
+
+a {
+  text-decoration: none;
 }
 
 .popup {
@@ -181,8 +212,12 @@ main {
 @media screen and (min-width: 668px) {
   .province-grid article {
     aspect-ratio: auto;
-    min-height: 12rem;
+    min-height: 10rem;
     max-height: 12rem;
+  }
+
+  .province-header img {
+    width: clamp(4rem, 12vw, 10rem);
   }
 
   .card {
@@ -221,7 +256,7 @@ main {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 850px) {
   main {
     flex-direction: row;
     justify-content: space-evenly;
@@ -234,7 +269,7 @@ main {
 
   .province-grid article {
     aspect-ratio: auto;
-    min-height: 12rem;
+    min-height: 10rem;
     max-height: 16rem;
   }
 

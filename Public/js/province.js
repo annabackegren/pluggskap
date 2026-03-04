@@ -167,4 +167,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   popup.addEventListener("click", (e) => {
     if (e.target === popup) popup.style.display = "none";
   });
+
+  const quizButton = document.querySelector(".quiz-button");
+  if (provinceId) {
+    quizButton.href = `quiz.html?id=${encodeURIComponent(provinceId)}`;
+  }
 });

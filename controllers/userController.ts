@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
 import { getAllUsers, updateUser as updateUserService, addUser as addUserService, deleteUser as deleteUserService, getOneUser } from "../services/userService.js"
 import type {ResponseMessage} from '../interfaces/responseInterface.ts'
-import type { PostUserDTO, LoginUserDTO, UpdateUserDTO } from '../interfaces/userInterface.ts';
+import type { PostUserDTO, LoginUserDTO, UpdateUserDTO, User } from '../interfaces/userInterface.ts';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
@@ -14,6 +14,26 @@ export const getUsers = async (_req: Request, res: Response) => {
     const users = await getAllUsers()
 
     res.status(200).send(users)
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({error: error.message})
+  }
+}
+
+
+export const getUser = async (_req: Request<User>, res: Response<User | ResponseMessage | null>) => {
+  try {
+
+
+    const { id } = _req.params;
+    const user = await getOneUser(id)
+    console.log('fel' + _req.params.id)
+
+    if(!id){
+      return res.status(400).json({error: 'Could not find any province id'})
+    }
+
+    res.status(200).send(user)
   } catch (error: any) {
     console.error(error);
     res.status(500).json({error: error.message})

@@ -6,6 +6,8 @@ import express from 'express'
 import provinceRoutes from './routes/provinceRoutes.ts'
 import userRoutes from './routes/userRoutes.ts'
 import protectedRoutes from './routes/protectedRoutes.ts'
+import quizRoutes from './routes/quizRoutes.ts'
+import resultRoutes from './routes/resultRoutes.ts'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -19,6 +21,8 @@ app.use(express.static('public'))
 app.use('/province', provinceRoutes)
 app.use('/user', userRoutes)
 app.use('/protected', protectedRoutes);
+app.use('/quiz', quizRoutes)
+app.use('/result', resultRoutes)
 
 app.get('/', (_request, response) => {
   response.send('Hello World!')

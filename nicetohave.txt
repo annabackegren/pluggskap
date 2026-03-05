@@ -58,6 +58,3 @@ Från header. Kod som krockade med inline i css. Resultat: Meny visades inte på
 #user-card p {
   padding-left: 1.8rem;
 }
-
-
-

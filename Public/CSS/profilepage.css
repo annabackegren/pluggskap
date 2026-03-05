@@ -1,0 +1,98 @@
+main {
+  position: relative;
+}
+
+#change-user-info {
+  width: 100%;
+  min-width: 60px;
+  max-width: 60px;
+  font-size: 16px;
+  display: block;
+  background-color: #b6da7e;
+  color: black;
+  text-align: center;
+  height: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+  margin-left: 20px;
+}
+
+#user-name {
+  padding-left: 40px;
+}
+
+#result-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-box {
+    background-color: #b6da7e;
+  width: 360px;
+  height: 500px;
+  border: none;
+  border-radius: 10px;
+}
+
+#user-info-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-info {
+  background-color: #a68ec1;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 90%;
+  height: 60%;
+  z-index: 20;
+  max-width: 400px;
+  border: none;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+
+#username, #password {
+  width: 75%;
+  height: 30px;
+  padding: 12px 16px;
+  border: 4px solid #b6da7e;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  max-width: 250px;
+}
+
+h2 {
+  padding-left: 14px;
+  margin-bottom: 10px;
+}
+
+#change-user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#change-user-button, #delete-user {
+  width: 100%;
+  min-width: 100px;
+  max-width: 100px;
+  font-size: 16px;
+  display: block;
+  background-color: #b6da7e;
+  color: black;
+  text-align: center;
+  height: 40px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+  margin-left: 20px;
+}

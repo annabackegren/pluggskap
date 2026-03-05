@@ -22,6 +22,17 @@ CREATE TABLE question(
     PRIMARY KEY (questionId)
 );
 
+CREATE TABLE result(
+    resultId INT AUTO_INCREMENT NOT NULL,
+    resultScore INT NOT NULL,
+    resultUserId INT NOT NULL,
+    resultProvinceId VARCHAR(20) NOT NULL,
+    PRIMARY KEY (resultId),
+    FOREIGN KEY (resultUserId) REFERENCES user(userId)
+);
+
+DROP TABLE result;
+
 INSERT INTO user(userType, userName, userPassword)
 VALUES ('elev', 'svagun', 'hejhopp123');
 
@@ -29,8 +40,16 @@ SELECT * FROM user;
 
 INSERT INTO question(questionText, questionImg, questionAnswerC, questionAnswerW1, questionAnswerW2, questionAnswerW3, questionProvinceId)
 VALUES
-('Vilket djur är detta?', '../assets/img/animal/bear.jpg', 'Björn', 'Varg', 'Älg', 'Rådjur', 'hrj');
+('Vilket djur är detta?', '../assets/img/animal/bear.jpg', 'Björn', 'Varg', 'Älg', 'Rådjur', 'hrj'),
+('När blommar Gullvivan?', '../assets/img/plant/primula.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'nrk');
 
 
+SELECT * FROM question;
+
+SELECT * FROM question WHERE questionProvinceId = 'nrk';
+
+INSERT INTO result(resultScore, resultUserId, resultProvinceId) VALUES ('9', '10', 'hrj');
+
+SELECT * FROM result;
 
 DROP DATABASE pluggskap_db;

@@ -19,13 +19,12 @@ export const getQuestion = async (_req: Request, res: Response) => {
   }
 }
 
-export const getQuestionOne = async (_req: Request<Question>, res: Response<Question | ResponseMessage | null>) => {
+export const getQuestionOne = async (_req: Request<Question>, res: Response<Question[] | ResponseMessage | null>) => {
   try {
 
 
     const { id } = _req.params;
     const question = await getOneQuestion(id)
-    console.log('fel' + _req.params.id)
 
     if(!id){
       return res.status(400).json({error: 'Could not find any province id'})

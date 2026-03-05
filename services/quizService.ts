@@ -12,10 +12,10 @@ export const getAllQuestions = async (): Promise<Question[]> => {
 }
 
 // ------------- GET ONE-------------
-export const getOneQuestion = async (questionProvinceId: string): Promise<Question | null> => {
+export const getOneQuestion = async (questionProvinceId: string): Promise<Question[] | null> => {
     const [results] = await databaseSQL.query<Question[]>(
         'SELECT * FROM question WHERE questionProvinceId=?', [questionProvinceId]
     );
 
-    return results[0] ?? null
+    return results ?? null
 }

@@ -24,14 +24,8 @@ export const getUsers = async (_req: Request, res: Response) => {
 export const getUser = async (_req: Request<User>, res: Response<User | ResponseMessage | null>) => {
   try {
 
-
     const { id } = _req.params;
     const user = await getOneUser(id)
-    console.log('fel' + _req.params.id)
-
-    if(!id){
-      return res.status(400).json({error: 'Could not find any province id'})
-    }
 
     res.status(200).send(user)
   } catch (error: any) {

@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
-import { getAllResults, addResult as addResultService} from "../services/resultService.ts"
+import { getAllResults, addResult as addResultService, getResults as getResultService} from "../services/resultService.ts"
 import type {ResponseMessage} from '../interfaces/responseInterface.ts'
-import type { AddResultDTO } from '../interfaces/resultInterface.ts';
+import type { AddResultDTO, Result } from '../interfaces/resultInterface.ts';
 
 
 // import dotenv from 'dotenv'
@@ -9,11 +9,24 @@ import type { AddResultDTO } from '../interfaces/resultInterface.ts';
 // dotenv.config()
 
 // ------------- GET -------------
-export const getResult = async (_req: Request, res: Response) => {
+export const getResults = async (_req: Request, res: Response) => {
   try {
     const users = await getAllResults()
 
     res.status(200).send(users)
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({error: error.message})
+  }
+}
+
+export const getResult = async (_req: Request<Result>, res: Response<Result[] | ResponseMessage | null>) => {
+  try {
+
+    const { id } = _req.params;
+    const result = await getResultService(id)
+
+    res.status(200).send(result)
   } catch (error: any) {
     console.error(error);
     res.status(500).json({error: error.message})

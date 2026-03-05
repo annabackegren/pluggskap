@@ -11,6 +11,15 @@ export const getAllResults = async (): Promise<Result[]> => {
     return results
 }
 
+// ------------- GET ONE-------------
+export const getResults = async (resultUserId: number): Promise<Result[] | null> => {
+    const [results] = await databaseSQL.query<Result[]>(
+        'SELECT * FROM result WHERE resultUserId=?', [resultUserId]
+    );
+
+    return results ?? null
+}
+
 // ------------- POST -------------
 export const addResult = async (request: AddResultDTO): Promise<void> => {
     await databaseSQL.execute(

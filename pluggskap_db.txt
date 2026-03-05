@@ -10,11 +10,27 @@ CREATE TABLE user(
     PRIMARY KEY (userId)
 );
 
+CREATE TABLE question(
+    questionId INT AUTO_INCREMENT NOT NULL,
+    questionText VARCHAR(255) NOT NULL,
+    questionImg VARCHAR(255),
+    questionAnswerC VARCHAR(50) NOT NULL,
+    questionAnswerW1 VARCHAR(50) NOT NULL,
+    questionAnswerW2 VARCHAR(50) NOT NULL,
+    questionAnswerW3 VARCHAR(50) NOT NULL,
+    questionProvinceId VARCHAR(10) NOT NULL,
+    PRIMARY KEY (questionId)
+);
+
 INSERT INTO user(userType, userName, userPassword)
 VALUES ('elev', 'svagun', 'hejhopp123');
 
 SELECT * FROM user;
 
+INSERT INTO question(questionText, questionImg, questionAnswerC, questionAnswerW1, questionAnswerW2, questionAnswerW3, questionProvinceId)
+VALUES
+('Vilket djur är detta?', '../assets/img/animal/bear.jpg', 'Björn', 'Varg', 'Älg', 'Rådjur', 'hrj');
 
--- ------ DROP DATABASE --------
+
+
 DROP DATABASE pluggskap_db;

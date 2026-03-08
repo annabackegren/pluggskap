@@ -1,21 +1,22 @@
-import { databaseSQL } from '../connectionMySQL.ts'
-import type { Question } from '../interfaces/quizInterface.ts'
-import type {ResponseMessage} from '../interfaces/responseInterface.ts'
+import { database } from "../connectionMySQL.ts";
+import type { Question } from "../interfaces/quizInterface.ts";
+import type { ResponseMessage } from "../interfaces/responseInterface.ts";
 
 // ------------- GET ALL-------------
 export const getAllQuestions = async (): Promise<Question[]> => {
-    const [results] = await databaseSQL.query<Question[]>(
-        'SELECT * FROM question'
-    );
+  const [results] = await database.query<Question[]>("SELECT * FROM question");
 
-    return results
-}
+  return results;
+};
 
 // ------------- GET ONE-------------
-export const getOneQuestion = async (questionProvinceId: string): Promise<Question[] | null> => {
-    const [results] = await databaseSQL.query<Question[]>(
-        'SELECT * FROM question WHERE questionProvinceId=?', [questionProvinceId]
-    );
+export const getOneQuestion = async (
+  questionProvinceId: string,
+): Promise<Question[] | null> => {
+  const [results] = await database.query<Question[]>(
+    "SELECT * FROM question WHERE questionProvinceId=?",
+    [questionProvinceId],
+  );
 
-    return results ?? null
-}
+  return results ?? null;
+};

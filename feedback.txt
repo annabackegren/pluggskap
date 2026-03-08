@@ -1,0 +1,43 @@
+USE pluggskap_db;
+
+CREATE TABLE feedback (
+    feedbackId INT AUTO_INCREMENT NOT NULL,
+    feedbackMessage TEXT NOT NULL,
+    feedbackTeacherId INT NOT NULL,
+    feedbackStudentId INT NOT NULL,
+    feedbackProvinceId VARCHAR(10) NOT NULL,
+    feedbackCreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (feedbackId),
+    FOREIGN KEY (feedbackTeacherId) REFERENCES user(userId),
+    FOREIGN KEY (feedbackStudentId) REFERENCES user(userId)
+);
+
+-- Använder user 1 för både lärare och elev som exempel då den inte är kopplad mot user tabellen än.
+
+
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Bra jobbat med Lappland-quiz!', 1, 1, 'lpl');
+
+SELECT * FROM user;
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Bättre lycka nästa gång!', 1, 1, 'hrj');
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Bra svarat på alla frågor!', 1, 1, 'nbt');
+
+
+SELECT * FROM feedback;
+SELECT * FROM user;
+
+
+
+--
+feedbackId          - AUTO_INCREMENT primary key
+feedbackMessage     - Feedback-meddelandet (TEXT)
+feedbackTeacherId   - userId för lärare (FOREIGN KEY → user)
+feedbackStudentId   - userId för elev (FOREIGN KEY → user)
+feedbackProvinceId  - Landskapskod (VARCHAR 10, t.ex. 'lpl', 'hrj')
+feedbackCreatedAt   - Tidsstämpel (automatisk)
+--

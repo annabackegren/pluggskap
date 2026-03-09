@@ -1,10 +1,10 @@
-import { database } from "../connectionMySQL.ts";
+import { databaseSQL } from "../connectionMySQL.ts";
 import type { Question } from "../interfaces/quizInterface.ts";
 import type { ResponseMessage } from "../interfaces/responseInterface.ts";
 
 // ------------- GET ALL-------------
 export const getAllQuestions = async (): Promise<Question[]> => {
-  const [results] = await database.query<Question[]>("SELECT * FROM question");
+  const [results] = await databaseSQL.query<Question[]>("SELECT * FROM question");
 
   return results;
 };
@@ -13,7 +13,7 @@ export const getAllQuestions = async (): Promise<Question[]> => {
 export const getOneQuestion = async (
   questionProvinceId: string,
 ): Promise<Question[] | null> => {
-  const [results] = await database.query<Question[]>(
+  const [results] = await databaseSQL.query<Question[]>(
     "SELECT * FROM question WHERE questionProvinceId=?",
     [questionProvinceId],
   );

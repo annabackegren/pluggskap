@@ -1,9 +1,9 @@
 import type { Request, Response } from "express";
-import { database } from "../connectionMySQL.js";
+import { databaseSQL } from "../connectionMySQL.js";
 
 export const getAllFeedback = async (_req: Request, res: Response) => {
   try {
-    const [feedback] = await database.query("SELECT * FROM feedback");
+    const [feedback] = await databaseSQL.query("SELECT * FROM feedback");
     res.status(200).send(feedback);
   } catch (error: any) {
     console.error(error);
@@ -19,7 +19,7 @@ export const postFeedback = async (req: Request, res: Response) => {
       feedbackStudentId,
       feedbackProvinceId,
     } = req.body;
-    await database.execute(
+    await databaseSQL.execute(
       "INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId) VALUES (?, ?, ?, ?)",
       [
         feedbackMessage,
@@ -40,7 +40,7 @@ export const updateFeedback = async (req: Request, res: Response) => {
     const { feedbackId } = req.params;
     const { feedbackMessage } = req.body;
 
-    await database.execute(
+    await databaseSQL.execute(
       "UPDATE feedback SET feedbackMessage = ? WHERE feedbackId = ?",
       [feedbackMessage, feedbackId],
     );
@@ -54,7 +54,7 @@ export const updateFeedback = async (req: Request, res: Response) => {
 export const deleteFeedback = async (req: Request, res: Response) => {
   try {
     const { feedbackId } = req.params;
-    await database.execute("DELETE FROM feedback WHERE feedbackId = ?", [
+    await databaseSQL.execute("DELETE FROM feedback WHERE feedbackId = ?", [
       feedbackId,
     ]);
     res.status(200).json({ message: "Feedback deleted successfully" });

@@ -17,8 +17,12 @@
         <h1>Skapa Feedback</h1>
 
         <form id="feedbackForm">
-            <input type="number" id="studentId" placeholder="Elev-ID" required>
-            <input type="text" id="provinceId" name="provinceId" placeholder="Landskapskod" required>
+            <select id="studentId" required>
+                <option value="" Välj elev ...></option>
+            </select>
+            <select id="" provinceId required>
+                <option value="Välj Landskap ..."></option>
+            </select>
             <textarea id="feedbackMessage" name="feedbackMessage" placeholder="Skriv feedback här ..." rows="5"
                 required></textarea>
             <button type="submit">Skicka Feedback</button>

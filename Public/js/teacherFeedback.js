@@ -1,3 +1,31 @@
+async function loadStudents() {
+  const response = await fetch("http://localhost:3000/user");
+  const users = await response.json();
+  const studentSelect = document.getElementById("studentId");
+
+  users.foreach((user) => {
+    const option = document.createElement("option");
+    option.value = user.userId;
+    option.textContent = user.userName;
+    studentSelect.appendChild(option);
+  });
+}
+
+async function loadProvinces() {
+  const response = await fetch("http://localhost:3000/province");
+  const provinces = await response.json();
+  const provinceSelect = document.getElementById("provinceId");
+
+  provinces.foreach((province) => {
+    const option = document.createElement("option");
+    option.value = province.provinceId;
+    option.textContent = province.provinceName;
+    provinceSelect.appendChild(option);
+  });
+}
+loadStudents();
+loadProvinces();
+
 const form = document.getElementById("feedbackForm");
 const studentId = document.getElementById("studentId");
 const provinceId = document.getElementById("provinceId");

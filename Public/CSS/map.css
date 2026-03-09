@@ -120,3 +120,13 @@ h3 {
     flex: 0 1 300px;
   }
 }
+
+@media screen and (min-width: 860px) {
+  #map-wrapper .user-card {
+    position: absolute !important;
+    top: 170px !important;
+    left: 20px !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}

@@ -1,41 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
-    <link rel="stylesheet" href="../CSS/index.css" />
-    <link rel="stylesheet" href="../CSS/userCard.css" />
-    <link rel="stylesheet" href="../CSS/profilepage.css" />
-    <title>Profil - Pluggskap</title>
-  </head>
-  <body>
-    <header id="header"></header>
-    <main>
-      <section class="user-card"></section>
-      <button id="change-user-info">Ändra</button>
-      <div id="result-box"><div id="text-box"></div></div>
-      <div id="user-info-box">
-        <section id="user-info">
-          <form id="change-user-form">
-            <h2>Ändra</h2>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Ändra användarnamn"
-            />
-            <input type="password" id="username" />
-            <button id="change-user-button">Spara</button>
-          </form>
-          <h2>Radera</h2>
-          <button id="delete-user">Radera</button>
-        </section>
-      </div>
-    </main>
-    <footer></footer>
-    <script src="../js/header.js"></script>
-    <script src="../js/userCard.js"></script>
-    <script src="../js/profilepage.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
+  <link rel="stylesheet" href="../CSS/index.css" />
+  <link rel="stylesheet" href="../CSS/userCard.css" />
+  <link rel="stylesheet" href="../CSS/profilepage.css" />
+  <link rel="stylesheet" href="../CSS/backButton.css">
+  <title>Profil - Pluggskap</title>
+</head>
+
+<body>
+  <header id="header"></header>
+  <main>
+    <section class="user-card"></section>
+    <button id="change-user-info">Ändra</button>
+    <div id="result-box">
+      <div id="text-box"></div>
+    </div>
+    <div id="user-info-box">
+      <section id="user-info">
+        <form id="change-user-form">
+          <h2>Ändra</h2>
+          <input type="text" name="username" id="username" placeholder="Ändra användarnamn" />
+          <input type="password" id="username" />
+          <button id="change-user-button">Spara</button>
+        </form>
+        <h2>Radera</h2>
+        <button id="delete-user">Radera</button>
+      </section>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="../js/header.js"></script>
+  <script src="../js/userCard.js"></script>
+  <script src="../js/profilepage.js"></script>
+  <script src="../js/backButton.js"></script>
+</body>
+
 </html>

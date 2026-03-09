@@ -15,11 +15,22 @@
     <main>
       <section class="user-card"></section>
 
-      <div class="province-wrapper">
-        <div class="province-header">
+      <div class="quiz-wrapper">
+        <div class="quiz-header">
           <h1>Landskapsnamn</h1>
         </div>
-        Fråga
+        <div id="question-wrapper">
+          <p id="question-counter"></p>
+          <p id="question-text"></p>
+          <ul id="question-answers"></ul>
+        </div>
+        <button id="next-button" class="button">Nästa fråga >></button>
+        <div id="quiz-end-buttons">
+          <button id="restart-button" class="button">Spela igen</button>
+          <button id="back-province-button" class="button">
+            Tillbaka till landskapet
+          </button>
+        </div>
       </div>
     </main>
     <script src="../js/header.js"></script>

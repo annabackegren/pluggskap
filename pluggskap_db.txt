@@ -31,25 +31,57 @@ CREATE TABLE result(
     FOREIGN KEY (resultUserId) REFERENCES user(userId)
 );
 
-DROP TABLE result;
+CREATE TABLE feedback (
+    feedbackId INT AUTO_INCREMENT NOT NULL,
+    feedbackMessage TEXT NOT NULL,
+    feedbackTeacherId INT NOT NULL,
+    feedbackStudentId INT NOT NULL,
+    feedbackProvinceId VARCHAR(10) NOT NULL,
+    feedbackCreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (feedbackId),
+    FOREIGN KEY (feedbackTeacherId) REFERENCES user(userId),
+    FOREIGN KEY (feedbackStudentId) REFERENCES user(userId)
+);
+
 
 INSERT INTO user(userType, userName, userPassword)
 VALUES ('elev', 'svagun', 'hejhopp123');
 
 SELECT * FROM user;
 
+
 INSERT INTO question(questionText, questionImg, questionAnswerC, questionAnswerW1, questionAnswerW2, questionAnswerW3, questionProvinceId)
 VALUES
 ('Vilket djur är detta?', '../assets/img/animal/bear.jpg', 'Björn', 'Varg', 'Älg', 'Rådjur', 'hrj'),
-('När blommar Gullvivan?', '../assets/img/plant/primula.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'nrk');
-
+('När blommar Gullvivan?', '../assets/img/plant/primula.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'nrk'),
+('Vad äter kungsörnen?', '../assets/img/bird/golden_eagle.jpg', 'Harar, ripor och andra mindre djur', 'Insekter','Insekter, maskar och smådjur','Fisk','hrj')
+('Vilken fisk ingår i Härjedalens landskapsrätt?', '../assets/img/food/roding_med_flotgrot.jpg','Röding','Torsk','Gädda', 'Gös','hrj'),
+('Hur mycket kan en björn väga?','../assets/img/animal/bear.jpg','100-300 kg','100-300 g','50-100kg','400-550 kg','hrj'),
+('Vilket vingspann har kungsörnen?','../assets/img/bird/golden_eagle.jpg','190-225 cm','40-75 cm','10-23 cm','250-340 cm','hrj'),
+('Vad äter hasselmusen?','../assets/img/animal/mouse.jpg','Frön, nötter och insekter', 'Bär, växter, insekter, fisk och mindre däggdjur','Barr, knoppar, bär och insekter','Gräs, blad, frukt och kvistar','nrk'),
+('Vad heter Närkes landskapsfågel?','../assets/img/bird/gulsparv.jpg','Gulsparv','Gulfink','Gyllensparv','Guldfink','nrk'),
+('Vad heter Närkes landskapsblomma?','../assets/img/plant/primula.jpg','Gullviva','Gullig viva', 'Gyllenlack', 'Gulklocka','nrk'),
+('Vilket kött används oftast till skomakarlåda?','../assets/img/food/skomakarlada.jpg','Nötkött','Fårkött','Fläskkött','Ankkött','nrk'),
+('Vad heter Närkes landskapsrätt?','../assets/img/food/skomakarlada.jpg','Skomakarlåda','Skokartong','Skosula','Skohylla','nrk');
 
 SELECT * FROM question;
 
 SELECT * FROM question WHERE questionProvinceId = 'nrk';
 
+
 INSERT INTO result(resultScore, resultUserId, resultProvinceId) VALUES ('9', '10', 'hrj');
 
 SELECT * FROM result;
+
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Bra jobbat med Lappland-quiz!', 1, 1, 'lpl'),
+('Bättre lycka nästa gång!', 1, 1, 'hrj'),
+('Bra svarat på alla frågor!', 1, 1, 'nbt');
+
+SELECT * FROM feedback;
+
+
+DROP TABLE result;
 
 DROP DATABASE pluggskap_db;

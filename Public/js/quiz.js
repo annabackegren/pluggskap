@@ -3,7 +3,9 @@ const urlParamsId = new URLSearchParams(window.location.search),
 
 const provinceHeaderName = document.querySelector(".quiz-header h1"),
   questionCounter = document.querySelector("#question-counter"),
+  chartContainer = document.querySelector(".chart-container"),
   questionText = document.querySelector("#question-text"),
+  questionImg = document.querySelector("#question-img"),
   questionAnswer = document.querySelector("#question-answers"),
   nextButton = document.querySelector("#next-button"),
   restartButton = document.querySelector("#restart-button"),
@@ -108,6 +110,7 @@ async function getQuestions(provinceId) {
 }
 
 async function saveResult() {
+  console.log(score, userId, provinceId);
   try {
     await fetch("/result", {
       method: "POST",
@@ -127,7 +130,7 @@ async function saveResult() {
 
 function renderProvince(province) {
   provinceName = province.name;
-  provinceHeaderName.textContent = `Quiz för ${provinceName}`;
+  provinceHeaderName.textContent = provinceName;
 }
 
 function renderCurrentQuestion() {
@@ -140,12 +143,17 @@ function renderCurrentQuestion() {
 
   questionCounter.textContent = `Fråga ${currentIndex + 1} / ${questions.length}`;
   questionText.textContent = question.questionText;
+  questionImg.src = question.questionImg;
 
+  questionCounter.style.display = "block";
+  chartContainer.style.display = "block";
   nextButton.style.display = "block";
   nextButton.disabled = true;
   endButtons.style.display = "none";
 
   renderAnswers(question);
+
+  updateChart(currentIndex + 1);
 }
 
 function renderAnswers(question) {
@@ -187,9 +195,12 @@ function selectAnswer(button, correct) {
 
 function quizEnd() {
   const feedback = quizFeedback(score, questions.length, provinceName);
-  questionText.textContent = `Du fick ${score}/${questions.length} rätt!`;
+  questionText.textContent = `Du fick ${score} av ${questions.length} rätt!`;
+  questionImg.src = "/assets/img/misc/party-monster.png";
   questionAnswer.innerHTML = `<p class="quiz-feedback">${feedback}</p>`;
 
+  questionCounter.style.display = "none";
+  chartContainer.style.display = "none";
   nextButton.style.display = "none";
   endButtons.style.display = "flex";
 
@@ -225,8 +236,9 @@ function buttonEvents() {
     renderCurrentQuestion();
   });
 
+  const previousUrl = document.referrer;
   backButton.addEventListener("click", async () => {
-    window.location.href = "/map.html";
+    window.location.href = previousUrl;
   });
 }
 

@@ -12,7 +12,7 @@ main {
   background-color: var(--light-green);
   border-radius: 15px;
   border: solid 3px var(--dark-green);
-  max-width: 63rem;
+  /* max-width: 63rem; */
   overflow: auto;
   /* padding-bottom: 1rem; */
   margin: 0 auto;
@@ -28,8 +28,44 @@ main {
   margin-top: 2rem;
 }
 
-#question-text {
-  width: 350px;
+#question-wrapper {
+  padding: 0;
+}
+
+#question-counter {
+  width: 20%;
+  min-width: 91px;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chart-container {
+  width: 80%;
+  max-width: 500px;
+  min-width: 50px;
+  height: 40px;
+}
+
+#question-counter-bar {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#question-img {
+  display: block;
+  margin: 0.5rem auto;
+  /* max-width: 400px; */
+  /* width: 80%; */
+  height: auto;
+  border-radius: 5%;
+  width: clamp(210px, 60%, 20rem);
+  max-height: 20rem;
 }
 
 .button {
@@ -54,6 +90,10 @@ main {
 .button:hover {
   transform: scale(1.05);
   border: solid 2px white;
+}
+
+#quiz-end-buttons {
+  gap: 2rem;
 }
 
 #next-button {
@@ -89,7 +129,11 @@ main {
 
 @media screen and (min-width: 768px) {
   .quiz-wrapper {
-    max-height: calc(100vh - 81px - 3rem);
+    max-height: calc(100vh - 16px - 3rem);
+  }
+
+  .user-card {
+    margin-top: 110px;
   }
 }
 

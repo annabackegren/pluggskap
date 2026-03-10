@@ -99,9 +99,9 @@ h3 {
   #map-wrapper .user-card {
     position: static;
     transform: none;
-    /* width: 300px; */
+    width: 300px;
     flex: 0 1 300px;
-    margin-top: 0;
+    margin-top: 110px;
   }
 
   #map-wrapper {
@@ -121,7 +121,7 @@ h3 {
   }
 }
 
-@media screen and (min-width: 860px) {
+/* @media screen and (min-width: 860px) {
   #map-wrapper .user-card {
     position: absolute !important;
     top: 170px !important;
@@ -129,4 +129,4 @@ h3 {
     transform: none !important;
     margin: 0 !important;
   }
-}
+} */

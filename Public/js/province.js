@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     card.addEventListener("click", async () => {
       const type = card.dataset.type;
       popup.style.display = "flex";
+      document.body.style.overflow = "hidden";
       let data;
 
       switch (type) {
@@ -100,7 +101,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             <dd>${data.height}</dd>
             <dt>Äter:</dt>
             <dd>${data.food}</dd>
-
+            <dt>Låter:</dt>
+            <dd>
+              <a href="${data.sound}" target="_blank" rel="noopener noreferrer">
+              Lyssna
+              </a>
+            </dd>
             `
                 : ""
             } ${
@@ -154,18 +160,26 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   // STÄNGA POPUP
+
+  function closePopup() {
+    popup.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
   popupContent.addEventListener("click", (e) => {
-    if (e.target.classList.contains("close")) {
-      popup.style.display = "none";
-    }
+    if (e.target.classList.contains("close")) closePopup();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") popup.style.display = "none";
+    if (e.key === "Escape") {
+      closePopup();
+    }
   });
 
   popup.addEventListener("click", (e) => {
-    if (e.target === popup) popup.style.display = "none";
+    if (e.target === popup) {
+      closePopup();
+    }
   });
 
   const quizButton = document.querySelector(".quiz-button");

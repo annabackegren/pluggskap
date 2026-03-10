@@ -3,7 +3,7 @@ async function loadStudents() {
   const users = await response.json();
   const studentSelect = document.getElementById("studentId");
 
-  users.foreach((user) => {
+  users.forEach((user) => {
     const option = document.createElement("option");
     option.value = user.userId;
     option.textContent = user.userName;

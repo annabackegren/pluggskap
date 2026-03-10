@@ -134,3 +134,39 @@ updateUserBtn.addEventListener("click", (e) => {
 confirmDeleteBtn.addEventListener("click", () => {
   deleteUser();
 });
+
+// här börjar mardrömmen  :)
+
+async function loadResults() {
+  let resultUserId = await getUser();
+
+  try {
+    const response = await fetch(
+      "http://localhost:3000/result/" + resultUserId,
+    );
+    const results = await response.json();
+    const resultsList = document.getElementById("results-list");
+
+    if (!results || results.length === 0) {
+      resultsList.innerHTML = "<p>Inga resultat ännu</p>";
+      return;
+    }
+    results.forEach((result) => {
+      const resultItem = document.createElement("div");
+      resultItem.className = "result-item";
+      resultItem.innerHTML = ` <div class= "result-header">
+        <span class="result-province">Landskap: ${result.resultProvinceId}</span>
+        <span class="result-score">${result.resultScore}/10</span>
+      </div>
+      <div class="result-bar">
+      <div class="result-bar-fill" style="width: ${result.resultScore * 10}%"></div>
+      </div>
+      `;
+      resultsList.appendChild(resultItem);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+loadResults();

@@ -54,7 +54,7 @@ INSERT INTO question(questionText, questionImg, questionAnswerC, questionAnswerW
 VALUES
 ('Vilket djur är detta?', '../assets/img/animal/bear.jpg', 'Björn', 'Varg', 'Älg', 'Rådjur', 'hrj'),
 ('När blommar Gullvivan?', '../assets/img/plant/primula.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'nrk'),
-('Vad äter kungsörnen?', '../assets/img/bird/golden_eagle.jpg', 'Harar, ripor och andra mindre djur', 'Insekter','Insekter, maskar och smådjur','Fisk','hrj')
+('Vad äter kungsörnen?', '../assets/img/bird/golden_eagle.jpg', 'Harar, ripor och andra mindre djur', 'Insekter','Insekter, maskar och smådjur','Fisk','hrj'),
 ('Vilken fisk ingår i Härjedalens landskapsrätt?', '../assets/img/food/roding_med_flotgrot.jpg','Röding','Torsk','Gädda', 'Gös','hrj'),
 ('Hur mycket kan en björn väga?','../assets/img/animal/bear.jpg','100-300 kg','100-300 g','50-100kg','400-550 kg','hrj'),
 ('Vilket vingspann har kungsörnen?','../assets/img/bird/golden_eagle.jpg','190-225 cm','40-75 cm','10-23 cm','250-340 cm','hrj'),

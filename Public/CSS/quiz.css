@@ -4,6 +4,9 @@ main {
   margin-bottom: 1rem;
 }
 
+h1 {
+  margin: 0;
+}
 .user-card img {
   z-index: 0;
 }
@@ -16,7 +19,8 @@ main {
   overflow: auto;
   /* padding-bottom: 1rem; */
   margin: 0 auto;
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 0 3rem;
 }
 
 .quiz-header {
@@ -51,6 +55,12 @@ main {
   height: 40px;
 }
 
+#question-text {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 2.5rem 0 1rem 0;
+}
+
 #question-counter-bar {
   display: block;
   width: 100% !important;
@@ -58,14 +68,25 @@ main {
 }
 
 #question-img {
+  width: clamp(250px, 28vw, 100%);
+  height: clamp(160px, 19vw, 200px);
+  object-fit: cover;
   display: block;
   margin: 0.5rem auto;
-  /* max-width: 400px; */
-  /* width: 80%; */
-  height: auto;
-  border-radius: 5%;
-  width: clamp(210px, 60%, 20rem);
-  max-height: 20rem;
+  border: solid 3px var(--dark-green);
+  border-radius: 5px;
+}
+
+#quiz-end-img {
+  max-height: 300px;
+  margin: 0 auto;
+}
+
+#question-answers {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 400px;
+  margin: 2rem auto 0 auto;
 }
 
 .button {
@@ -87,6 +108,10 @@ main {
   transition: transform 0.2s ease;
 }
 
+ul .button {
+  margin: 0;
+}
+
 .button:hover {
   transform: scale(1.05);
   border: solid 2px white;
@@ -94,10 +119,16 @@ main {
 
 #quiz-end-buttons {
   gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#quiz-feedback {
+  width: 100%;
 }
 
 #next-button {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #next-button:not(:disabled) {
@@ -119,6 +150,12 @@ main {
   cursor: default;
 }
 
+@media screen and (max-width: 400px) {
+  .quiz-wrapper {
+    padding: 0 1rem;
+  }
+}
+
 @media screen and (min-width: 668px) {
   .quiz-grid article {
     aspect-ratio: auto;
@@ -128,23 +165,19 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+
   .quiz-wrapper {
     max-height: calc(100vh - 16px - 3rem);
+    margin-top: 3rem;
+    padding: 0 5rem;
   }
 
   .user-card {
     margin-top: 110px;
-  }
-}
-
-@media screen and (min-width: 850px) {
-  main {
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 0.5rem;
-  }
-
-  .quiz-wrapper {
-    margin-top: 3rem;
   }
 }

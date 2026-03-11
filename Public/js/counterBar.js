@@ -14,12 +14,12 @@ const chart = new Chart(answerChart, {
         backgroundColor: "#a68ec1",
         borderColor: "#446036",
         borderWidth: 3,
-        borderRadius: {
-          topRight: 0,
-          bottomRight: 0,
-          topLeft: 15,
-          bottomLeft: 15,
-        },
+        // borderRadius: {
+        //   topRight: isLast ? 15 : 0,
+        //   bottomRight: isLast ? 15 : 0,
+        //   topLeft: 15,
+        //   bottomLeft: 15,
+        // },
         borderSkipped: false,
         barThickness: 30,
         categoryPercentage: 1,
@@ -27,7 +27,7 @@ const chart = new Chart(answerChart, {
       {
         label: "Ogjorda",
         data: [totalQuestions - currentQuestion],
-        backgroundColor: "#ffffff",
+        backgroundColor: "#446036",
         borderColor: "#446036",
         borderWidth: 3,
         borderRadius: {
@@ -71,8 +71,33 @@ const chart = new Chart(answerChart, {
 });
 
 function updateChart(current) {
+  const isLast = current === totalQuestions;
+
   chart.data.datasets[0].data = [current];
   chart.data.datasets[1].data = [totalQuestions - current];
+
+  chart.data.datasets[0].borderRadius = {
+    topRight: 0,
+    bottomRight: 0,
+    topLeft: 15,
+    bottomLeft: 15,
+  };
+
+  chart.options.animation = {
+    onComplete: () => {
+      if (isLast) {
+        chart.data.datasets[0].borderRadius = {
+          topLeft: 15,
+          bottomLeft: 15,
+          topRight: 15,
+          bottomRight: 15,
+        };
+        chart.update();
+      }
+    },
+  };
+  chart.data.datasets[1].data = [isLast ? 0 : totalQuestions - current];
+
   chart.update();
 }
 

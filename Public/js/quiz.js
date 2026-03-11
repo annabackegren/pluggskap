@@ -6,8 +6,10 @@ const provinceHeaderName = document.querySelector(".quiz-header h1"),
   chartContainer = document.querySelector(".chart-container"),
   questionText = document.querySelector("#question-text"),
   questionImg = document.querySelector("#question-img"),
+  quizEndImg = document.querySelector("#quiz-end-img"),
   questionAnswer = document.querySelector("#question-answers"),
   nextButton = document.querySelector("#next-button"),
+  feedbackText = document.querySelector("#quiz-feedback"),
   restartButton = document.querySelector("#restart-button"),
   backButton = document.querySelector("#back-province-button"),
   endButtons = document.querySelector("#quiz-end-buttons");
@@ -139,16 +141,25 @@ function renderCurrentQuestion() {
     return;
   }
 
+  if (currentIndex === questions.length - 1) {
+    changeButtonText();
+  }
+
   const question = questions[currentIndex];
 
   questionCounter.textContent = `Fråga ${currentIndex + 1} / ${questions.length}`;
   questionText.textContent = question.questionText;
+
+  questionImg.style.display = "block";
   questionImg.src = question.questionImg;
 
+  quizEndImg.style.display = "none";
   questionCounter.style.display = "block";
   chartContainer.style.display = "block";
+  questionAnswer.style.display = "grid";
   nextButton.style.display = "block";
   nextButton.disabled = true;
+  feedbackText.style.display = "none";
   endButtons.style.display = "none";
 
   renderAnswers(question);
@@ -193,12 +204,19 @@ function selectAnswer(button, correct) {
   nextButton.disabled = false;
 }
 
+function changeButtonText() {
+  nextButton.textContent = "Visa resultat >>";
+}
+
 function quizEnd() {
   const feedback = quizFeedback(score, questions.length, provinceName);
   questionText.textContent = `Du fick ${score} av ${questions.length} rätt!`;
-  questionImg.src = "/assets/img/misc/party-monster.png";
-  questionAnswer.innerHTML = `<p class="quiz-feedback">${feedback}</p>`;
+  feedbackText.style.display = "block";
+  feedbackText.textContent = `${feedback}`;
 
+  questionImg.style.display = "none";
+  quizEndImg.style.display = "block";
+  questionAnswer.style.display = "none";
   questionCounter.style.display = "none";
   chartContainer.style.display = "none";
   nextButton.style.display = "none";
@@ -233,6 +251,8 @@ function buttonEvents() {
     questions = shuffleArray(questions).slice(0, 5);
     currentIndex = 0;
     score = 0;
+
+    nextButton.textContent = "Nästa fråga >>";
     renderCurrentQuestion();
   });
 

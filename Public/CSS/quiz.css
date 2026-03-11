@@ -78,6 +78,7 @@ h1 {
 }
 
 #quiz-end-img {
+  display: none;
   max-height: 300px;
   margin: 0 auto;
 }

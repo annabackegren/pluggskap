@@ -47,8 +47,8 @@
     font-weight: bold;
   }
 }
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .user-card {
     margin-top: 120px;
   }
-}
+} */

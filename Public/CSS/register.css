@@ -48,11 +48,15 @@ label {
   outline: none;
 }
 
+#username.username-error {
+  border-color: red;
+}
+
 #username:focus, #password:focus, #confirmpassword:focus {
   border-color: #a68ec1;
 }
 
-#passworderror, #cfpassworderror {
+#passworderror, #cfpassworderror, #username-exists {
   color: white;
   font-size: 13px;
 }

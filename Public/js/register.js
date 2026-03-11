@@ -11,11 +11,13 @@ const userCreated = document.querySelector("#usercreated");
 const loginBtn = document.querySelector("#loginbtn");
 const larareBtn = document.querySelector("#lararebtn");
 const elevBtn = document.querySelector("#elevbtn");
+const usernameError = document.querySelector("#username-exists");
 
 loginBtn.style.display = "none";
 userCreated.style.display = "none";
 cfpasswordError.style.display = "none";
 passwordError.style.display = "none";
+usernameError.style.display = "none";
 submitbtn.disabled = true;
 
 function clearInputs() {
@@ -74,6 +76,11 @@ confirmPassword.addEventListener("keyup", () => {
   errorForm();
 });
 
+username.addEventListener("keyup", () => {
+  username.classList.remove("username-error");
+  usernameError.style.display = "none";
+});
+
 async function sendData() {
   try {
     const usertype = document.querySelector(".usertype:checked");
@@ -90,9 +97,15 @@ async function sendData() {
       }),
     });
     console.log(await response.json());
-    form.style.display = "none";
-    userCreated.style.display = "block";
-    loginBtn.style.display = "block";
+    if ((await response.status) === 200) {
+      form.style.display = "none";
+      userCreated.style.display = "block";
+      loginBtn.style.display = "block";
+    } else {
+      usernameError.style.display = "block";
+      username.classList.add("username-error");
+      window.scrollTo(0, 0);
+    }
   } catch (err) {
     console.error(err);
   }

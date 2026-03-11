@@ -17,35 +17,16 @@
     <div id="header"></div>
     <main>
       <form id="userinfo" action="">
-        <div class="radiobtns">
-          <div>
-            <input
-              id="elevbtn"
-              class="usertype"
-              name="usertype"
-              type="radio"
-              value="elev"
-            />
-            <label for="elevbtn">Elev</label>
-          </div>
-          <div>
-            <input
-              id="lararebtn"
-              class="usertype"
-              name="usertype"
-              type="radio"
-              value="larare"
-            />
-            <label for="lararebtn">Lärare</label>
-          </div>
+        <div class="passwordgroup">
+          <span id="username-exists">Användarnamnet är upptaget</span>
+          <input
+            id="username"
+            name="username"
+            placeholder="Användarnamn"
+            type="text"
+            required
+          />
         </div>
-        <input
-          id="username"
-          name="username"
-          placeholder="Användarnamn"
-          type="text"
-          required
-        />
         <div class="passwordgroup">
           <span id="passworderror"
             >Lösenordet måste innehålla mer än 3 tecken</span
@@ -67,6 +48,28 @@
             type="password"
             required
           />
+        </div>
+        <div class="radiobtns">
+          <div>
+            <input
+              id="elevbtn"
+              class="usertype"
+              name="usertype"
+              type="radio"
+              value="elev"
+            />
+            <label for="elevbtn">Elev</label>
+          </div>
+          <div>
+            <input
+              id="lararebtn"
+              class="usertype"
+              name="usertype"
+              type="radio"
+              value="larare"
+            />
+            <label for="lararebtn">Lärare</label>
+          </div>
         </div>
         <div id="gdpr">
           <input id="gdprcheck" name="gdprcheck" type="checkbox" />

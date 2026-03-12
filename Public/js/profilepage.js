@@ -151,18 +151,21 @@ async function loadResults() {
       resultsList.innerHTML = "<p>Inga resultat ännu</p>";
       return;
     }
-    results.forEach((result) => {
+    results.forEach((result, index) => {
       const resultItem = document.createElement("div");
       resultItem.className = "result-item";
-      resultItem.innerHTML = ` <div class= "result-header">
-        <span class="result-province">Landskap: ${result.resultProvinceId}</span>
-        <span class="result-score">${result.resultScore}/10</span>
+      const canvasId = "chart-" + index;
+      resultItem.innerHTML = `
+      <div class="result-header">
+      <span class="result-province">Landskap: ${result.resultProvinceId}</span>
+      <span class="result-score"> ${result.resultScore}/10</span>
       </div>
-      <div class="result-bar">
-      <div class="result-bar-fill" style="width: ${result.resultScore * 10}%"></div>
+      <div class="chart-container">
+      <canvas id="${canvasId}"></canvas>
       </div>
       `;
       resultsList.appendChild(resultItem);
+      createResultChart(canvasId, result.resultScore);
     });
   } catch (error) {
     console.error(error);

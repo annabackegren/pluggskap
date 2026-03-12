@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getAllFeedback,
+  getUserFeedback,
   postFeedback,
   updateFeedback,
   deleteFeedback,
@@ -9,6 +10,7 @@ import {
 const router = express.Router();
 
 router.get("/", getAllFeedback);
+router.get("/:userId", getUserFeedback)
 router.post("/", postFeedback);
 router.put("/:feedbackId", updateFeedback);
 router.delete("/:feedbackId", deleteFeedback);

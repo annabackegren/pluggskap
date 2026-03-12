@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import {
   getAllFeedback as getAllFeedbackService,
+  getUserFeedback as getUserFeedbackService,
   postFeedback as postFeedbackService,
   updateFeedback as updateFeedbackService,
   deleteFeedback as deleteFeedbackService,
@@ -10,6 +11,19 @@ export const getAllFeedback = async (_req: Request, res: Response) => {
   try {
     const feedback = await getAllFeedbackService();
     res.status(200).send(feedback);
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getUserFeedback = async (_req: Request, res: Response) => {
+  try {
+    const userId = Number(_req.params.userId)
+
+    const feedback = await getUserFeedbackService(userId);
+
+    res.status(200).json(feedback);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({ error: error.message });

@@ -6,6 +6,15 @@ export const getAllFeedback = async () => {
   return results;
 };
 
+// ------ GET ALL WHERE USER -------
+export const getUserFeedback = async (userId: number) => {
+  const [results] = await databaseSQL.query(
+    "SELECT * FROM feedback WHERE feedbackStudentId = ?",
+    [userId]
+  );
+  return results;
+};
+
 // ------- POST -------
 
 export const postFeedback = async (

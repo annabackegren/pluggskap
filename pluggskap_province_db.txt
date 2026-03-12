@@ -555,11 +555,361 @@ plant: {
     protected: false,
     image: "../assets/img/plant/chickweed.jpg"
 },
-    }
+    },
+    {
+id: "dls",
+name: "Dalsland",
+coatOfArms: "../assets/img/coatOfArms/Dalsland_landskapsvapen.png",
+animal: {
+    name: "Korp",
+    weight: "0,7–1,6 kg",
+    height: "54–67 cm",
+    food: "Allätare",
+    sound: "ljudfil",
+    image: "../assets/img/animal/raven.jpg"
+},
+bird: {
+    name: "Korp",
+    weight: "0,7–1,6 kg",
+    wingspan: "115–150 cm",
+    stay: true,
+    food: "Allätare",
+    sound: "ljudfil",
+    image: "../assets/img/bird/raven.jpg"
+},
+food: {
+        name: "Äppelkaka från Åmål",
+        description: "En klassisk äppeldessert från Dalsland gjord på äpplen, socker och ofta serverad med vaniljsås eller grädde.",
+        recipeLink: "https://www.ica.se/recept/appelkaka-fran-amal-701123/",
+        image: "../assets/img/food/appelkaka_fran_amal.jpg"
+    },
+plant: {
+    name: "Förgätmigej",
+    type: "Blomma",
+    season: "Vår",
+    protected: false,
+    image: "../assets/img/plant/forget-me-not.jpg"
+},
+},
+{
+id: "vgl",
+name: "Västergötland",
+coatOfArms: "../assets/img/coatOfArms/Vastergotland_landskapsvapen.png",
+animal: {
+    name: "Trana",
+    weight: "4–6 kg",
+    height: "100–130 cm",
+    food: "Växter, insekter och smådjur",
+    sound: "ljudfil",
+    image: "../assets/img/animal/crane.jpg"
+},
+bird: {
+    name: "Trana",
+    weight: "4–6 kg",
+    wingspan: "180–240 cm",
+    stay: false,
+    food: "Växter, insekter och smådjur",
+    sound: "ljudfil",
+    image: "../assets/img/bird/crane.jpg"
+},
+food: {
+    name: "Grynkorv med stuvade bönor",
+    description: "En klassisk rätt från Västergötland där den lokala grynkorven serveras tillsammans med stuvade vita bönor.",
+    recipeLink: "https://www.ica.se/recept/grynkorv-700958/",
+    image: "../assets/img/food/grynkorv.jpg"
+},
+plant: {
+    name: "Ljung",
+    type: "Buske",
+    season: "Sommar-höst",
+    protected: false,
+    image: "../assets/img/plant/heather.jpg"
+},
+},
+{
+id: "ogl",
+name: "Östergötland",
+coatOfArms: "../assets/img/coatOfArms/Ostergotland_landskapsvapen.png",
+animal: {
+    name: "Knölsvan",
+    weight: "9–15 kg",
+    height: "125–160 cm",
+    food: "Vattenväxter",
+    sound: "ljudfil",
+    image: "../assets/img/animal/swan.jpg"
+},
+bird: {
+    name: "Knölsvan",
+    weight: "9–15 kg",
+    wingspan: "200–240 cm",
+    stay: true,
+    food: "Vattenväxter",
+    sound: "ljudfil",
+    image: "../assets/img/bird/swan.jpg"
+},
+food: {
+    name: "Raggmunk med lingon",
+    description: "Raggmunk är en potatispannkaka gjord på riven potatis och mjöl som steks krispig och serveras traditionellt med stekt fläsk och lingon.",
+    recipeLink: "https://www.ica.se/recept/raggmunk-med-flask-och-lingon-524547/",
+    image: "../assets/img/food/raggmunk_med_flask_och_lingon.jpg"
+},
+plant: {
+    name: "Blåklint",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/cornflower.jpg"
+},
+},
+{
+id: "bhl",
+name: "Bohuslän",
+coatOfArms: "../assets/img/coatOfArms/Bohuslan_landskapsvapen.png",
+animal: {
+    name: "Knubbsäl",
+    weight: "70–130 kg",
+    height: "140–180 cm",
+    food: "Fisk",
+    sound: "ljudfil",
+    image: "../assets/img/animal/seal.jpg"
+},
+bird: {
+    name: "Strandskata",
+    weight: "400–700 g",
+    wingspan: "80–90 cm",
+    stay: false,
+    food: "Musslor och andra smådjur",
+    sound: "ljudfil",
+    image: "../assets/img/bird/oystercatcher.jpg"
+},
+food: {
+    name: "Äggost",
+    description: "Äggost är en traditionell dessert från Bohuslän gjord på mjölk, ägg och gräddfil som kokas och formas i en särskild form.",
+    recipeLink: "https://www.ica.se/recept/aggost-701070/",
+    image: "../assets/img/food/aggost.jpg"
+},
+plant: {
+    name: "Vildkaprifol",
+    type: "Buske",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/honeysuckle.jpg"
+},
+},
+{
+id: "got",
+name: "Gotland",
+coatOfArms: "../assets/img/coatOfArms/Gotland_landskapsvapen.png",
+animal: {
+    name: "Igelkott",
+    weight: "0,6–1,2 kg",
+    height: "20–30 cm",
+    food: "Insekter och smådjur",
+    sound: "ljudfil",
+    image: "../assets/img/animal/hedgehog.jpg"
+},
+bird: {
+    name: "Halsbandsflugsnappare",
+    weight: "12–15 g",
+    wingspan: "22–24 cm",
+    stay: false,
+    food: "Insekter",
+    sound: "ljudfil",
+    image: "../assets/img/bird/flycatcher.jpg"
+},
+food: {
+    name: "Saffranspannkaka",
+    description: "Saffranspannkaka är en gotländsk dessert gjord på risgrynsgröt, saffran, mandel och ägg som bakas i ugn och serveras med salmbärssylt.",
+    recipeLink: "https://www.ica.se/recept/gotlandsk-saffranspannkaka-327821/",
+    image: "../assets/img/food/gotlandsk_saffranspannkaka.jpg"
+},
+plant: {
+    name: "Murgröna",
+    type: "Klätterväxt",
+    season: "Hela året",
+    protected: false,
+    image: "../assets/img/plant/ivy.jpg"
+},
+},
+{
+id: "sml",
+name: "Småland",
+coatOfArms: "../assets/img/coatOfArms/Smaland_landskapsvapen.png",
+animal: {
+    name: "Utter",
+    weight: "5–12 kg",
+    height: "55–90 cm",
+    food: "Fisk och smådjur",
+    sound: "ljudfil",
+    image: "../assets/img/animal/otter.jpg"
+},
+bird: {
+    name: "Taltrast",
+    weight: "65–100 g",
+    wingspan: "33–36 cm",
+    stay: true,
+    food: "Maskar och insekter",
+    sound: "ljudfil",
+    image: "../assets/img/bird/thrush.jpg"
+},
+food: {
+    name: "Småländsk ostkaka",
+    description: "En klassisk dessert från Småland gjord på mjölk, ostmassa, ägg och mandel. Serveras ofta med sylt och grädde.",
+    recipeLink: "https://www.ica.se/recept/ostkaka-676482/",
+    image: "../assets/img/food/ostkaka.jpg"
+},
+plant: {
+    name: "Linnea",
+    type: "Blomma",
+    season: "Sommar",
+    protected: true,
+    image: "../assets/img/plant/Linnaea_borealis.jpg"
+},
+},
+{
+id: "old",
+name: "Öland",
+coatOfArms: "../assets/img/coatOfArms/Oland_landskapsvapen.png",
+animal: {
+    name: "Näktergal",
+    weight: "20–30 g",
+    height: "15–17 cm",
+    food: "Insekter",
+    sound: "ljudfil",
+    image: "../assets/img/animal/nightingale.jpg"
+},
+bird: {
+    name: "Näktergal",
+    weight: "20–30 g",
+    wingspan: "23–26 cm",
+    stay: false,
+    food: "Insekter",
+    sound: "ljudfil",
+    image: "../assets/img/bird/nightingale.jpg"
+},
+food: {
+    name: "Öländska kroppkakor",
+    description: "Potatisbaserade kroppkakor fyllda med fläsk och kryddor, en klassisk rätt från Öland.",
+    recipeLink: "https://www.ica.se/recept/olandska-kroppkakor-676394/",
+    image: "../assets/img/food/olandska_kroppkakor.jpg"
+},
+plant: {
+    name: "Solvända",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/helianthemum.jpg"
+},
+},
+{
+id: "hal",
+name: "Halland",
+coatOfArms: "../assets/img/coatOfArms/Halland_landskapsvapen.png",
+animal: {
+    name: "Lax",
+    weight: "3–15 kg",
+    height: "70–100 cm",
+    food: "Fisk och smådjur",
+    sound: "ljudfil",
+    image: "../assets/img/animal/salmon.jpg"
+},
+bird: {
+    name: "Pilgrimsfalk",
+    weight: "600–1300 g",
+    wingspan: "95–115 cm",
+    stay: true,
+    food: "Fåglar",
+    sound: "ljudfil",
+    image: "../assets/img/bird/hawk.jpg"
+},
+food: {
+    name: "Långkål med skinka",
+    description: "En traditionell halländsk rätt där grönkål kokas och stuvas med grädde och kryddor, ofta serverad med julskinka.",
+    recipeLink: "https://www.ica.se/recept/langkal-med-skinka-676493/",
+    image: "../assets/img/food/langkal_med_skinka.jpg"
+},
+plant: {
+    name: "Ginst",
+    type: "Buske",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/broom.jpg"
+},
+},
+{
+id: "ble",
+name: "Blekinge",
+coatOfArms: "../assets/img/coatOfArms/Blekinge_landskapsvapen.png",
+animal: {
+    name: "Ekoxe",
+    weight: "2–6 g",
+    height: "3–8 cm",
+    food: "Trädsaft",
+    sound: "ljudfil",
+    image: "../assets/img/animal/stag-beetle.jpg"
+},
+bird: {
+    name: "Nötväcka",
+    weight: "20–25 g",
+    wingspan: "22–27 cm",
+    stay: true,
+    food: "Insekter och frön",
+    sound: "ljudfil",
+    image: "../assets/img/bird/nuthatch.jpg"
+},
+food: {
+    name: "Sjömansbiff",
+    description: "Sjömansbiff är en klassisk rätt där nötkött, lök och potatis långkokas ofta med öl eller buljong.",
+    recipeLink: "https://www.ica.se/recept/sjomansbiff-3755/",
+    image: "../assets/img/food/sjomansbiff.jpg"
+},
+plant: {
+    name: "Kungsljus",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/mullein.jpg"
+},
+},
+{
+id: "ske",
+name: "Skåne",
+coatOfArms: "../assets/img/coatOfArms/Skane_landskapsvapen.png",
+animal: {
+    name: "Kronhjort",
+    weight: "160–240 kg",
+    height: "120–150 cm",
+    food: "Gräs, blad och kvistar",
+    sound: "ljudfil",
+    image: "../assets/img/animal/red-deer.jpg"
+},
+bird: {
+    name: "Röd glada",
+    weight: "800–1200 g",
+    wingspan: "150–180 cm",
+    stay: true,
+    food: "Smådjur och kadaver",
+    sound: "ljudfil",
+    image: "../assets/img/bird/red-kite.jpg"
+},
+food: {
+    name: "Äggakaka",
+    description: "Äggakaka är en skånsk pannkaka gjord på ägg, mjöl och mjölk som steks tjock och serveras med stekt fläsk och lingon.",
+    recipeLink: "https://www.ica.se/recept/aggakaka-676422/",
+    image: "../assets/img/food/aggakaka.jpg"
+},
+plant: {
+    name: "Prästkrage",
+    type: "Blomma",
+    season: "Sommar",
+    protected: false,
+    image: "../assets/img/plant/daisies.jpg"
+},
+}
     ])
 
 db.provinces.find()
 
-db.provinces.findOne({id: "lpl"})
+db.provinces.findOne({id: "ske"})
 
 db.dropDatabase()

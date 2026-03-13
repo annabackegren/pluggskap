@@ -1,4 +1,6 @@
 import { databaseSQL } from "../connectionMySQL.ts";
+import type { RowDataPacket } from "mysql2";
+import {database} from "../connectionMongoDB.ts"
 
 // ------ GET ALL -------
 export const getAllFeedback = async () => {
@@ -7,12 +9,40 @@ export const getAllFeedback = async () => {
 };
 
 // ------ GET ALL WHERE USER -------
-export const getUserFeedback = async (userId: number) => {
-  const [results] = await databaseSQL.query(
-    "SELECT * FROM feedback WHERE feedbackStudentId = ?",
-    [userId]
+export const getUserFeedback = async (userName: string) => {
+  const [feedback] = await databaseSQL.query<RowDataPacket[]>(
+`SELECT f.feedbackMessage, f.feedbackProvinceId 
+FROM feedback f JOIN user u ON f.feedbackStudentId = u.userId 
+WHERE u.userName=?`, 
+   [userName]
   );
-  return results;
+
+  const result = await Promise.all(
+    (feedback as any[]).map(async fedbackObject => {
+      const province = await database
+      .collection("provinces")
+      .findOne({id: fedbackObject.feedbackProvinceId})
+
+      return{
+        ...fedbackObject,
+        provinceName: province?.name || "Okänt landskap",
+      }
+    })
+  )  
+  return result;
+};
+
+// ------ GET ALL WHERE USER BY PROVINCE-------
+export const getUserFeedbackByProvince = async (userName: string, provinceId: string) => {
+  const [result] = await databaseSQL.query<RowDataPacket[]>(
+`SELECT f.feedbackMessage
+FROM feedback f JOIN user u ON f.feedbackStudentId = u.userId 
+WHERE u.userName=? AND f.feedbackProvinceId = ?`, 
+   [userName, provinceId]
+  );
+
+  console.log("result är: ", result);
+  return result;
 };
 
 // ------- POST -------

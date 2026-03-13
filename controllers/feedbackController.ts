@@ -2,6 +2,7 @@ import type { Request, Response } from "express";
 import {
   getAllFeedback as getAllFeedbackService,
   getUserFeedback as getUserFeedbackService,
+  getUserFeedbackByProvince as getUserFeedbackByProvinceService,
   postFeedback as postFeedbackService,
   updateFeedback as updateFeedbackService,
   deleteFeedback as deleteFeedbackService,
@@ -17,11 +18,25 @@ export const getAllFeedback = async (_req: Request, res: Response) => {
   }
 };
 
-export const getUserFeedback = async (_req: Request, res: Response) => {
+export const getUserFeedback = async (_req: Request<{userName: string}>, res: Response) => {
   try {
-    const userId = Number(_req.params.userId)
+    const userName = _req.params.userName
 
-    const feedback = await getUserFeedbackService(userId);
+    const feedback = await getUserFeedbackService(userName);
+
+    res.status(200).json(feedback);
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getUserFeedbackByProvince = async (_req: Request<{userName: string, provinceId: string}>, res: Response) => {
+  try {
+    const userName = _req.params.userName
+    const provinceId = _req.params.provinceId
+
+    const feedback = await getUserFeedbackByProvinceService(userName, provinceId);
 
     res.status(200).json(feedback);
   } catch (error: any) {

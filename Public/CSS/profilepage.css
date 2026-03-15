@@ -38,9 +38,13 @@ main {
 #text-box {
   background-color: #b6da7e;
   width: 360px;
-  height: 500px;
-  border: none;
+  max-height: 500px;
+  height: auto;
+  border: 3px solid #9ec95e;
   border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 15px;
 }
 
 #user-info-box {
@@ -217,8 +221,9 @@ h2 {
 }
 
 .result-item {
-  background-color: #446036;
-  border-radius: 8px;
+  background-color: #b6da7e;
+  border: 3px solid white;
+  border-radius: 15px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -226,7 +231,8 @@ h2 {
 .result-header {
   display: flex;
   justify-content: space-between;
-  color: white;
+  align-items: center;
+  color: black;
   margin-bottom: 8px;
 }
 
@@ -240,4 +246,43 @@ h2 {
   background-color: #a68ec1;
   height: 100%;
   border-radius: 4px;
+}
+
+.show-more-btn {
+  background-color: #446036;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.show-more-btn:hover {
+  background-color: #3a5230;
+}
+
+.feedback-content {
+  background-color: #b6da7e;
+  color: black;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.chart-container {
+  height: 25px;
+  width: 60%;
+  margin-bottom: 5px;
+}
+
+.result-province {
+  flex: 1;
+}
+
+.result-score {
+  min-width: 40px;
+  text-align: right;
+  margin-right: 10px;
 }

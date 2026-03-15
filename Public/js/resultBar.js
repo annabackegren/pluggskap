@@ -1,6 +1,6 @@
 function createResultChart(canvasId, score) {
   const canvas = document.getElementById(canvasId);
-  const maxScore = 10;
+  const maxScore = 5;
 
   const chart = new Chart(canvas, {
     type: "bar",
@@ -11,10 +11,10 @@ function createResultChart(canvasId, score) {
           label: "Rätt",
           data: [score],
           backgroundColor: "#a68ec1",
-          borderColor: "#446036",
+          borderColor: "#a68ec1",
           borderWidth: 3,
           borderSkipped: false,
-          barThickness: 30,
+          barThickness: 35,
           categoryPercentage: 1,
         },
         {
@@ -30,7 +30,7 @@ function createResultChart(canvasId, score) {
             bottomLeft: 0,
           },
           borderSkipped: false,
-          barThickness: 30,
+          barThickness: 35,
           categoryPercentage: 1,
         },
       ],

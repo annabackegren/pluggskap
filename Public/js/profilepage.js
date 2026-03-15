@@ -151,21 +151,48 @@ async function loadResults() {
       resultsList.innerHTML = "<p>Inga resultat ännu</p>";
       return;
     }
-    results.forEach((result, index) => {
+    results.forEach(async (result, index) => {
       const resultItem = document.createElement("div");
       resultItem.className = "result-item";
       const canvasId = "chart-" + index;
+      let provinceName = result.resultProvinceId;
+      try {
+        const provinceResponse = await fetch(
+          "http://localhost:3000/province/" + result.resultProvinceId,
+        );
+        const provinceData = await provinceResponse.json();
+        provinceName = provinceData.name;
+      } catch (error) {
+        console.error(error);
+      }
       resultItem.innerHTML = `
       <div class="result-header">
-      <span class="result-province">Landskap: ${result.resultProvinceId}</span>
-      <span class="result-score"> ${result.resultScore}/10</span>
+      <span class="result-province"><strong>Landskap:</strong> ${provinceName}</span>
+      <span class="result-score"> ${result.resultScore}/5</span>
+      <button class="show-more-btn">Läs mer>></button>
       </div>
       <div class="chart-container">
       <canvas id="${canvasId}"></canvas>
       </div>
+      <div class="feedback-content" style="display: none;">
+      <p>Kommentar från Lärare:</p>
+      <p>Ingen kommentar ännu</p>
+      </div>
       `;
       resultsList.appendChild(resultItem);
       createResultChart(canvasId, result.resultScore);
+      const btn = resultItem.querySelector(".show-more-btn");
+      const feedback = resultItem.querySelector(".feedback-content");
+
+      btn.addEventListener("click", function () {
+        if (feedback.style.display === "none") {
+          feedback.style.display = "block";
+          btn.textContent = "Dölj>>";
+        } else {
+          feedback.style.display = "none";
+          btn.textContent = "Läs mer >>";
+        }
+      });
     });
   } catch (error) {
     console.error(error);

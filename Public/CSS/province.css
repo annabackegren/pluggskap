@@ -150,8 +150,9 @@ main {
   margin-top: 0;
 }
 
-span {
+#feedback-message span {
   opacity: 0.8;
+  font-style: italic;
 }
 
 .popup {

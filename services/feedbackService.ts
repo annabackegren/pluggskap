@@ -11,8 +11,8 @@ export const getAllFeedback = async () => {
 // ------ GET ALL WHERE USER -------
 export const getUserFeedback = async (userName: string) => {
   const [feedback] = await databaseSQL.query<RowDataPacket[]>(
-`SELECT f.feedbackMessage, f.feedbackProvinceId 
-FROM feedback f JOIN user u ON f.feedbackStudentId = u.userId 
+`SELECT f.feedbackMessage, f.feedbackProvinceId, t.feedbackTeacherId as teacherId
+FROM feedback f JOIN user s ON f.feedbackStudentId = s.userId JOIN user t on f.feedbackTeacherId = t.userId
 WHERE u.userName=?`, 
    [userName]
   );
@@ -35,13 +35,13 @@ WHERE u.userName=?`,
 // ------ GET ALL WHERE USER BY PROVINCE-------
 export const getUserFeedbackByProvince = async (userName: string, provinceId: string) => {
   const [result] = await databaseSQL.query<RowDataPacket[]>(
-`SELECT f.feedbackMessage
-FROM feedback f JOIN user u ON f.feedbackStudentId = u.userId 
+`SELECT f.feedbackMessage, t.userName as teacherName
+FROM feedback f JOIN user u ON f.feedbackStudentId = u.userId JOIN user t on f.feedbackTeacherId = t.userId
 WHERE u.userName=? AND f.feedbackProvinceId = ?`, 
    [userName, provinceId]
   );
 
-  console.log("result är: ", result);
+  // console.log("result är: ", result);
   return result;
 };
 

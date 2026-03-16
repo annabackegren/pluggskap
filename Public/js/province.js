@@ -16,6 +16,15 @@ const provinceHeaderName = document.querySelector(".province-header h1"),
   foodImg = foodCard.querySelector("img"),
   foodName = foodCard.querySelector("p");
 
+const feedbackInfoMessage = document.querySelector("#feedback-info-message");
+const feedbackMessage = document.querySelector("#feedback-message");
+
+if (!feedbackMessage || feedbackMessage.children.length === 0) {
+  feedbackInfoMessage.classList.remove("hidden");
+} else {
+  feedbackInfoMessage.classList.add("hidden");
+}
+
 let provinceData = null;
 
 async function getProvince(provinceId) {
@@ -29,9 +38,64 @@ async function getProvince(provinceId) {
     console.log(data);
     return data;
   } catch (error) {
-    console.error(`Error fetching province with id ${provinceId}`, error);
+    console.error(`Error fetching province`, error);
   }
 }
+
+async function getMyFeedbackProvince(provinceId) {
+  let username = JSON.parse(localStorage.getItem("usernameIndex"));
+
+  try {
+    const response = await fetch(
+      `/feedback/${username}/province/${provinceId}`,
+    );
+
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+    const feedbackData = await response.json();
+    return feedbackData;
+  } catch (error) {
+    console.error(`Error fetching feedback`, error);
+  }
+}
+
+function renderFeedback(feedbackData) {
+  if (!feedbackData || feedbackData.length === 0) {
+    feedbackInfoMessage.classList.remove("hidden");
+    return;
+  } else {
+    feedbackInfoMessage.classList.add("hidden");
+  }
+  feedbackMessage.innerHTML = "";
+
+  feedbackData.forEach((message) => {
+    const li = document.createElement("li");
+
+    const h3 = document.createElement("h3");
+    h3.textContent = message.provinceName;
+
+    const pMessage = document.createElement("p");
+    pMessage.textContent = message.feedbackMessage;
+    const spanTeacherName = document.createElement("span");
+    spanTeacherName.textContent = ` -${message.teacherName}`;
+
+    li.appendChild(h3);
+    li.appendChild(pMessage);
+    pMessage.appendChild(spanTeacherName);
+
+    feedbackMessage.appendChild(li);
+  });
+}
+
+async function initFeedback() {
+  const feedbackData = await getMyFeedbackProvince(provinceId);
+  console.log("Feedback data: ", feedbackData);
+  renderFeedback(feedbackData);
+  return;
+}
+
+initFeedback();
 
 function renderProvince(province) {
   provinceHeaderName.textContent = province.name;
@@ -101,12 +165,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             <dd>${data.height}</dd>
             <dt>Äter:</dt>
             <dd>${data.food}</dd>
-            <dt>Låter:</dt>
-            <dd>
-              <a href="${data.sound}" target="_blank" rel="noopener noreferrer">
-              Lyssna
-              </a>
-            </dd>
             `
                 : ""
             } ${
@@ -120,12 +178,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             <dd>${data.food}</dd>
             <dt>Stannfågel/Flyttfågel:</dt>
             <dd>${data.stay === true ? "Stannfågel" : "Flyttfågel"}</dd>
-            <dt>Låter:</dt>
-            <dd>
-              <a href="${data.sound}" target="_blank" rel="noopener noreferrer">
-              Lyssna
-              </a>
-            </dd>
             `
                 : ""
             } ${

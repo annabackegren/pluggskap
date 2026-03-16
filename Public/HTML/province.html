@@ -1,78 +1,87 @@
 <!doctype html>
 <html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/userCard.css" />
+    <link rel="stylesheet" href="../CSS/backButton.css" />
+    <link rel="stylesheet" href="../CSS/province.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
-  <link rel="stylesheet" href="../CSS/index.css" />
-  <link rel="stylesheet" href="../CSS/userCard.css" />
-  <link rel="stylesheet" href="../CSS/backButton.css">
-  <link rel="stylesheet" href="../CSS/province.css" />
+    <title>Landskapsfakta - Pluggskap</title>
+  </head>
 
-  <title>Landskapsfakta - Pluggskap</title>
-</head>
-
-<body>
-  <header id="header"></header>
-  <main>
-    <section class="user-card"></section>
-
-    <div class="province-wrapper">
-      <div class="province-header">
-        <img src="" alt="Vapensköld" />
-        <h1>Landskapsnamn</h1>
+  <body>
+    <header id="header"></header>
+    <main>
+      <div>
+        <section class="user-card"></section>
+        <section id="feedback-wrapper">
+          <h2>Meddelanden:</h2>
+          <p id="feedback-info-message">
+            Här kommer du att se de meddelanden din lärare har skickat till dig.
+          </p>
+          <ul id="feedback-message"></ul>
+        </section>
       </div>
 
-      <section class="province-grid">
-        <button class="card-button" data-type="animal">
-          <article class="card">
-            <figure><img src="" alt="Landskapsdjur" /></figure>
-            <div class="card-content">
-              <h2>Djur</h2>
-              <p>Djurets namn</p>
-            </div>
-          </article>
-        </button>
-        <button class="card-button" data-type="plant">
-          <article class="card">
-            <figure><img src="" alt="Landskapsväxt" /></figure>
-            <div class="card-content">
-              <h2>Växt</h2>
-              <p></p>
-            </div>
-          </article>
-        </button>
-        <button class="card-button" data-type="bird">
-          <article class="card">
-            <figure><img src="" alt="Landskapsfågel" /></figure>
-            <div class="card-content">
-              <h2>Fågel</h2>
-              <p>Fågelns namn</p>
-            </div>
-          </article>
-        </button>
-        <button class="card-button" data-type="food">
-          <article class="card">
-            <figure><img src="" alt="Landskapsmat" /></figure>
-            <div class="card-content">
-              <h2>Mat</h2>
-              <p>Matens namn</p>
-            </div>
-          </article>
-        </button>
-      </section>
-      <a href="quiz.html" class="quiz-button"><span class="quiz-button-text">Starta quiz</span></a>
-    </div>
+      <div class="province-wrapper">
+        <div class="province-header">
+          <img src="" alt="Vapensköld" />
+          <h1>Landskapsnamn</h1>
+        </div>
 
-    <div id="popup" class="popup">
-      <div class="popup-content"></div>
-    </div>
-  </main>
-  <script src="../js/header.js"></script>
-  <script src="../js/userCard.js"></script>
-  <script src="../js/province.js"></script>
-  <script src="../js/backButton.js"></script>
-</body>
+        <section class="province-grid">
+          <button class="card-button" data-type="animal">
+            <article class="card">
+              <figure><img src="" alt="Landskapsdjur" /></figure>
+              <div class="card-content">
+                <h2>Djur</h2>
+                <p>Djurets namn</p>
+              </div>
+            </article>
+          </button>
+          <button class="card-button" data-type="plant">
+            <article class="card">
+              <figure><img src="" alt="Landskapsväxt" /></figure>
+              <div class="card-content">
+                <h2>Växt</h2>
+                <p></p>
+              </div>
+            </article>
+          </button>
+          <button class="card-button" data-type="bird">
+            <article class="card">
+              <figure><img src="" alt="Landskapsfågel" /></figure>
+              <div class="card-content">
+                <h2>Fågel</h2>
+                <p>Fågelns namn</p>
+              </div>
+            </article>
+          </button>
+          <button class="card-button" data-type="food">
+            <article class="card">
+              <figure><img src="" alt="Landskapsmat" /></figure>
+              <div class="card-content">
+                <h2>Mat</h2>
+                <p>Matens namn</p>
+              </div>
+            </article>
+          </button>
+        </section>
+        <a href="quiz.html" class="quiz-button"
+          ><span class="quiz-button-text">Starta quiz</span></a
+        >
+      </div>
 
+      <div id="popup" class="popup">
+        <div class="popup-content"></div>
+      </div>
+    </main>
+    <script src="../js/header.js"></script>
+    <script src="../js/userCard.js"></script>
+    <script src="../js/province.js"></script>
+    <script src="../js/backButton.js"></script>
+  </body>
 </html>

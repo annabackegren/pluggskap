@@ -512,7 +512,7 @@ food: {
 plant: {
     name: "Mistel",
     type: "Buske",
-    season: "Vinter",
+    season: "Vår",
     protected: false,
     image: "../assets/img/plant/mistletoe.jpg"
 },

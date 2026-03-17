@@ -14,9 +14,10 @@ h1 {
 .quiz-wrapper {
   background-color: var(--light-green);
   border-radius: 15px;
-  border: solid 3px var(--dark-green);
+  /* border: solid 3px var(--dark-green); */
   /* max-width: 63rem; */
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   /* padding-bottom: 1rem; */
   margin: 0 auto;
   /* padding: 1rem; */
@@ -58,7 +59,7 @@ h1 {
 #question-text {
   font-size: 20px;
   font-weight: 500;
-  margin: 2.5rem 0 1rem 0;
+  margin: 1.5rem 0 1rem 0;
 }
 
 #question-counter-bar {
@@ -173,7 +174,9 @@ ul .button {
   }
 
   .quiz-wrapper {
-    max-height: calc(100vh - 16px - 3rem);
+    /* max-height: calc(100vh - 16px - 3rem); */
+    width: clamp(320px, 90%, 600px);
+
     margin-top: 3rem;
     padding: 0 5rem;
   }

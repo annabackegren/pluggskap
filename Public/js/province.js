@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       popupContent.innerHTML = `
-        <span class="close">X</span>
+        <button id="close-button-popup" class="close">&#10007</button>
           <div class="popup-header">
             <figure><img src="${data.image}" alt="Province ${type}"/></figure>
             <h3>${data.name}</h3>
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <dd>${data.wingspan}</dd>
             <dt>Äter:</dt>
             <dd>${data.food}</dd>
-            <dt>Stannfågel/Flyttfågel:</dt>
+            <dt>Stann-/Flyttfågel:</dt>
             <dd>${data.stay === true ? "Stannfågel" : "Flyttfågel"}</dd>
             `
                 : ""
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <dt>Recept:</dt>
             <dd>
               <a href="${data.recipeLink}" target="_blank" rel="noopener noreferrer">
-              Lämna sidan för att se receptet >>
+              Klicka för att öppna receptet i nytt fönster. >>
               </a>
             </dd>
             `

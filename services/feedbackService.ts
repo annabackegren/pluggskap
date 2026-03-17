@@ -45,7 +45,7 @@ JOIN user u ON f.feedbackStudentId = u.userId
 JOIN user t on f.feedbackTeacherId = t.userId
 WHERE u.userName=? AND f.feedbackProvinceId = ?
 ORDER BY f.feedbackCreatedAt DESC
-LIMIT 2`, 
+LIMIT 4`, 
    [userName, provinceId]
   );
 

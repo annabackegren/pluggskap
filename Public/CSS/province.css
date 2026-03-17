@@ -4,6 +4,10 @@ main {
   margin-bottom: 1rem;
 }
 
+a {
+  color: var(--text-dark);
+}
+
 .hidden {
   display: none;
 }
@@ -183,8 +187,7 @@ main {
 .popup-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .popup-header figure {
@@ -211,7 +214,8 @@ main {
   display: grid;
   grid-template-columns: max-content 1fr;
   row-gap: 0.5rem;
-  column-gap: 0.2rem;
+  column-gap: 2rem;
+  margin-top: 2rem;
 }
 
 .popup-content dl dt {
@@ -220,6 +224,25 @@ main {
 
 .popup-content dl dd {
   margin-left: 0;
+}
+
+#close-button-popup {
+  display: block;
+  background-color: var(--dark-green);
+  color: var(--text-light);
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border: solid 2px transparent;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+  width: 30px;
+  height: auto;
+  padding: 0;
+}
+
+#close-button-popup:hover {
+  transform: scale(1.05);
+  border: solid 2px white;
 }
 
 .popup-content .close {
@@ -263,7 +286,7 @@ main {
   }
 
   .popup-header figure {
-    min-width: 13rem;
+    min-width: 50%;
   }
 }
 

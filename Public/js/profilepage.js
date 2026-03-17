@@ -13,6 +13,8 @@ const deleteBox = document.querySelector("#confirm-delete-user-box");
 const userUpdated = document.querySelector("#user-updated");
 const closeUserBtn = document.querySelector("#close-user-box");
 const closeDeleteBtn = document.querySelector("#close-delete-box");
+const updateUserBtn = document.querySelector("#change-user-button");
+const confirmDeleteBtn = document.querySelector("#confirm-delete-user");
 
 userUpdated.style.display = "none";
 changeOverlay.style.display = "none";
@@ -20,6 +22,9 @@ changeOverlay.style.display = "none";
 closeUserBtn.addEventListener("click", (e) => {
   e.preventDefault();
   changeOverlay.style.display = "none";
+  username.value = "";
+  password.value = "";
+  updateUserBtn.disabled = true;
 });
 
 closeDeleteBtn.addEventListener("click", () => {
@@ -54,6 +59,9 @@ document.addEventListener("click", () => {
   if (deleteBox.style.display === "block") {
     deleteBox.style.display = "none";
   }
+  username.value = "";
+  password.value = "";
+  updateUserBtn.disabled = true;
 });
 
 function clearInputs() {
@@ -123,8 +131,27 @@ async function deleteUser() {
   }
 }
 
-const updateUserBtn = document.querySelector("#change-user-button");
-const confirmDeleteBtn = document.querySelector("#confirm-delete-user");
+updateUserBtn.disabled = true;
+
+function checkUpdateForm() {
+  if (
+    username.value.length < 1 ||
+    username.value.length > 10 ||
+    password.value.length < 4
+  ) {
+    updateUserBtn.disabled = true;
+  } else {
+    updateUserBtn.disabled = false;
+  }
+}
+
+username.addEventListener("keyup", () => {
+  checkUpdateForm();
+});
+
+password.addEventListener("keyup", () => {
+  checkUpdateForm();
+});
 
 updateUserBtn.addEventListener("click", (e) => {
   e.preventDefault();

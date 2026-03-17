@@ -1,5 +1,6 @@
 main {
   position: relative;
+  height: 100vh;
 }
 
 #change-user-info {
@@ -16,8 +17,7 @@ main {
   border: none;
   border-radius: 6px;
   transition: transform 0.2s ease;
-  margin-left: 20px;
-  margin-right: 10px;
+  margin-left: 5px;
 }
 
 #change-user-info:hover {
@@ -38,13 +38,9 @@ main {
 #text-box {
   background-color: #b6da7e;
   width: 360px;
-  max-height: 500px;
-  height: auto;
-  border: 3px solid #9ec95e;
+  height: 500px;
+  border: none;
   border-radius: 10px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-bottom: 15px;
 }
 
 #user-info-box {
@@ -211,10 +207,17 @@ h2 {
   margin-bottom: 30px;
 }
 
+#change-user-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: grey;
+}
+
 #user-updated {
   position: absolute;
   margin-top: 230px;
 }
+
 
 #results-list {
   padding: 15px;

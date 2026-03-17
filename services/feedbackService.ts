@@ -11,20 +11,24 @@ export const getAllFeedback = async () => {
 // ------ GET ALL WHERE USER -------
 export const getUserFeedback = async (userName: string) => {
   const [feedback] = await databaseSQL.query<RowDataPacket[]>(
-`SELECT f.feedbackMessage, f.feedbackProvinceId, t.feedbackTeacherId as teacherId
-FROM feedback f JOIN user s ON f.feedbackStudentId = s.userId JOIN user t on f.feedbackTeacherId = t.userId
-WHERE u.userName=?`, 
+`SELECT f.feedbackMessage, f.feedbackProvinceId, f.feedbackCreatedAt ,t.userName as teacherName
+FROM feedback f 
+JOIN user s ON f.feedbackStudentId = s.userId 
+JOIN user t on f.feedbackTeacherId = t.userId
+WHERE s.userName=? 
+ORDER BY f.feedbackCreatedAt DESC 
+LIMIT 10`, 
    [userName]
   );
 
   const result = await Promise.all(
-    (feedback as any[]).map(async fedbackObject => {
+    (feedback as any[]).map(async feedbackObject => {
       const province = await database
       .collection("provinces")
-      .findOne({id: fedbackObject.feedbackProvinceId})
+      .findOne({id: feedbackObject.feedbackProvinceId})
 
       return{
-        ...fedbackObject,
+        ...feedbackObject,
         provinceName: province?.name || "Okänt landskap",
       }
     })
@@ -35,9 +39,13 @@ WHERE u.userName=?`,
 // ------ GET ALL WHERE USER BY PROVINCE-------
 export const getUserFeedbackByProvince = async (userName: string, provinceId: string) => {
   const [result] = await databaseSQL.query<RowDataPacket[]>(
-`SELECT f.feedbackMessage, t.userName as teacherName
-FROM feedback f JOIN user u ON f.feedbackStudentId = u.userId JOIN user t on f.feedbackTeacherId = t.userId
-WHERE u.userName=? AND f.feedbackProvinceId = ?`, 
+`SELECT f.feedbackMessage, f.feedbackCreatedAt, t.userName as teacherName
+FROM feedback f 
+JOIN user u ON f.feedbackStudentId = u.userId 
+JOIN user t on f.feedbackTeacherId = t.userId
+WHERE u.userName=? AND f.feedbackProvinceId = ?
+ORDER BY f.feedbackCreatedAt DESC
+LIMIT 2`, 
    [userName, provinceId]
   );
 

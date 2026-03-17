@@ -27,6 +27,7 @@ CREATE TABLE result(
     resultScore INT NOT NULL,
     resultUserId INT NOT NULL,
     resultProvinceId VARCHAR(20) NOT NULL,
+    resultCreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (resultId),
     FOREIGN KEY (resultUserId) REFERENCES user(userId)
 );
@@ -52,71 +53,96 @@ SELECT * FROM user;
 
 INSERT INTO question(questionText, questionImg, questionAnswerC, questionAnswerW1, questionAnswerW2, questionAnswerW3, questionProvinceId)
 VALUES
+-- Härjedalen
 ('Vilket djur är detta?', '../assets/img/animal/bear.jpg', 'Björn', 'Varg', 'Älg', 'Rådjur', 'hrj'),
 ('När blommar Gullvivan?', '../assets/img/plant/primula.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'nrk'),
 ('Vad äter kungsörnen?', '../assets/img/bird/golden_eagle.jpg', 'Harar, ripor och andra mindre djur', 'Insekter','Insekter, maskar och smådjur','Fisk','hrj'),
 ('Vilken fisk ingår i Härjedalens landskapsrätt?', '../assets/img/food/roding_med_flotgrot.jpg','Röding','Torsk','Gädda', 'Gös','hrj'),
 ('Hur mycket kan en björn väga?','../assets/img/animal/bear.jpg','100-300 kg','100-300 g','50-100kg','400-550 kg','hrj'),
 ('Vilket vingspann har kungsörnen?','../assets/img/bird/golden_eagle.jpg','190-225 cm','40-75 cm','10-23 cm','250-340 cm','hrj'),
+
+-- Närke
 ('Vad äter hasselmusen?','../assets/img/animal/mouse.jpg','Frön, nötter och insekter', 'Bär, växter, insekter, fisk och mindre däggdjur','Barr, knoppar, bär och insekter','Gräs, blad, frukt och kvistar','nrk'),
 ('Vad heter Närkes landskapsfågel?','../assets/img/bird/gulsparv.jpg','Gulsparv','Gulfink','Gyllensparv','Guldfink','nrk'),
 ('Vad heter Närkes landskapsblomma?','../assets/img/plant/primula.jpg','Gullviva','Gullig viva', 'Gyllenlack', 'Gulklocka','nrk'),
 ('Vilket kött används oftast till skomakarlåda?','../assets/img/food/skomakarlada.jpg','Nötkött','Fårkött','Fläskkött','Ankkött','nrk'),
 ('Vad heter Närkes landskapsrätt?','../assets/img/food/skomakarlada.jpg','Skomakarlåda','Skokartong','Skosula','Skohylla','nrk'),
+
+-- Lappland
 ('Vilket djur är detta?', '../assets/img/animal/arctic-fox.jpg', 'Fjällräv', 'Räv', 'Hermelin', 'Iller', 'lpl'),
 ('Vad äter fjällräven?', '../assets/img/animal/arctic-fox.jpg', 'Smågnagare', 'Fisk', 'Bär', 'Gräs', 'lpl'),
 ('Vad heter Lapplands landskapsfågel?', '../assets/img/bird/bluethroat.jpg', 'Blåhake', 'Blåmes', 'Blåtrast', 'Blåkråka', 'lpl'),
 ('Hur mycket kan fjällräven väga?', '../assets/img/animal/arctic-fox.jpg', '3-8 kg', '10-15 kg', '1-2 kg', '20-30 kg', 'lpl'),
 ('Vad heter Lapplands landskapsrätt?', '../assets/img/food/suovas_pirko.jpg', 'Souvas Pirko', 'Renskav', 'Souvasgryta', 'Renpaj', 'lpl'),
 ('När blommar fjällsippan?', '../assets/img/plant/dryas-octopetala.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'lpl'),
+
+-- Norrbotten
 ('Vad heter Norrbottens landskapsdjur?', '../assets/img/animal/siberian-jay.jpg', 'Lavskrika', 'Korp', 'Skata', 'Nötskrika', 'nbt'),
 ('Vad äter lavskrikan?', '../assets/img/bird/siberian-jay.jpg', 'Allätare', 'Fisk', 'Bär', 'Frön', 'nbt'),
 ('Vad heter Norrbottens landskapsrätt?', '../assets/img/food/pitepalt.jpg', 'Pitepalt', 'Blodpalt', 'Potatispalt', 'Paltbröd', 'nbt'),
+('Vilken är huvudingrediensen i pitepalt?', '../assets/img/food/pitepalt.jpg', 'Potatis', 'Ägg', 'Morot', 'Ris', 'nbt'),
 ('Hur stort vingspann har lavskrikan?', '../assets/img/bird/siberian-jay.jpg', '40-46 cm', '20-30 cm', '60-80 cm', '100-120 cm', 'nbt'),
 ('Vad är åkerbär för typ av växt?', '../assets/img/plant/rubus_arcticus.jpg', 'Bärväxt', 'Träd', 'Buske', 'Gräs', 'nbt'),
-('När växer åkerbär?', '../assets/img/plant/rubus_arcticus.jpg', 'Sommar', 'Vinter', 'Höst', 'Vår', 'nbt'),
+('När är det säsong för åkerbär?', '../assets/img/plant/rubus_arcticus.jpg', 'Sommar', 'Vinter', 'Höst', 'Vår', 'nbt'),
+
+-- Västerbotten
 ('Vilken fågel är detta?', '../assets/img/bird/curlew.jpg', 'Storspov', 'Storlom', 'Trana', 'Skrattmås', 'vbt'),
 ('Vad äter storspoven?', '../assets/img/bird/curlew.jpg', 'Insekter, maskar och smådjur', 'Fisk', 'Frön', 'Bär', 'vbt'),
 ('Vad heter Västerbottens landskapsrätt?', '../assets/img/food/klassisk_vasterbottenpaj.jpg', 'Västerbottenpaj', 'Ostpaj', 'Potatispaj', 'Äggpaj', 'vbt'),
+('Vilken är huvudingrediensen i en västerbottenpaj?', '../assets/img/food/klassisk_vasterbottenpaj.jpg', 'Ost', 'Skinka', 'Pastej', 'Räkor', 'vbt'),
 ('Hur mycket kan storspoven väga?', '../assets/img/animal/curlew.jpg', '700-1000 g', '100-200 g', '2-3 kg', '3-5 kg', 'vbt'),
 ('När blommar Kung Karls spira?', '../assets/img/plant/pedicularis.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'vbt'),
 ('Vad är Kung Karls spira för typ av växt?', '../assets/img/plant/pedicularis.jpg', 'Blomma', 'Träd', 'Buske', 'Gräs', 'vbt'),
+
+-- Ångermanland
 ('Vilket djur är detta?', '../assets/img/animal/beaver.jpg', 'Bäver', 'Utter', 'Bisam', 'Mård', 'aml'),
 ('Vad äter bävern?', '../assets/img/animal/beaver.jpg', 'Bark, kvistar, löv och vattenväxter', 'Fisk', 'Insekter', 'Bär', 'aml'),
 ('Vad heter Ångermanlands landskapsfågel?', '../assets/img/bird/green-woodpecker.jpg', 'Gråspett', 'Hackspett', 'Spillkråka', 'Trädkrypare', 'aml'),
 ('Hur mycket kan en bäver väga?', '../assets/img/animal/beaver.jpg', '18-30 kg', '5-10 kg', '40-60 kg', '1-3 kg', 'aml'),
 ('Vad heter Ångermanlands landskapsrätt?', '../assets/img/food/surstrommingsklamma.jpg', 'Surströmmingsklämma', 'Strömmingsmacka', 'Fiskklämma', 'Surfisk', 'aml'),
 ('När blommar styvmorsviolen?', '../assets/img/plant/wild_pansies.jpg', 'Vår-sommar', 'Sommar', 'Höst', 'Vinter', 'aml'),
+
+-- Jämtland
 ('Vilket djur är detta?', '../assets/img/animal/moose.jpg', 'Älg', 'Rådjur', 'Hjort', 'Ren', 'jml'),
 ('Vad äter älgen?', '../assets/img/animal/moose.jpg', 'Gräs, örter och träd', 'Fisk', 'Insekter', 'Bär', 'jml'),
 ('Vad heter Jämtlands landskapsfågel?', '../assets/img/bird/northern-hawk-owl.jpg', 'Hökuggla', 'Hornuggla', 'Kattuggla', 'Slaguggla', 'jml'),
 ('Hur mycket kan en älg väga?', '../assets/img/animal/moose.jpg', '200-600 kg', '50-100 kg', '20-40 kg', '700-900 kg', 'jml'),
 ('Vad heter Jämtlands landskapsrätt?', '../assets/img/food/algfile-med-murkelsas.jpg', 'Älgstek med murklor', 'Älggryta', 'Älgpaj', 'Älgsoppa', 'jml'),
 ('Är brunkullan fridlyst?', '../assets/img/plant/brunkulla.jpg', 'Ja', 'Nej', 'Bara på vintern', 'Bara i fjällen', 'jml'),
+
+-- Medelpad
 ('Vilket djur är detta?', '../assets/img/animal/rabbit.jpg', 'Skogshare', 'Fälthare', 'Kanin', 'Hermelin', 'mpd'),
 ('Vad äter skogsharen?', '../assets/img/animal/rabbit.jpg', 'Gräs, örter, kvistar och bark', 'Fisk', 'Insekter', 'Frön', 'mpd'),
 ('Vad heter Medelpads landskapsfågel?', '../assets/img/bird/loxia.jpg', 'Mindre korsnäbb', 'Större korsnäbb', 'Domherre', 'Grönfink', 'mpd'),
 ('Hur mycket kan skogsharen väga?', '../assets/img/animal/rabbit.jpg', '2-5 kg', '10-15 kg', '500 g', '6-9 kg', 'mpd'),
 ('Vad heter Medelpads landskapsrätt?', '../assets/img/food/tjalknol_med_rotfruktsgratang.jpg', 'Tjälknöl', 'Älgstek', 'Renskav', 'Köttgryta', 'mpd'),
 ('Vad är gran för typ av växt?', '../assets/img/plant/picea_abies.jpg', 'Träd', 'Blomma', 'Buske', 'Gräs', 'mpd'),
+
+-- Hälsingland
 ('Vilket djur är detta?', '../assets/img/animal/lynx.jpg', 'Lodjur', 'Varg', 'Räv', 'Järv', 'hsl'),
 ('Vad äter lodjuret?', '../assets/img/animal/lynx.jpg', 'Rådjur, hare och fågel', 'Fisk', 'Bär', 'Gräs', 'hsl'),
 ('Vad heter Hälsinglands landskapsfågel?', '../assets/img/bird/ural-owl.jpg', 'Slaguggla', 'Hornuggla', 'Hökuggla', 'Berguv', 'hsl'),
 ('Hur mycket kan lodjuret väga?', '../assets/img/animal/lynx.jpg', '18-30 kg', '5-10 kg', '40-60 kg', '2-5 kg', 'hsl'),
 ('Vad heter Hälsinglands landskapsrätt?', '../assets/img/food/halsingeostkaka.jpg', 'Hälsingeostkaka', 'Ostkaka', 'Mjölkkaka', 'Mandelkaka', 'hsl'),
 ('När växer lin?', '../assets/img/plant/linum.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'hsl'),
+
+-- Gästrikland
 ('Vilket djur är detta?', '../assets/img/animal/tjader.jpg', 'Tjäder', 'Orre', 'Fasan', 'Ripa', 'grl'),
 ('Vad äter tjädern?', '../assets/img/animal/tjader.jpg', 'Barr, knoppar, bär och insekter', 'Fisk', 'Frön', 'Gräs', 'grl'),
 ('Vad heter Gästriklands landskapsfågel?', '../assets/img/bird/big_loon.jpg', 'Storlom', 'Smålom', 'Trana', 'Svan', 'grl'),
 ('Hur stort vingspann har storlommen?', '../assets/img/bird/big_loon.jpg', '122–148 cm', '50–70 cm', '160–200 cm', '20–40 cm', 'grl'),
 ('Vad heter Gästriklands landskapsrätt?', '../assets/img/food/sotare_med_farskpotatis.jpg', 'Sotare med färskpotatis', 'Stekt fisk', 'Fiskgryta', 'Rökt fisk', 'grl'),
 ('När blommar liljekonvaljen?', '../assets/img/plant/lily-of-the-valley.jpg', 'Vår', 'Sommar', 'Höst', 'Vinter', 'grl'),
+
+-- Dalarna
 ('Vilken fågel är detta?', '../assets/img/bird/bubo.jpg', 'Berguv', 'Kattuggla', 'Slaguggla', 'Hornuggla', 'dal'),
 ('Vad äter berguven?', '../assets/img/bird/bubo.jpg', 'Harar, gnagare och fåglar', 'Fisk', 'Frön', 'Bär', 'dal'),
 ('Hur mycket kan berguven väga?', '../assets/img/animal/bubo.jpg', '1,5–4 kg', '200–400 g', '5–7 kg', '500–900 g', 'dal'),
 ('Vad heter Dalarnas landskapsrätt?', '../assets/img/food/raraka.webp', 'Rårakor med fläsk', 'Fläskpannkaka', 'Potatisplättar', 'Stekt potatis', 'dal'),
 ('När blommar ängsklockan?', '../assets/img/plant/bellflower.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'dal'),
 ('Vad är ängsklocka för typ av växt?', '../assets/img/plant/bellflower.jpg', 'Blomma', 'Träd', 'Buske', 'Gräs', 'dal'),
+
+-- Uppland
 ('Vilken fågel är detta?', '../assets/img/bird/eagle.jpg', 'Havsörn', 'Kungsörn', 'Ormvråk', 'Fiskgjuse', 'upl'),
 ('Vad äter havsörnen?', '../assets/img/animal/eagle.jpg', 'Fisk och sjöfågel', 'Insekter', 'Frön', 'Bär', 'upl'),
 ('Hur stort vingspann har havsörnen?', '../assets/img/bird/eagle.jpg', '200–245 cm', '120–150 cm', '50–70 cm', '260–300 cm', 'upl'),
@@ -243,7 +269,23 @@ VALUES ('Bra jobbat med Lappland-quiz!', 1, 1, 'lpl'),
 ('Bättre lycka nästa gång!', 1, 1, 'hrj'),
 ('Bra svarat på alla frågor!', 1, 1, 'nbt');
 
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Läs lite till om Tranor', 1, 2, 'vgl');
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Du kan mycket om Ljung, bra jobbat!', 1, 2, 'vgl'),
+       ('Bättre lycka nästa gång!', 1, 1, 'hsl');
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Snyggt jobbat!', 1, 2, 'hsl');
+
+INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
+VALUES ('Det här har du läst på om!', 1, 2, 'vgl');
+
 SELECT * FROM feedback;
+
+SELECT f.feedbackMessage, f.feedbackProvinceId, t.userName as teacherName FROM feedback f JOIN user s ON f.feedbackStudentId = s.userId JOIN user t ON f.feedbackTeacherId = t.userId WHERE s.userName="kerstin";
+
 
 
 DROP TABLE result;

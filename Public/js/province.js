@@ -35,7 +35,7 @@ async function getProvince(provinceId) {
       throw new Error("Something went wrong");
     }
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error(`Error fetching province`, error);
@@ -90,7 +90,7 @@ function renderFeedback(feedbackData) {
 
 async function initFeedback() {
   const feedbackData = await getMyFeedbackProvince(provinceId);
-  console.log("Feedback data: ", feedbackData);
+  // console.log("Feedback data: ", feedbackData);
   renderFeedback(feedbackData);
   return;
 }

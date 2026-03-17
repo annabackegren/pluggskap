@@ -185,7 +185,7 @@ VALUES
 -- Västergötland
 ('Vilket djur är Västergötlands landskapsdjur?', '../assets/img/animal/crane.jpg', 'Trana', 'Korp', 'Knölsvan', 'Utter', 'vgl'),
 ('Vad äter tranan?', '../assets/img/bird/crane.jpg', 'Växter, insekter och smådjur', 'Fisk', 'Maskar', 'Bär', 'vgl'),
-('Vilken buske blommar i Västergötland under sommaren?', '../assets/img/plant/hether.jpg', 'Ljung', 'Ginst', 'Blåklint', 'Solvända', 'vgl'),
+('Vilken buske blommar i Västergötland under sommaren?', '../assets/img/plant/heather.jpg', 'Ljung', 'Ginst', 'Blåklint', 'Solvända', 'vgl'),
 ('Vilken maträtt är typisk för Västergötland?', '../assets/img/food/grynkorv.jpg', 'Grynkorv med stuvade bönor', 'Raggmunk med lingon', 'Sjömansbiff', 'Äggakaka', 'vgl'),
 ('Hur hög kan en trana bli?', '../assets/img/animal/crane.jpg', '100–130 cm', '55–90 cm', '70–100 cm', '120–150 cm', 'vgl'),
 ('Vilket vingspann har tranan?', '../assets/img/bird/crane.jpg', '180–240 cm', '115–150 cm', '33–36 cm', '200–240 cm', 'vgl'),

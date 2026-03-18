@@ -1,10 +1,14 @@
 import express from 'express';
-import {getQuestion, getQuestionOne} from '../controllers/quizController.ts'
+import {getQuestion, getAllByProvince, getQuizQuestions, getQuizCountryQuestions} from '../controllers/quizController.ts'
 
 const router = express.Router()
 
+router.get('/country', getQuizCountryQuestions)
+router.get('/:id', getQuizQuestions)
 router.get('/', getQuestion)
-router.get('/:id', getQuestionOne)
+
 
 
 export default router
+
+// router.get('/:id', getAllByProvince)

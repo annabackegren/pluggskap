@@ -12,7 +12,7 @@ async function header() {
       hamburgerWrapper = headerEl.querySelector("#hamburger-wrapper"),
       currentPage = window.location.pathname.split("/").pop();
 
-    if (currentPage === "index.html") {
+    if (currentPage === "index.html" || currentPage === "quizCountry.html") {
       menu.style.display = "none";
       if (hamburgerWrapper) {
         hamburgerWrapper.style.display = "none";

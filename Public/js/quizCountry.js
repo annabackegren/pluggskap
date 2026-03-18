@@ -1,5 +1,5 @@
-const urlParamsId = new URLSearchParams(window.location.search),
-  provinceId = urlParamsId.get("id");
+// const urlParamsId = new URLSearchParams(window.location.search),
+//   provinceId = urlParamsId.get("id");
 
 const provinceHeaderName = document.querySelector(".quiz-header h1"),
   questionCounter = document.querySelector("#question-counter"),
@@ -16,9 +16,9 @@ const provinceHeaderName = document.querySelector(".quiz-header h1"),
 
 let questions = [],
   currentIndex = 0,
-  score = 0,
-  userId = null,
-  provinceName = "";
+  score = 0;
+//   userId = null,
+//   provinceName = "";
 
 // ------------- HELPERS -------------
 
@@ -34,15 +34,17 @@ function shuffleArray(array) {
   return arr;
 }
 
-function quizFeedback(score, total, province) {
+function quizFeedback(score, total) {
+  // function quizFeedback(score, total, province) {
   const percent = (score / total) * 100;
 
-  if (percent === 100) return `Du är en expert på ${province}!`;
-  if (percent >= 80) return `Du kan nästan allt om ${province}!`;
-  if (percent >= 60) return `Du har bra koll på ${province}!`;
+  if (percent === 100)
+    return `Bra jobbat! Du verkar vara en expert på Sverige!`;
+  if (percent >= 80) return `Snyggt! Du kan ju nästan allt om Sverige!`;
+  if (percent >= 60) return `Bra koll du verkar ha!`;
   if (percent >= 40)
-    return `Läs på lite mer om ${province} så sitter det snart!`;
-  return `Gå tillbaka till ${province} och försök igen!`;
+    return `Läs på lite mer om Sveriges landskap så sitter det snart!`;
+  return `Läs på lite mer om landskapen och försök sedan igen!`;
 }
 
 function createAnswerButton(answer) {
@@ -59,42 +61,42 @@ function createAnswerButton(answer) {
 
 // ------------- FETCH -------------
 
-async function getUser() {
-  let username = JSON.parse(localStorage.getItem("usernameIndex"));
+// async function getUser() {
+//   let username = JSON.parse(localStorage.getItem("usernameIndex"));
 
-  const userurl = `/user/${username}`;
+//   const userurl = `/user/${username}`;
+//   try {
+//     const response = await fetch(userurl);
+//     if (!response.ok) {
+//       throw new Error("Something went wrong");
+//     }
+
+//     const user = await response.json();
+//     console.log("userId är: ", user.userId);
+//     return user.userId;
+//   } catch (error) {
+//     console.error(`Error fetching userId: `, error);
+//   }
+// }
+
+// async function getProvince(provinceId) {
+//   try {
+//     const response = await fetch(`/province/${provinceId}`);
+
+//     if (!response.ok) {
+//       throw new Error("Something went wrong");
+//     }
+//     const data = await response.json();
+//     console.log(data);
+//     return data;
+//   } catch (error) {
+//     console.error(`Error fetching province with id ${provinceId}`, error);
+//   }
+// }
+
+async function getQuestions() {
   try {
-    const response = await fetch(userurl);
-    if (!response.ok) {
-      throw new Error("Something went wrong");
-    }
-
-    const user = await response.json();
-    console.log("userId är: ", user.userId);
-    return user.userId;
-  } catch (error) {
-    console.error(`Error fetching userId: `, error);
-  }
-}
-
-async function getProvince(provinceId) {
-  try {
-    const response = await fetch(`/province/${provinceId}`);
-
-    if (!response.ok) {
-      throw new Error("Something went wrong");
-    }
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.error(`Error fetching province with id ${provinceId}`, error);
-  }
-}
-
-async function getQuestions(provinceId) {
-  try {
-    const response = await fetch(`/quiz/${provinceId}`);
+    const response = await fetch(`/quiz/country`);
 
     if (!response.ok) {
       throw new Error("Something went wrong");
@@ -107,33 +109,52 @@ async function getQuestions(provinceId) {
 
     renderCurrentQuestion();
   } catch (error) {
-    console.error(`Error fetching question with id for ${provinceId}`, error);
+    console.error(`Error fetching questions`, error);
   }
 }
 
-async function saveResult() {
-  console.log(score, userId, provinceId);
-  try {
-    await fetch("/result", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        resultScore: score,
-        resultUserId: userId,
-        resultProvinceId: provinceId,
-      }),
-    });
-  } catch (error) {
-    console.error("Kunde inte spara resultatet:", error);
-  }
-}
+// async function getQuestions(provinceId) {
+//   try {
+//     const response = await fetch(`/quiz/${provinceId}`);
+
+//     if (!response.ok) {
+//       throw new Error("Something went wrong");
+//     }
+//     const data = await response.json();
+//     console.log("Alla frågor från backend: ", data);
+
+//     questions = data;
+//     currentIndex = 0;
+
+//     renderCurrentQuestion();
+//   } catch (error) {
+//     console.error(`Error fetching question with id for ${provinceId}`, error);
+//   }
+// }
+
+// async function saveResult() {
+//   console.log(score, userId, provinceId);
+//   try {
+//     await fetch("/result", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         resultScore: score,
+//         resultUserId: userId,
+//         resultProvinceId: provinceId,
+//       }),
+//     });
+//   } catch (error) {
+//     console.error("Kunde inte spara resultatet:", error);
+//   }
+// }
 
 // ------------- QUIZ -------------
 
-function renderProvince(province) {
-  provinceName = province.name;
-  provinceHeaderName.textContent = provinceName;
-}
+// function renderProvince(province) {
+//   provinceName = province.name;
+//   provinceHeaderName.textContent = provinceName;
+// }
 
 function renderCurrentQuestion() {
   if (currentIndex >= questions.length) {
@@ -209,7 +230,8 @@ function changeButtonText() {
 }
 
 function quizEnd() {
-  const feedback = quizFeedback(score, questions.length, provinceName);
+  const feedback = quizFeedback(score, questions.length);
+  //   const feedback = quizFeedback(score, questions.length, provinceName);
   questionText.textContent = `Du fick ${score} av ${questions.length} rätt!`;
   feedbackText.style.display = "block";
   feedbackText.textContent = `${feedback}`;
@@ -222,24 +244,24 @@ function quizEnd() {
   nextButton.style.display = "none";
   endButtons.style.display = "flex";
 
-  saveResult();
+  //   saveResult();
 
   return;
 }
 
 // ------------- INIT QUIZFUNCTIONS -------------
 
-async function loadUser() {
-  userId = await getUser();
-}
+// async function loadUser() {
+//   userId = await getUser();
+// }
 
-async function loadProvince() {
-  const provinceData = await getProvince(provinceId);
+// async function loadProvince() {
+//   const provinceData = await getProvince(provinceId);
 
-  if (provinceData) {
-    renderProvince(provinceData);
-  }
-}
+//   if (provinceData) {
+//     renderProvince(provinceData);
+//   }
+// }
 
 async function buttonEvents() {
   nextButton.addEventListener("click", () => {
@@ -265,11 +287,12 @@ async function buttonEvents() {
 // ------------- INIT QUIZ -------------
 
 async function initQuiz() {
-  if (!provinceId) return;
+  //   if (!provinceId) return;
 
-  await loadUser();
-  await loadProvince();
-  await getQuestions(provinceId);
+  //   await loadUser();
+  //   await loadProvince();
+  await getQuestions();
+  //   await getQuestions(provinceId);
   buttonEvents();
 }
 

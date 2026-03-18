@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/backButton.css" />
+    <link rel="stylesheet" href="../CSS/province.css" />
+    <link rel="stylesheet" href="../CSS/quizCountry.css" />
+
+    <title>Landskapsfakta - Pluggskap</title>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main>
+      <div class="quiz-wrapper">
+        <div class="quiz-header">
+          <h1>Quizet om Sverige</h1>
+          <p>Testa dina kunskaper om Sverige och dess landskap.</p>
+          <p>(För att kunna spara dina resultat måste du logga in.)</p>
+        </div>
+        <div id="question-wrapper">
+          <div class="counter-container">
+            <p id="question-counter"></p>
+            <div class="chart-container">
+              <canvas id="question-counter-bar"></canvas>
+            </div>
+          </div>
+          <p id="question-text"></p>
+          <img src="" alt="" id="question-img" />
+          <img
+            src="../assets/img/misc/party-monster.png"
+            alt=""
+            id="quiz-end-img"
+          />
+          <ul id="question-answers"></ul>
+          <p id="quiz-feedback"></p>
+        </div>
+        <button id="next-button" class="button">Nästa fråga >></button>
+        <div id="quiz-end-buttons">
+          <button id="restart-button" class="button">Spela igen</button>
+          <button id="back-province-button" class="button">
+            Tillbaka till landskapet
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="../js/header.js"></script>
+    <script src="../js/backButton.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="../js/counterBar.js"></script>
+    <script src="../js/quizCountry.js"></script>
+  </body>
+</html>

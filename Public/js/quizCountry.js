@@ -270,7 +270,7 @@ async function buttonEvents() {
   });
 
   restartButton.addEventListener("click", async () => {
-    await getQuestions(provinceId);
+    await getQuestions();
     currentIndex = 0;
     score = 0;
 
@@ -278,9 +278,9 @@ async function buttonEvents() {
     renderCurrentQuestion();
   });
 
-  const previousUrl = document.referrer;
+  //   const previousUrl = document.referrer;
   backButton.addEventListener("click", async () => {
-    window.location.href = previousUrl;
+    window.location.href = "index.html";
   });
 }
 

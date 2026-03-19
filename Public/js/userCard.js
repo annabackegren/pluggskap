@@ -11,6 +11,18 @@ async function user() {
 
     if (usernameEl)
       usernameEl.textContent = showUsername || "Förnamn Efternamn";
+
+    try {
+      const response = await fetch("/user/" + showUsername);
+      const userData = await response.json();
+      const profileImg = userEl.querySelector("img");
+
+      if (profileImg && userData.userType === "larare") {
+        profileImg.src = "../assets/img/misc/dancing.png";
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const userCardBox = document.querySelector("#user-card-box");

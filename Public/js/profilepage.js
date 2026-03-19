@@ -197,7 +197,7 @@ async function checkUserType() {
           }
           resultItem.innerHTML = `
       <div class="result-header">
-      <span class="result-province"><strong>Landskap:</strong> ${provinceName}</span>
+      <span class="result-province"><strong>${provinceName}</strong></span>
       <span class="result-score"> ${result.resultScore}/5</span>
       <button class="show-more-btn" type="button">Läs mer>></button>
       </div>

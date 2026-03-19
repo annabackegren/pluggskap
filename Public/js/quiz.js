@@ -256,9 +256,8 @@ async function buttonEvents() {
     renderCurrentQuestion();
   });
 
-  const previousUrl = document.referrer;
   backButton.addEventListener("click", async () => {
-    window.location.href = previousUrl;
+    window.location.href = "/html/map.html";
   });
 }
 

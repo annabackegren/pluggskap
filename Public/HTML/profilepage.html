@@ -17,14 +17,40 @@
   <main>
     <section class="user-card"></section>
     <button id="change-user-info">Ändra</button>
-    <div id="result-box">
+    <form id="feedbackForm">
+        <label class="teacherPage">Välj elev...</label>
+        <select id="studentId" required class="teacherPage">
+          <option value=""></option>
+        </select>
+        <label class="teacherPage">Välj landskap...</label>
+        <select id="provinceId" provinceId required class="teacherPage">
+          <option value="" aria-placeholder="Välj landskap..."></option>
+        </select>
+        <div id="result-box">
+          <div id="text-box">
+            <div id="results-list"></div>
+            <div class="chart-container">
+          <canvas id="result-chart"></canvas>
+        </div>
+          </div>
+        </div>
+        <textarea
+          id="feedbackReport"
+          placeholder="Skriv feedback här ..."
+          rows="5"
+          required class="teacherPage"
+        ></textarea>
+        <div id="message" class="teacherPage"></div>
+        <button type="submit" id="feedback-btn" class="teacherPage">Skicka Feedback</button>
+      </form>
+    <!-- <div id="result-box">
       <div id="text-box">
         <div id="results-list"></div>
         <div class="chart-container">
           <canvas id="result-chart"></canvas>
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="user-info-box">
       <section id="user-info">
         <form id="change-user-form">

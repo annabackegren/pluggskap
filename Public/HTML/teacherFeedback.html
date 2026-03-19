@@ -1,40 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skapa Feedback - Pluggskap</title>
-    <link rel="stylesheet" href="../CSS/index.css">
-    <link rel="stylesheet" href="../CSS/teacherFeedback.css">
-    <link rel="stylesheet" href="../CSS/backButton.css">
-</head>
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/teacherFeedback.css" />
+    <link rel="stylesheet" href="../CSS/backButton.css" />
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
 
     <main>
-        <h1>Skapa Feedback</h1>
+      <h1>Skapa Feedback</h1>
 
-        <form id="feedbackForm">
-            <select id="studentId" required>
-                <option value="" Välj elev ...></option>
-            </select>
-            <select id="" provinceId required>
-                <option value="Välj Landskap ..."></option>
-            </select>
-            <textarea id="feedbackMessage" name="feedbackMessage" placeholder="Skriv feedback här ..." rows="5"
-                required></textarea>
-            <button type="submit">Skicka Feedback</button>
-        </form>
+      <form id="feedbackForm">
+        <select id="studentId" required class="teacherPage">
+          <option value="" aria-placeholder="Välj elev..."></option>
+        </select>
+        <select id="provinceId" provinceId required class="teacherPage">
+          <option value="" aria-placeholder="Välj landskap..."></option>
+        </select>
+        <div id="result-box">
+          <div id="text-box">
+            <div id="results-list"></div>
+          </div>
+        </div>
+        <textarea
+          id="feedbackMessage"
+          name="feedbackMessage"
+          placeholder="Skriv feedback här ..."
+          rows="5"
+          required
+          class="teacherPage"
+        ></textarea>
+        <button type="submit" class="teacherPage">Skicka Feedback</button>
+      </form>
 
-
-        <div id="message"></div>
-
+      <div id="message"></div>
     </main>
     <script src="../js/header.js"></script>
     <script src="../js/teacherFeedback.js"></script>
     <script src="../js/backButton.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="../js/resultBar.js"></script>
+  </body>
 </html>

@@ -14,8 +14,21 @@ export const getResults = async (
   resultUserId: number,
 ): Promise<Result[] | null> => {
   const [results] = await databaseSQL.query<Result[]>(
-    "SELECT * FROM result WHERE resultUserId=?",
+    "SELECT * FROM result WHERE resultUserId=? ORDER BY resultCreatedAt DESC",
     [resultUserId],
+  );
+
+  return results ?? null;
+};
+
+// ------------- GET All FOR 1 USER-------------
+export const getAllResultsUser = async (
+  resultUserId: number,
+  resultProvinceId: string,
+): Promise<Result[] | null> => {
+  const [results] = await databaseSQL.query<Result[]>(
+    "SELECT * FROM result WHERE resultUserId=? AND resultProvinceId=?  ORDER BY resultCreatedAt DESC",
+    [resultUserId, resultProvinceId],
   );
 
   return results ?? null;

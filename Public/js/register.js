@@ -11,12 +11,14 @@ const userCreated = document.querySelector("#usercreated");
 const loginBtn = document.querySelector("#loginbtn");
 const larareBtn = document.querySelector("#lararebtn");
 const elevBtn = document.querySelector("#elevbtn");
-const usernameError = document.querySelector("#username-exists");
+const usernameExists = document.querySelector("#username-exists");
+const usernameError = document.querySelector("#username-error");
 
 loginBtn.style.display = "none";
 userCreated.style.display = "none";
 cfpasswordError.style.display = "none";
 passwordError.style.display = "none";
+usernameExists.style.display = "none";
 usernameError.style.display = "none";
 submitbtn.disabled = true;
 
@@ -34,13 +36,22 @@ function clearInputs() {
 
 clearInputs();
 
+function checkUsername() {
+  if (username.value.length > 10) {
+    usernameError.style.display = "block";
+  } else {
+    usernameError.style.display = "none";
+  }
+}
+
 function checkForm() {
   if (
     password.value.length > 3 &&
     confirmPassword.value.length > 3 &&
     password.value === confirmPassword.value &&
     gdprcheck.checked === true &&
-    (larareBtn.checked === true || elevBtn.checked === true)
+    (larareBtn.checked === true || elevBtn.checked === true) &&
+    username.value.length <= 10
   ) {
     submitbtn.disabled = false;
   } else {
@@ -77,8 +88,10 @@ confirmPassword.addEventListener("keyup", () => {
 });
 
 username.addEventListener("keyup", () => {
+  checkForm();
+  checkUsername();
   username.classList.remove("username-error");
-  usernameError.style.display = "none";
+  usernameExists.style.display = "none";
 });
 
 async function sendData() {
@@ -102,7 +115,7 @@ async function sendData() {
       userCreated.style.display = "block";
       loginBtn.style.display = "block";
     } else {
-      usernameError.style.display = "block";
+      usernameExists.style.display = "block";
       username.classList.add("username-error");
       window.scrollTo(0, 0);
     }

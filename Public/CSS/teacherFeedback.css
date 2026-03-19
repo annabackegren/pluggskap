@@ -55,3 +55,33 @@ button:hover {
   border-radius: 8px;
   text-align: center;
 }
+
+#results-list {
+  padding: 15px;
+}
+
+.result-item {
+  background-color: #446036;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.result-bar {
+  background-color: #b6da7e;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.result-bar-fill {
+  background-color: #a68ec1;
+  height: 100%;
+  border-radius: 4px;
+}

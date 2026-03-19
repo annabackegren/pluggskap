@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { getAllResults, addResult as addResultService, getResults as getResultService} from "../services/resultService.ts"
+import { getAllResults, addResult as addResultService, getResults as getResultService, getAllResultsUser as getAllResultsUserService} from "../services/resultService.ts"
 import type {ResponseMessage} from '../interfaces/responseInterface.ts'
 import type { AddResultDTO, Result } from '../interfaces/resultInterface.ts';
 
@@ -14,6 +14,20 @@ export const getResults = async (_req: Request, res: Response) => {
     const users = await getAllResults()
 
     res.status(200).send(users)
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({error: error.message})
+  }
+}
+
+export const getAllResultsUser = async (_req: Request<{resultUserId: number, resultProvinceId: string}>, res: Response) => {
+  try {
+    const resultUserId = _req.params.resultUserId
+    const resultProvinceId = _req.params.resultProvinceId
+
+    const result = await getAllResultsUserService(resultUserId, resultProvinceId)
+
+    res.status(200).send(result)
   } catch (error: any) {
     console.error(error);
     res.status(500).json({error: error.message})

@@ -56,7 +56,7 @@ label {
   border-color: #a68ec1;
 }
 
-#passworderror, #cfpassworderror, #username-exists {
+#passworderror, #cfpassworderror, #username-exists, #username-error {
   color: white;
   font-size: 13px;
 }

@@ -14,27 +14,48 @@ h1 {
 .quiz-wrapper {
   background-color: var(--light-green);
   border-radius: 15px;
-  /* border: solid 3px var(--dark-green); */
-  /* max-width: 63rem; */
   overflow-y: auto;
   overflow-x: hidden;
-  /* padding-bottom: 1rem; */
   margin: 0 auto;
-  /* padding: 1rem; */
   padding: 0 3rem;
+}
+
+.quiz-wrapper--country {
+  margin-top: 3rem;
 }
 
 .quiz-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.quiz-header--province {
+  flex-direction: row;
   gap: 2rem;
   margin-top: 2rem;
 }
 
+.quiz-header--country {
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.quiz-header--country p {
+  margin: 0;
+}
+
+.quiz-header--country p:last-child {
+  font-size: 14px;
+}
+
 #question-wrapper {
   padding: 0;
+}
+
+.question-wrapper--country {
+  margin-top: 0.5rem;
 }
 
 #question-counter {
@@ -184,5 +205,11 @@ ul .button {
 
   .user-card {
     margin-top: 110px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 940px) {
+  .quiz-wrapper--country {
+    margin-top: 5rem;
   }
 }

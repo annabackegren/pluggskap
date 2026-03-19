@@ -81,13 +81,13 @@ VALUES
 ('Vad äter lavskrikan?', '../assets/img/bird/siberian-jay.jpg', 'Allätare', 'Fisk', 'Bär', 'Frön', 'nbt'),
 ('Vad heter Norrbottens landskapsrätt?', '../assets/img/food/pitepalt.jpg', 'Pitepalt', 'Blodpalt', 'Potatispalt', 'Paltbröd', 'nbt'),
 ('Vilken är huvudingrediensen i pitepalt?', '../assets/img/food/pitepalt.jpg', 'Potatis', 'Ägg', 'Morot', 'Ris', 'nbt'),
-('Hur stort vingspann har lavskrikan?', '../assets/img/bird/siberian-jay.jpg', '40-46 cm', '20-30 cm', '60-80 cm', '100-120 cm', 'nbt'),
+('Hur stort vingspann har lavskrikan?', '../assets/img/bird/siberian-jay2.jpg', '40-46 cm', '20-30 cm', '60-80 cm', '100-120 cm', 'nbt'),
 ('Vad är åkerbär för typ av växt?', '../assets/img/plant/rubus_arcticus.jpg', 'Bärväxt', 'Träd', 'Buske', 'Gräs', 'nbt'),
 ('När är det säsong för åkerbär?', '../assets/img/plant/rubus_arcticus.jpg', 'Sommar', 'Vinter', 'Höst', 'Vår', 'nbt'),
 
 -- Västerbotten
-('Vilken fågel är detta?', '../assets/img/bird/curlew.jpg', 'Storspov', 'Storlom', 'Trana', 'Skrattmås', 'vbt'),
-('Vad äter storspoven?', '../assets/img/bird/curlew.jpg', 'Insekter, maskar och smådjur', 'Fisk', 'Frön', 'Bär', 'vbt'),
+('Vilken fågel är detta?', '../assets/img/bird/curlew2.jpg', 'Storspov', 'Storlom', 'Trana', 'Skrattmås', 'vbt'),
+('Vad äter storspoven?', '../assets/img/bird/curlew2.jpg', 'Insekter, maskar och smådjur', 'Fisk', 'Frön', 'Bär', 'vbt'),
 ('Vad heter Västerbottens landskapsrätt?', '../assets/img/food/klassisk_vasterbottenpaj.jpg', 'Västerbottenpaj', 'Ostpaj', 'Potatispaj', 'Äggpaj', 'vbt'),
 ('Vilken är huvudingrediensen i en västerbottenpaj?', '../assets/img/food/klassisk_vasterbottenpaj.jpg', 'Ost', 'Skinka', 'Pastej', 'Räkor', 'vbt'),
 ('Hur mycket kan storspoven väga?', '../assets/img/animal/curlew.jpg', '700-1000 g', '100-200 g', '2-3 kg', '3-5 kg', 'vbt'),
@@ -145,9 +145,9 @@ VALUES
 ('Vad heter Gästriklands landskapsblomma?', '../assets/img/plant/lily-of-the-valley.jpg', 'Liljekonvalj', 'Sommardroppar', 'Vitklocka', 'Klocktorn', 'grl'),
 
 -- Dalarna
-('Vilken fågel är detta?', '../assets/img/bird/bubo.jpg', 'Berguv', 'Kattuggla', 'Slaguggla', 'Hornuggla', 'dal'),
+('Vilken fågel är detta?', '../assets/img/bird/bubo2.jpg', 'Berguv', 'Kattuggla', 'Slaguggla', 'Hornuggla', 'dal'),
 ('Vad äter berguven?', '../assets/img/bird/bubo.jpg', 'Harar, gnagare och fåglar', 'Fisk', 'Frön', 'Bär', 'dal'),
-('Hur mycket kan berguven väga?', '../assets/img/animal/bubo.jpg', '1,5–4 kg', '200–400 g', '5–7 kg', '500–900 g', 'dal'),
+('Hur mycket kan berguven väga?', '../assets/img/animal/bubo2.jpg', '1,5–4 kg', '200–400 g', '5–7 kg', '500–900 g', 'dal'),
 ('Vad heter Dalarnas landskapsrätt?', '../assets/img/food/raraka.webp', 'Rårakor med fläsk', 'Fläskpannkaka', 'Potatisplättar', 'Stekt potatis', 'dal'),
 ('Vad river man för att göra rårakor?', '../assets/img/food/raraka.webp', 'Potatis', 'Morot', 'Ost', 'Blomkål', 'dal'),
 ('När blommar ängsklockan?', '../assets/img/plant/bellflower.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'dal'),
@@ -155,18 +155,18 @@ VALUES
 ('Vad är ängsklocka för typ av växt?', '../assets/img/plant/bellflower.jpg', 'Blomma', 'Träd', 'Buske', 'Gräs', 'dal'),
 
 -- Uppland
-('Vilken fågel är detta?', '../assets/img/bird/eagle.jpg', 'Havsörn', 'Kungsörn', 'Ormvråk', 'Fiskgjuse', 'upl'),
+('Vilken fågel är detta?', '../assets/img/bird/eagle2.jpg', 'Havsörn', 'Kungsörn', 'Ormvråk', 'Fiskgjuse', 'upl'),
 ('Vad äter havsörnen?', '../assets/img/animal/eagle.jpg', 'Fisk och sjöfågel', 'Insekter', 'Frön', 'Bär', 'upl'),
-('Hur stort vingspann har havsörnen?', '../assets/img/bird/eagle.jpg', '200–245 cm', '120–150 cm', '50–70 cm', '260–300 cm', 'upl'),
+('Hur stort vingspann har havsörnen?', '../assets/img/bird/eagle2.jpg', '200–245 cm', '120–150 cm', '50–70 cm', '260–300 cm', 'upl'),
 ('Vad heter Upplands landskapsrätt?', '../assets/img/food/angbatsbiff.jpg', 'Ångbåtsbiff', 'Biffgryta', 'Stekbiff', 'Köttgryta', 'upl'),
 ('När blommar kungsängsliljan?', '../assets/img/plant/fritillaria.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'upl'),
 ('Är kungsängsliljan fridlyst?', '../assets/img/plant/fritillaria.jpg', 'Ja', 'Nej', 'Bara på vintern', 'Bara i parker', 'upl'),
 ('Vad heter Upplands landskapsblomma?', '../assets/img/plant/fritillaria.jpg', 'Kungsängslilja', 'Drottningklocka', 'Prinsessört', 'Prinskrona', 'upl'),
 
 -- Södermanland
-('Vilken fågel är detta?', '../assets/img/bird/osprey.jpg', 'Fiskgjuse', 'Havsörn', 'Kungsörn', 'Ormvråk', 'sdm'),
+('Vilken fågel är detta?', '../assets/img/bird/osprey2.jpg', 'Fiskgjuse', 'Havsörn', 'Kungsörn', 'Ormvråk', 'sdm'),
 ('Vad äter fiskgjusen?', '../assets/img/bird/osprey.jpg', 'Fisk', 'Insekter', 'Bär', 'Frön', 'sdm'),
-('Hur stort vingspann har fiskgjusen?', '../assets/img/bird/osprey.jpg', '150–180 cm', '60–80 cm', '200–240 cm', '30–40 cm', 'sdm'),
+('Hur stort vingspann har fiskgjusen?', '../assets/img/bird/osprey2.jpg', '150–180 cm', '60–80 cm', '200–240 cm', '30–40 cm', 'sdm'),
 ('Vad heter Södermanlands landskapsrätt?', '../assets/img/food/sorunda.jpg', 'Sorundatårta', 'Sörmlandstårta', 'Mandelkaka', 'Festtårta', 'sdm'),
 ('Vad används i en Sorundatårta?', '../assets/img/food/sorunda.jpg', 'Mandelmassa', 'Grädde', 'Jordgubbar', 'Kakao', 'sdm'),
 ('När blommar vit näckros?', '../assets/img/plant/water-lily.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'sdm'),
@@ -199,16 +199,16 @@ VALUES
 ('Vad äter korpen?', '../assets/img/bird/raven.jpg', 'Allätare', 'Fisk', 'Insekter', 'Bär', 'dls'),
 ('Vilken blomma blommar på våren i Dalsland?', '../assets/img/plant/forget-me-not.jpg', 'Förgätmigej', 'Linnea', 'Blåklint', 'Solvända', 'dls'),
 ('Vilken maträtt är traditionell i Dalsland?', '../assets/img/food/appelkaka_fran_amal.jpg', 'Äppelkaka från Åmål', 'Raggmunk med lingon', 'Saffranspannkaka', 'Äggost', 'dls'),
-('Hur mycket väger en korp?', '../assets/img/animal/raven.jpg', '0,7–1,6 kg', '3–6 kg', '9–15 kg', '70–130 kg', 'dls'),
-('Vilket vingspann har korpen?', '../assets/img/bird/raven.jpg', '115–150 cm', '80–90 cm', '200–240 cm', '150–180 cm', 'dls'),
+('Hur mycket väger en korp?', '../assets/img/animal/raven2.jpg', '0,7–1,6 kg', '3–6 kg', '9–15 kg', '70–130 kg', 'dls'),
+('Vilket vingspann har korpen?', '../assets/img/bird/raven2.jpg', '115–150 cm', '80–90 cm', '200–240 cm', '150–180 cm', 'dls'),
 
 -- Västergötland
 ('Vilket djur är Västergötlands landskapsdjur?', '../assets/img/animal/crane.jpg', 'Trana', 'Korp', 'Knölsvan', 'Utter', 'vgl'),
-('Vad äter tranan?', '../assets/img/bird/crane.jpg', 'Växter, insekter och smådjur', 'Fisk', 'Maskar', 'Bär', 'vgl'),
+('Vad äter tranan?', '../assets/img/bird/crane2.jpg', 'Växter, insekter och smådjur', 'Fisk', 'Maskar', 'Bär', 'vgl'),
 ('Vilken buske blommar i Västergötland under sommaren?', '../assets/img/plant/heather.jpg', 'Ljung', 'Ginst', 'Blåklint', 'Solvända', 'vgl'),
 ('Vilken maträtt är typisk för Västergötland?', '../assets/img/food/grynkorv.jpg', 'Grynkorv med stuvade bönor', 'Raggmunk med lingon', 'Sjömansbiff', 'Äggakaka', 'vgl'),
 ('Hur hög kan en trana bli?', '../assets/img/animal/crane.jpg', '100–130 cm', '55–90 cm', '70–100 cm', '120–150 cm', 'vgl'),
-('Vilket vingspann har tranan?', '../assets/img/bird/crane.jpg', '180–240 cm', '115–150 cm', '33–36 cm', '200–240 cm', 'vgl'),
+('Vilket vingspann har tranan?', '../assets/img/bird/crane2.jpg', '180–240 cm', '115–150 cm', '33–36 cm', '200–240 cm', 'vgl'),
 
 -- Östergötland
 ('Vilket djur är Östergötlands landskapsdjur?', '../assets/img/animal/swan.jpg', 'Knölsvan', 'Trana', 'Igelkott', 'Utter', 'ogl'),
@@ -216,8 +216,8 @@ VALUES
 ('Vilken blomma blommar på sommaren i Östergötland?', '../assets/img/plant/cornflower.jpg', 'Blåklint', 'Förgätmigej', 'Solvända', 'Linnea', 'ogl'),
 ('Vilken maträtt är typisk för Östergötland?', '../assets/img/food/raggmunk_med_flask_och_lingon.jpg', 'Raggmunk med lingon', 'Äppelkaka från Åmål', 'Småländsk ostkaka', 'Saffranspannkaka', 'ogl'),
 ('Vad görs raggmunk av?', '../assets/img/food/raggmunk_med_flask_och_lingon.jpg', 'Potatis', 'Äpple', 'Morot', 'Ris', 'ogl'),
-('Hur mycket kan en knölsvan väga?', '../assets/img/animal/swan.jpg', '9–15 kg', '4–6 kg', '0,7–1,6 kg', '65–100 g', 'ogl'),
-('Vilket vingspann har knölsvanen?', '../assets/img/bird/swan.jpg', '200–240 cm', '180–240 cm', '80–90 cm', '150–180 cm', 'ogl'),
+('Hur mycket kan en knölsvan väga?', '../assets/img/animal/swan2.jpg', '9–15 kg', '4–6 kg', '0,7–1,6 kg', '65–100 g', 'ogl'),
+('Vilket vingspann har knölsvanen?', '../assets/img/bird/swan2.jpg', '200–240 cm', '180–240 cm', '80–90 cm', '150–180 cm', 'ogl'),
 
 -- Bohuslän
 ('Vilket djur är Bohusläns landskapsdjur?', '../assets/img/animal/seal.jpg', 'Knubbsäl', 'Korp', 'Lax', 'Igelkott', 'bhl'),
@@ -255,8 +255,8 @@ VALUES
 ('När blommar solvändan?', '../assets/img/plant/helianthemum.jpg', 'Sommar', 'Vår', 'Året runt', 'Höst', 'old'),
 ('Vilken rätt är typisk för Öland?', '../assets/img/food/olandska_kroppkakor.jpg', 'Öländska kroppkakor', 'Äppelkaka från Åmål', 'Småländsk ostkaka', 'Raggmunk med lingon', 'old'),
 ('Vad fylls kroppkakor med?', '../assets/img/food/olandska_kroppkakor.jpg', 'Fläsk och kryddor', 'Äpple och ingefära', 'Ris och lingon', 'Ost och morot', 'old'),
-('Hur mycket väger en näktergal?', '../assets/img/animal/nightingale.jpg', '20–30 g', '65–100 g', '600–1300 g', '0,7–1,6 kg', 'old'),
-('Vilket vingspann har näktergalen?', '../assets/img/bird/nightingale.jpg', '23–26 cm', '22–24 cm', '33–36 cm', '115–150 cm', 'old'),
+('Hur mycket väger en näktergal?', '../assets/img/animal/nightingale2.jpg', '20–30 g', '65–100 g', '600–1300 g', '0,7–1,6 kg', 'old'),
+('Vilket vingspann har näktergalen?', '../assets/img/bird/nightingale2.jpg', '23–26 cm', '22–24 cm', '33–36 cm', '115–150 cm', 'old'),
 
 -- Halland
 ('Vilket djur är Hallands landskapsdjur?', '../assets/img/animal/salmon.jpg', 'Lax', 'Utter', 'Korp', 'Knölsvan', 'hal'),
@@ -290,6 +290,7 @@ SELECT * FROM question;
 
 SELECT * FROM question WHERE questionProvinceId = 'nrk';
 
+SELECT * FROM question ORDER BY RAND() LIMIT 5;
 
 INSERT INTO result(resultScore, resultUserId, resultProvinceId) VALUES ('9', '10', 'hrj');
 

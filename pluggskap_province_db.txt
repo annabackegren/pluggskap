@@ -58,7 +58,7 @@ db.provinces.insertMany([
             stay: true,
             food: "Allätare",
             sound: "ljudfil",
-            image: "../assets/img/bird/siberian-jay.jpg"
+            image: "../assets/img/bird/siberian-jay2.jpg"
         },
         food: {
             name: "Pitepalt",
@@ -93,7 +93,7 @@ db.provinces.insertMany([
             stay: false,
             food: "Insekter, maskar och smådjur",
             sound: "ljudfil",
-            image: "../assets/img/bird/curlew.jpg"
+            image: "../assets/img/bird/curlew2.jpg"
         },
         food: {
             name: "Västerbottenpaj",
@@ -343,7 +343,7 @@ bird: {
     stay: true,
     food: "Harar, gnagare och fåglar",
     sound: "ljudfil",
-    image: "../assets/img/bird/bubo.jpg"
+    image: "../assets/img/bird/bubo2.jpg"
 },
 
 food: {
@@ -382,7 +382,7 @@ bird: {
     stay: true,
     food: "Fisk och sjöfågel",
     sound: "ljudfil",
-    image: "../assets/img/bird/eagle.jpg"
+    image: "../assets/img/bird/eagle2.jpg"
 },
 
 food: {
@@ -421,7 +421,7 @@ bird: {
     stay: false,
     food: "Fisk",
     sound: "ljudfil",
-    image: "../assets/img/bird/osprey.jpg"
+    image: "../assets/img/bird/osprey2.jpg"
 },
 
 food: {
@@ -575,7 +575,7 @@ bird: {
     stay: true,
     food: "Allätare",
     sound: "ljudfil",
-    image: "../assets/img/bird/raven.jpg"
+    image: "../assets/img/bird/raven2.jpg"
 },
 food: {
         name: "Äppelkaka från Åmål",
@@ -610,7 +610,7 @@ bird: {
     stay: false,
     food: "Växter, insekter och smådjur",
     sound: "ljudfil",
-    image: "../assets/img/bird/crane.jpg"
+    image: "../assets/img/bird/crane2.jpg"
 },
 food: {
     name: "Grynkorv med stuvade bönor",
@@ -645,7 +645,7 @@ bird: {
     stay: true,
     food: "Vattenväxter",
     sound: "ljudfil",
-    image: "../assets/img/bird/swan.jpg"
+    image: "../assets/img/bird/swan2.jpg"
 },
 food: {
     name: "Raggmunk med lingon",

@@ -1,5 +1,5 @@
-const resulturl = "http://localhost:3000/result";
-const protectedurl = "http://localhost:3000/protected";
+const resulturl = "/result";
+const protectedurl = "/protected";
 
 let authToken = JSON.parse(localStorage.getItem("token"));
 
@@ -77,7 +77,7 @@ clearInputs();
 async function getUser() {
   let username = JSON.parse(localStorage.getItem("usernameIndex"));
 
-  const userurl = `http://localhost:3000/user/${username}`;
+  const userurl = `/user/${username}`;
   try {
     const response = await fetch(userurl);
     const result = await response.json();
@@ -124,7 +124,7 @@ async function deleteUser() {
     });
     console.log(await response.json());
     if ((await response.status) === 200) {
-      window.location.href = "http://localhost:3000/html/index.html";
+      window.location.href = "/html/index.html";
     }
   } catch (err) {
     console.error(err);
@@ -168,9 +168,7 @@ async function loadResults() {
   let resultUserId = await getUser();
 
   try {
-    const response = await fetch(
-      "http://localhost:3000/result/" + resultUserId,
-    );
+    const response = await fetch("/result/" + resultUserId);
     const results = await response.json();
     const resultsList = document.getElementById("results-list");
 
@@ -185,7 +183,7 @@ async function loadResults() {
       let provinceName = result.resultProvinceId;
       try {
         const provinceResponse = await fetch(
-          "http://localhost:3000/province/" + result.resultProvinceId,
+          "/province/" + result.resultProvinceId,
         );
         const provinceData = await provinceResponse.json();
         provinceName = provinceData.name;

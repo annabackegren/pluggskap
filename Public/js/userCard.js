@@ -13,9 +13,11 @@ async function user() {
       usernameEl.textContent = showUsername || "Förnamn Efternamn";
   }
 
-  userCardBox = document.querySelector("#user-card-box");
-  changeUserInfo = document.querySelector("#change-user-info");
+  const userCardBox = document.querySelector("#user-card-box");
+  const changeUserInfo = document.querySelector("#change-user-info");
 
-  userCardBox.appendChild(changeUserInfo);
+  if (userCardBox && changeUserInfo) {
+    userCardBox.appendChild(changeUserInfo);
+  }
 }
 user();

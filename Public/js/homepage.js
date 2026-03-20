@@ -1,5 +1,5 @@
 if (localStorage.getItem("usernameIndex") === null) {
-  window.location.href = "http://localhost:3000/html/index.html";
+  window.location.href = "/html/index.html";
 }
 
 const mapbtn = document.querySelector("#mapbtn");

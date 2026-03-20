@@ -1,5 +1,5 @@
-const resulturl = "http://localhost:3000/result";
-const protectedurl = "http://localhost:3000/protected";
+const resulturl = "/result";
+const protectedurl = "/protected";
 
 let authToken = JSON.parse(localStorage.getItem("token"));
 
@@ -77,7 +77,7 @@ clearInputs();
 async function getUser() {
   let username = JSON.parse(localStorage.getItem("usernameIndex"));
 
-  const userurl = `http://localhost:3000/user/${username}`;
+  const userurl = `/user/${username}`;
   try {
     const response = await fetch(userurl);
     const result = await response.json();
@@ -123,7 +123,7 @@ async function deleteUser() {
       headers: { Authorization: authToken },
     });
     if ((await response.status) === 200) {
-      window.location.href = "http://localhost:3000/html/index.html";
+      window.location.href = "/html/index.html";
     }
   } catch (err) {
     console.error(err);
@@ -171,9 +171,7 @@ async function checkUserType() {
       let resultUserId = await getUser();
 
       try {
-        const response = await fetch(
-          "http://localhost:3000/result/" + resultUserId.userId,
-        );
+        const response = await fetch("/result/" + resultUserId.userId);
         const results = await response.json();
         const resultsList = document.getElementById("results-list");
 
@@ -188,7 +186,7 @@ async function checkUserType() {
           let provinceName = result.resultProvinceId;
           try {
             const provinceResponse = await fetch(
-              "http://localhost:3000/province/" + result.resultProvinceId,
+              "/province/" + result.resultProvinceId,
             );
             const provinceData = await provinceResponse.json();
             provinceName = provinceData.name;
@@ -216,7 +214,7 @@ async function checkUserType() {
           let feedbackMsg = resultItem.querySelector("#feedback-msg");
 
           const feedbackResponse = await fetch(
-            `http://localhost:3000/feedback/${resultUserId.userName}/province/${result.resultProvinceId}`,
+            `/feedback/${resultUserId.userName}/province/${result.resultProvinceId}`,
           );
 
           const feedbackData = await feedbackResponse.json();
@@ -252,7 +250,7 @@ async function checkUserType() {
     });
 
     async function loadStudents() {
-      const response = await fetch("http://localhost:3000/user");
+      const response = await fetch("/user");
       const users = await response.json();
       const studentSelect = document.getElementById("studentId");
 
@@ -267,7 +265,7 @@ async function checkUserType() {
     }
 
     async function loadProvinces() {
-      const response = await fetch("http://localhost:3000/province");
+      const response = await fetch("/province");
       const provinces = await response.json();
       const provinceSelect = document.getElementById("provinceId");
 
@@ -292,9 +290,7 @@ async function checkUserType() {
       if (!studentId || !provinceId) return;
 
       try {
-        const response = await fetch(
-          `http://localhost:3000/result/${studentId}/${provinceId}`,
-        );
+        const response = await fetch(`/result/${studentId}/${provinceId}`);
         const results = await response.json();
 
         if (!results || results.length === 0) {
@@ -309,7 +305,7 @@ async function checkUserType() {
           resultItem.innerHTML = "";
           try {
             const provinceResponse = await fetch(
-              "http://localhost:3000/province/" + result.resultProvinceId,
+              "/province/" + result.resultProvinceId,
             );
             const provinceData = await provinceResponse.json();
             provinceName = provinceData.name;
@@ -365,7 +361,7 @@ async function checkUserType() {
       };
 
       try {
-        const response = await fetch("http://localhost:3000/feedback", {
+        const response = await fetch("/feedback", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

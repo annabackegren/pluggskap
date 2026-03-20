@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/user/";
+const url = "/user/";
 
 const form = document.querySelector("#userinfo");
 const submitbtn = document.querySelector("#submitbtn");

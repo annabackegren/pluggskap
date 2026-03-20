@@ -1,7 +1,7 @@
 async function getUser() {
   let username = JSON.parse(localStorage.getItem("usernameIndex"));
 
-  const userurl = `http://localhost:3000/user/${username}`;
+  const userurl = `/user/${username}`;
   try {
     const response = await fetch(userurl);
     const result = await response.json();
@@ -12,7 +12,7 @@ async function getUser() {
 }
 
 async function loadStudents() {
-  const response = await fetch("http://localhost:3000/user");
+  const response = await fetch("/user");
   const users = await response.json();
   const studentSelect = document.getElementById("studentId");
 
@@ -27,7 +27,7 @@ async function loadStudents() {
 }
 
 async function loadProvinces() {
-  const response = await fetch("http://localhost:3000/province");
+  const response = await fetch("/province");
   const provinces = await response.json();
   console.log(provinces);
   const provinceSelect = document.getElementById("provinceId");
@@ -53,9 +53,7 @@ async function loadResults() {
   if (!studentId || !provinceId) return;
 
   try {
-    const response = await fetch(
-      `http://localhost:3000/result/${studentId}/${provinceId}`,
-    );
+    const response = await fetch(`/result/${studentId}/${provinceId}`);
     const results = await response.json();
 
     if (!results || results.length === 0) {
@@ -70,7 +68,7 @@ async function loadResults() {
       resultItem.innerHTML = "";
       try {
         const provinceResponse = await fetch(
-          "http://localhost:3000/province/" + result.resultProvinceId,
+          "/province/" + result.resultProvinceId,
         );
         const provinceData = await provinceResponse.json();
         provinceName = provinceData.name;
@@ -126,7 +124,7 @@ form.addEventListener("submit", async function (event) {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/feedback", {
+    const response = await fetch("/feedback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

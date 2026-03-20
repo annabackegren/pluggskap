@@ -36,7 +36,7 @@ async function header() {
     logoutBtn.addEventListener("click", (e) => {
       localStorage.removeItem("usernameIndex");
       localStorage.removeItem("token");
-      window.location.href = "http://localhost:3000/html/index.html";
+      window.location.href = "/html/index.html";
     });
   }
 }

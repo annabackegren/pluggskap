@@ -147,7 +147,7 @@ VALUES
 -- Dalarna
 ('Vilken fågel är detta?', '../assets/img/bird/bubo2.jpg', 'Berguv', 'Kattuggla', 'Slaguggla', 'Hornuggla', 'dal'),
 ('Vad äter berguven?', '../assets/img/bird/bubo.jpg', 'Harar, gnagare och fåglar', 'Fisk', 'Frön', 'Bär', 'dal'),
-('Hur mycket kan berguven väga?', '../assets/img/animal/bubo2.jpg', '1,5–4 kg', '200–400 g', '5–7 kg', '500–900 g', 'dal'),
+('Hur mycket kan berguven väga?', '../assets/img/bird/bubo2.jpg', '1,5–4 kg', '200–400 g', '5–7 kg', '500–900 g', 'dal'),
 ('Vad heter Dalarnas landskapsrätt?', '../assets/img/food/raraka.webp', 'Rårakor med fläsk', 'Fläskpannkaka', 'Potatisplättar', 'Stekt potatis', 'dal'),
 ('Vad river man för att göra rårakor?', '../assets/img/food/raraka.webp', 'Potatis', 'Morot', 'Ost', 'Blomkål', 'dal'),
 ('När blommar ängsklockan?', '../assets/img/plant/bellflower.jpg', 'Sommar', 'Vår', 'Höst', 'Vinter', 'dal'),
@@ -199,7 +199,7 @@ VALUES
 ('Vad äter korpen?', '../assets/img/bird/raven.jpg', 'Allätare', 'Fisk', 'Insekter', 'Bär', 'dls'),
 ('Vilken blomma blommar på våren i Dalsland?', '../assets/img/plant/forget-me-not.jpg', 'Förgätmigej', 'Linnea', 'Blåklint', 'Solvända', 'dls'),
 ('Vilken maträtt är traditionell i Dalsland?', '../assets/img/food/appelkaka_fran_amal.jpg', 'Äppelkaka från Åmål', 'Raggmunk med lingon', 'Saffranspannkaka', 'Äggost', 'dls'),
-('Hur mycket väger en korp?', '../assets/img/animal/raven2.jpg', '0,7–1,6 kg', '3–6 kg', '9–15 kg', '70–130 kg', 'dls'),
+('Hur mycket väger en korp?', '../assets/img/bird/raven2.jpg', '0,7–1,6 kg', '3–6 kg', '9–15 kg', '70–130 kg', 'dls'),
 ('Vilket vingspann har korpen?', '../assets/img/bird/raven2.jpg', '115–150 cm', '80–90 cm', '200–240 cm', '150–180 cm', 'dls'),
 
 -- Västergötland
@@ -216,7 +216,7 @@ VALUES
 ('Vilken blomma blommar på sommaren i Östergötland?', '../assets/img/plant/cornflower.jpg', 'Blåklint', 'Förgätmigej', 'Solvända', 'Linnea', 'ogl'),
 ('Vilken maträtt är typisk för Östergötland?', '../assets/img/food/raggmunk_med_flask_och_lingon.jpg', 'Raggmunk med lingon', 'Äppelkaka från Åmål', 'Småländsk ostkaka', 'Saffranspannkaka', 'ogl'),
 ('Vad görs raggmunk av?', '../assets/img/food/raggmunk_med_flask_och_lingon.jpg', 'Potatis', 'Äpple', 'Morot', 'Ris', 'ogl'),
-('Hur mycket kan en knölsvan väga?', '../assets/img/animal/swan2.jpg', '9–15 kg', '4–6 kg', '0,7–1,6 kg', '65–100 g', 'ogl'),
+('Hur mycket kan en knölsvan väga?', '../assets/img/bird/swan2.jpg', '9–15 kg', '4–6 kg', '0,7–1,6 kg', '65–100 g', 'ogl'),
 ('Vilket vingspann har knölsvanen?', '../assets/img/bird/swan2.jpg', '200–240 cm', '180–240 cm', '80–90 cm', '150–180 cm', 'ogl'),
 
 -- Bohuslän
@@ -255,7 +255,7 @@ VALUES
 ('När blommar solvändan?', '../assets/img/plant/helianthemum.jpg', 'Sommar', 'Vår', 'Året runt', 'Höst', 'old'),
 ('Vilken rätt är typisk för Öland?', '../assets/img/food/olandska_kroppkakor.jpg', 'Öländska kroppkakor', 'Äppelkaka från Åmål', 'Småländsk ostkaka', 'Raggmunk med lingon', 'old'),
 ('Vad fylls kroppkakor med?', '../assets/img/food/olandska_kroppkakor.jpg', 'Fläsk och kryddor', 'Äpple och ingefära', 'Ris och lingon', 'Ost och morot', 'old'),
-('Hur mycket väger en näktergal?', '../assets/img/animal/nightingale2.jpg', '20–30 g', '65–100 g', '600–1300 g', '0,7–1,6 kg', 'old'),
+('Hur mycket väger en näktergal?', '../assets/img/bird/nightingale2.jpg', '20–30 g', '65–100 g', '600–1300 g', '0,7–1,6 kg', 'old'),
 ('Vilket vingspann har näktergalen?', '../assets/img/bird/nightingale2.jpg', '23–26 cm', '22–24 cm', '33–36 cm', '115–150 cm', 'old'),
 
 -- Halland

@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/user/login";
+const url = "/user/login";
 
 const form = document.querySelector("#loginform");
 const loginError = document.querySelector("#loginerror");
@@ -35,7 +35,7 @@ async function loginReq() {
       let showToken = localStorage.getItem("token");
       console.log(showToken);
       console.log(showUsername);
-      window.location.href = "http://localhost:3000/html/homepage.html";
+      window.location.href = "/html/homepage.html";
     } else {
       console.log("fel");
       loginError.style.display = "block";

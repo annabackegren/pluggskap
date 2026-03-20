@@ -13,7 +13,7 @@ function initSvgClick() {
     const element = event.target.closest("path, circle");
     if (!element) return;
 
-    console.log("Klickad:", element.id);
+    // console.log("Klickad:", element.id);
 
     // Om det är en circle -> hitta motsvarande path
     let targetPath;

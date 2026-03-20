@@ -47,9 +47,10 @@
 }
 
 #menu {
-  padding-top: 100px;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 40px;
@@ -82,6 +83,7 @@
 @media (min-width: 768px) {
   #menu {
     flex-direction: row;
+    padding-top: 5rem;
   }
 }
 

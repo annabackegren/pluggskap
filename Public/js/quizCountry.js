@@ -102,7 +102,7 @@ async function getQuestions() {
       throw new Error("Something went wrong");
     }
     const data = await response.json();
-    console.log("Alla frågor från backend: ", data);
+    // console.log("Alla frågor från backend: ", data);
 
     questions = data;
     currentIndex = 0;

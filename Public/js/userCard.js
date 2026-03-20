@@ -2,7 +2,7 @@ async function user() {
   const userEl = document.querySelector(".user-card");
 
   if (userEl) {
-    const result = await fetch("../HTML/userCard.html"),
+    const result = await fetch("/html/userCard.html"),
       user = await result.text();
     userEl.innerHTML = user;
 

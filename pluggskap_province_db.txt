@@ -4,6 +4,10 @@ db.provinces.createIndex({ name: 1}, {unique: true})
 db.provinces.createIndex({ id: 1}, {unique: true})
 
 db.provinces.insertMany([
+            {
+        id: "swe",
+        name: "Sverige",
+    },
         {
         id: "lpl",
         name: "Lappland",

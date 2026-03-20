@@ -2,7 +2,7 @@ async function header() {
   const headerEl = document.querySelector("#header");
 
   if (headerEl) {
-    const result = await fetch("../HTML/header.html"),
+    const result = await fetch("/html/header.html"),
       header = await result.text();
     headerEl.innerHTML = header;
 
@@ -12,11 +12,21 @@ async function header() {
       hamburgerWrapper = headerEl.querySelector("#hamburger-wrapper"),
       currentPage = window.location.pathname.split("/").pop();
 
-    if (currentPage === "index.html" || currentPage === "quizCountry.html") {
+    if (
+      currentPage === "index.html" ||
+      localStorage.getItem("usernameIndex") === null
+    ) {
       menu.style.display = "none";
       if (hamburgerWrapper) {
         hamburgerWrapper.style.display = "none";
       }
+    }
+
+    const homeLink = headerEl.querySelector("#home-link");
+    if (localStorage.getItem("usernameIndex") === null) {
+      homeLink.href = "/html/index.html";
+    } else {
+      homeLink.href = "/html/homepage.html";
     }
 
     links.forEach((link) => {

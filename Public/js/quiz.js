@@ -70,7 +70,7 @@ async function getUser() {
     }
 
     const user = await response.json();
-    console.log("userId är: ", user.userId);
+    // console.log("userId är: ", user.userId);
     return user.userId;
   } catch (error) {
     console.error(`Error fetching userId: `, error);
@@ -85,7 +85,7 @@ async function getProvince(provinceId) {
       throw new Error("Something went wrong");
     }
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error(`Error fetching province with id ${provinceId}`, error);
@@ -94,13 +94,18 @@ async function getProvince(provinceId) {
 
 async function getQuestions(provinceId) {
   try {
-    const response = await fetch(`/quiz/${provinceId}`);
+    let response;
+    if (provinceId) {
+      provinceId === "swe"
+        ? (response = await fetch(`/quiz/country`))
+        : (response = await fetch(`/quiz/${provinceId}`));
+    }
 
     if (!response.ok) {
       throw new Error("Something went wrong");
     }
     const data = await response.json();
-    console.log("Alla frågor från backend: ", data);
+    // console.log("Alla frågor från backend: ", data);
 
     questions = data;
     currentIndex = 0;
@@ -255,6 +260,12 @@ async function buttonEvents() {
     nextButton.textContent = "Nästa fråga >>";
     renderCurrentQuestion();
   });
+
+  if (provinceId === "swe") {
+    backButton.innerHTML = "Tillbaka till menyn";
+  } else {
+    backButton.innerHTML = "Tillbaka till landskapet";
+  }
 
   const previousUrl = document.referrer;
   backButton.addEventListener("click", async () => {

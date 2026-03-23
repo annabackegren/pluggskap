@@ -29,7 +29,7 @@ CREATE TABLE result(
     resultProvinceId VARCHAR(20) NOT NULL,
     resultCreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (resultId),
-    FOREIGN KEY (resultUserId) REFERENCES user(userId)
+    FOREIGN KEY (resultUserId) REFERENCES user(userId) ON DELETE CASCADE
 );
 
 CREATE TABLE feedback (
@@ -40,8 +40,8 @@ CREATE TABLE feedback (
     feedbackProvinceId VARCHAR(10) NOT NULL,
     feedbackCreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (feedbackId),
-    FOREIGN KEY (feedbackTeacherId) REFERENCES user(userId),
-    FOREIGN KEY (feedbackStudentId) REFERENCES user(userId)
+    FOREIGN KEY (feedbackTeacherId) REFERENCES user(userId) ON DELETE CASCADE,
+    FOREIGN KEY (feedbackStudentId) REFERENCES user(userId) ON DELETE CASCADE
 );
 
 SELECT * FROM user;
@@ -303,5 +303,3 @@ DROP TABLE result;
 DROP TABLE question;
 
 DROP DATABASE pluggskap_db;
-
-

@@ -1,8 +1,6 @@
-import express from 'express';
 import type { Request, Response } from 'express';
 import { database } from '../connectionMongoDB.ts'
 import type {ResponseMessage} from '../interfaces/responseInterface.ts'
-import { error } from 'node:console';
 
 interface Province {
     id: string,

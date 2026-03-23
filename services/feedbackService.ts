@@ -49,7 +49,6 @@ LIMIT 4`,
    [userName, provinceId]
   );
 
-  // console.log("result är: ", result);
   return result;
 };
 

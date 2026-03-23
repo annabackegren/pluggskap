@@ -1,5 +1,5 @@
 import express from 'express';
-import {getQuestion, getAllByProvince, getQuizQuestions, getQuizCountryQuestions} from '../controllers/quizController.ts'
+import {getQuestion, getQuizQuestions, getQuizCountryQuestions} from '../controllers/quizController.ts'
 
 const router = express.Router()
 

@@ -1,6 +1,5 @@
 import { databaseSQL } from "../connectionMySQL.ts";
 import type { Result, AddResultDTO } from "../interfaces/resultInterface.ts";
-import type { ResponseMessage } from "../interfaces/responseInterface.ts";
 
 // ------------- GET ALL-------------
 export const getAllResults = async (): Promise<Result[]> => {

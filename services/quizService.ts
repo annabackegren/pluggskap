@@ -1,6 +1,5 @@
 import { databaseSQL } from "../connectionMySQL.ts";
 import type { Question } from "../interfaces/quizInterface.ts";
-import type { ResponseMessage } from "../interfaces/responseInterface.ts";
 
 // ------------- GET ALL-------------
 export const getAllQuestions = async (): Promise<Question[]> => {
@@ -10,16 +9,16 @@ export const getAllQuestions = async (): Promise<Question[]> => {
 };
 
 // ------------- GET ALL BY PROVINCE ID -------------
-export const getAllQuestionsByProvince = async (
-  questionProvinceId: string,
-): Promise<Question[] | null> => {
-  const [results] = await databaseSQL.query<Question[]>(
-    "SELECT * FROM question WHERE questionProvinceId=?",
-    [questionProvinceId],
-  );
+// export const getAllQuestionsByProvince = async (
+//   questionProvinceId: string,
+// ): Promise<Question[] | null> => {
+//   const [results] = await databaseSQL.query<Question[]>(
+//     "SELECT * FROM question WHERE questionProvinceId=?",
+//     [questionProvinceId],
+//   );
 
-  return results ?? null;
-};
+//   return results ?? null;
+// };
 
 // ------------- GET ALL FOR GAME -------------
 export const getQuizQuestions = async (

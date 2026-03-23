@@ -90,7 +90,7 @@ h1 {
 }
 
 #question-img {
-  width: clamp(250px, 28vw, 100%);
+  width: clamp(250px, 23rem, 100%);
   height: clamp(160px, 19vw, 200px);
   object-fit: cover;
   display: block;

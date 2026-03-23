@@ -270,7 +270,7 @@ VALUES
 ('Vilken blomma blommar på sommaren i Blekinge?', '../assets/img/plant/mullein.jpg', 'Kungsljus', 'Blåklint', 'Murgröna', 'Linnea', 'ble'),
 ('Vilken maträtt är typisk för Blekinge?', '../assets/img/food/sjomansbiff.jpg', 'Sjömansbiff', 'Raggmunk med lingon', 'Äppelkaka från Åmål', 'Äggakaka', 'ble'),
 ('Vilket kött används till sjömansbiff?', '../assets/img/food/sjomansbiff.jpg', 'Nöt', 'Torsk', 'Gås', 'Marulk', 'ble'),
-('Hur mycket väger en ekoxe?', '../assets/img/animal/stag-beatle.jpg', '2–6 g', '20–30 g', '600–1300 g', '65–100 g', 'ble'),
+('Hur mycket väger en ekoxe?', '../assets/img/animal/stag-beetle.jpg', '2–6 g', '20–30 g', '600–1300 g', '65–100 g', 'ble'),
 ('Vilket vingspann har nötväckan?', '../assets/img/bird/nuthatch.jpg', '22–27 cm', '16–20 cm', '33–36 cm', '80–90 cm', 'ble'),
 
 -- Skåne
@@ -303,3 +303,5 @@ DROP TABLE result;
 DROP TABLE question;
 
 DROP DATABASE pluggskap_db;
+
+

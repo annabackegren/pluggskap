@@ -1,8 +1,7 @@
-const url = "http://localhost:3000/user/login";
+const url = "/user/login";
 
-interface Login {
+interface LoginRes {
   token: string;
-  message: string;
 }
 
 const form = document.querySelector<HTMLFormElement>("#loginform");
@@ -36,11 +35,11 @@ async function loginReq() {
         userPassword: password.value,
       }),
     });
-    const loginMsg = await response.json();
+    const loginMsg: LoginRes = await response.json();
     if ((await response.status) === 200) {
       localStorage.setItem("usernameIndex", JSON.stringify(username.value));
       localStorage.setItem("token", JSON.stringify(loginMsg.token));
-      window.location.href = "http://localhost:3000/html/homepage.html";
+      window.location.href = "/html/homepage.html";
     } else {
       console.log("fel");
       if (loginError) loginError.style.display = "block";

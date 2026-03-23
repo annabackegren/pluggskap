@@ -1,12 +1,16 @@
 fetch("../HTML/backButton.html")
-  .then((response) => response.text())
-  .then((html) => {
-    // console.log("Hämtade backbutton");
+    .then(function (response) { return response.text(); })
+    .then(function (html) {
     document.body.insertAdjacentHTML("beforeend", html);
-
-    const backBtn = document.getElementById("back-button");
-
-    backBtn.addEventListener("click", function () {
-      window.history.back();
-    });
-  });
+    var backBtn = document.querySelector("#back-button");
+    if (backBtn) {
+        backBtn.addEventListener("click", function () {
+            if (window.location.pathname.includes("province.html")) {
+                window.location.href = "../HTML/map.html";
+            }
+            else {
+                window.history.back();
+            }
+        });
+    }
+});

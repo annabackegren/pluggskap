@@ -196,7 +196,7 @@ ul .button {
   }
 
   .quiz-wrapper {
-    /* max-height: calc(100vh - 16px - 3rem); */
+    max-height: calc(100vh - 82px - 3rem);
     width: clamp(320px, 90%, 600px);
 
     margin-top: 3rem;

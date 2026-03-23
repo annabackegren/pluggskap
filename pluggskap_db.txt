@@ -44,10 +44,6 @@ CREATE TABLE feedback (
     FOREIGN KEY (feedbackStudentId) REFERENCES user(userId)
 );
 
-
-INSERT INTO user(userType, userName, userPassword)
-VALUES ('elev', 'svagun', 'hejhopp123');
-
 SELECT * FROM user;
 
 
@@ -232,7 +228,7 @@ VALUES
 -- Gotland
 ('Vilket djur är Gotlands landskapsdjur?', '../assets/img/animal/hedgehog.jpg', 'Igelkott', 'Utter', 'Korp', 'Knölsvan', 'got'),
 ('Vad äter halsbandsflugsnapparen?', '../assets/img/bird/flycatcher.jpg', 'Insekter', 'Fisk', 'Maskar', 'Bär', 'got'),
-('Vad heter Gotlands landskapsfågel?', '../assets/img/bird/flycatcher.jpg', 'Halsbandsflugsnappare', 'Ringduva', 'Kronsimmare', 'Armbandsriddare', 'got'),
+('Vad heter Gotlands landskapsfågel?', '../assets/img/bird/flycatcher.jpg', 'Halsbands- flugsnappare', 'Ringduva', 'Kronsimmare', 'Armbandsriddare', 'got'),
 ('Vilken klätterväxt finns året runt på Gotland?', '../assets/img/plant/ivy.jpg', 'Murgröna', 'Linnea', 'Solvända', 'Blåklint', 'got'),
 ('Vilken dessert är typisk för Gotland?', '../assets/img/food/gotlandsk_saffranspannkaka.jpg', 'Saffranspannkaka', 'Småländsk ostkaka', 'Äppelkaka från Åmål', 'Äggost', 'got'),
 ('Vilken är huvudingrediensen i saffranspannkaka?', '../assets/img/food/gotlandsk_saffranspannkaka.jpg', 'Risgrynsgröt', 'Havregrynsgröt', 'Polentagröt', 'Mannagrynsgröt', 'got'),
@@ -269,13 +265,13 @@ VALUES
 ('Vilket vingspann har pilgrimsfalken?', '../assets/img/bird/hawk.jpg', '95–115 cm', '150–180 cm', '180–240 cm', '80–90 cm', 'hal'),
 
 -- Blekinge
-('Vilket djur är Blekinges landskapsdjur?', '../assets/img/animal/stag-beatle.jpg', 'Ekoxe', 'Korp', 'Knölsvan', 'Igelkott', 'ble'),
+('Vilket djur är Blekinges landskapsdjur?', '../assets/img/animal/stag-beetle.jpg', 'Ekoxe', 'Korp', 'Knölsvan', 'Igelkott', 'ble'),
 ('Vad äter nötväckan?', '../assets/img/bird/nuthatch.jpg', 'Insekter och frön', 'Maskar', 'Fisk', 'Bär', 'ble'),
 ('Vilken blomma blommar på sommaren i Blekinge?', '../assets/img/plant/mullein.jpg', 'Kungsljus', 'Blåklint', 'Murgröna', 'Linnea', 'ble'),
 ('Vilken maträtt är typisk för Blekinge?', '../assets/img/food/sjomansbiff.jpg', 'Sjömansbiff', 'Raggmunk med lingon', 'Äppelkaka från Åmål', 'Äggakaka', 'ble'),
 ('Vilket kött används till sjömansbiff?', '../assets/img/food/sjomansbiff.jpg', 'Nöt', 'Torsk', 'Gås', 'Marulk', 'ble'),
 ('Hur mycket väger en ekoxe?', '../assets/img/animal/stag-beatle.jpg', '2–6 g', '20–30 g', '600–1300 g', '65–100 g', 'ble'),
-('Vilket vingspann har nötväckan?', '../assets/img/bird/nuthatch.jpg', '22–27 cm', '23–26 cm', '33–36 cm', '80–90 cm', 'ble'),
+('Vilket vingspann har nötväckan?', '../assets/img/bird/nuthatch.jpg', '22–27 cm', '16–20 cm', '33–36 cm', '80–90 cm', 'ble'),
 
 -- Skåne
 ('Vilket djur är Skånes landskapsdjur?', '../assets/img/animal/red-deer.jpg', 'Kronhjort', 'Korp', 'Trana', 'Knölsvan', 'ske'),
@@ -296,34 +292,14 @@ INSERT INTO result(resultScore, resultUserId, resultProvinceId) VALUES ('9', '10
 
 SELECT * FROM result;
 
-
-INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
-VALUES ('Bra jobbat med Lappland-quiz!', 1, 1, 'lpl'),
-('Bättre lycka nästa gång!', 1, 1, 'hrj'),
-('Bra svarat på alla frågor!', 1, 1, 'nbt');
-
-INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
-VALUES ('Läs lite till om Tranor', 1, 2, 'vgl');
-
-INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
-VALUES ('Du kan mycket om Ljung, bra jobbat!', 1, 2, 'vgl'),
-       ('Bättre lycka nästa gång!', 1, 1, 'hsl');
-
-INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
-VALUES ('Snyggt jobbat!', 1, 2, 'hsl');
-
-INSERT INTO feedback(feedbackMessage, feedbackTeacherId, feedbackStudentId, feedbackProvinceId)
-VALUES ('Det här har du läst på om!', 1, 2, 'vgl');
-
 SELECT * FROM feedback;
 
 SELECT f.feedbackMessage, f.feedbackProvinceId, t.userName as teacherName FROM feedback f JOIN user s ON f.feedbackStudentId = s.userId JOIN user t ON f.feedbackTeacherId = t.userId WHERE s.userName="kerstin";
 
 
+-- DROP TABLE / DATABASE
 
 DROP TABLE result;
 DROP TABLE question;
 
 DROP DATABASE pluggskap_db;
-
-
